@@ -1,4 +1,4 @@
-# [UClod MediaPlayer iOS SDK]()
+# [UCloud MediaPlayer iOS SDK]()
 
 UCDMediaPlayer 是一个适用于 iOS 的音视频播放器 SDK，基于FFmpeg自主研发音视频媒体播放器，支持 RTMP, HTTP-FLV 和 HLS 直播流媒体播放。
 
@@ -25,7 +25,7 @@ UCDMediaPlayer 是一个适用于 iOS 的音视频播放器 SDK，基于FFmpeg�
 * 最低支持iPhone型号：iPhone 4
 * 支持CPU架构： armv7,arm64(和i386,x86_64模拟器) 
 
-### 2.2 下载集成（要修改）
+### 2.2 下载集成
 ```
 git clone https://github.com/umdk/UCDMediaPlayer_iOS.git
 ```
