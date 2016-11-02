@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/UCloudPlayback.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/UCloudPlayback</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+            
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/setView:</TokenIdentifier>
+			<Abstract type="html">视频画面</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UIView *view</Declaration>
+			
+			
+			<Anchor>//api/name/view</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/view</TokenIdentifier>
+			<Abstract type="html">视频画面</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UIView *view</Declaration>
+			
+			
+			<Anchor>//api/name/view</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UCloudPlayback/view</TokenIdentifier>
+			<Abstract type="html">视频画面</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UIView *view</Declaration>
+			
+			
+			<Anchor>//api/name/view</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/setCurrentPlaybackTime:</TokenIdentifier>
+			<Abstract type="html">当前播放的位置</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSTimeInterval currentPlaybackTime</Declaration>
+			
+			
+			<Anchor>//api/name/currentPlaybackTime</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/currentPlaybackTime</TokenIdentifier>
+			<Abstract type="html">当前播放的位置</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSTimeInterval currentPlaybackTime</Declaration>
+			
+			
+			<Anchor>//api/name/currentPlaybackTime</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UCloudPlayback/currentPlaybackTime</TokenIdentifier>
+			<Abstract type="html">当前播放的位置</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSTimeInterval currentPlaybackTime</Declaration>
+			
+			
+			<Anchor>//api/name/currentPlaybackTime</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/setDuration:</TokenIdentifier>
+			<Abstract type="html">视频总时间</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval duration</Declaration>
+			
+			
+			<Anchor>//api/name/duration</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/duration</TokenIdentifier>
+			<Abstract type="html">视频总时间</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval duration</Declaration>
+			
+			
+			<Anchor>//api/name/duration</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UCloudPlayback/duration</TokenIdentifier>
+			<Abstract type="html">视频总时间</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval duration</Declaration>
+			
+			
+			<Anchor>//api/name/duration</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/setPlayableDuration:</TokenIdentifier>
+			<Abstract type="html">媒体可播放时长，主要用于表示网络媒体已下载视频时长</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval playableDuration</Declaration>
+			
+			
+			<Anchor>//api/name/playableDuration</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/playableDuration</TokenIdentifier>
+			<Abstract type="html">媒体可播放时长，主要用于表示网络媒体已下载视频时长</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval playableDuration</Declaration>
+			
+			
+			<Anchor>//api/name/playableDuration</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UCloudPlayback/playableDuration</TokenIdentifier>
+			<Abstract type="html">媒体可播放时长，主要用于表示网络媒体已下载视频时长</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval playableDuration</Declaration>
+			
+			
+			<Anchor>//api/name/playableDuration</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/setBufferingProgress:</TokenIdentifier>
+			<Abstract type="html">缓冲进度</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger bufferingProgress</Declaration>
+			
+			
+			<Anchor>//api/name/bufferingProgress</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/bufferingProgress</TokenIdentifier>
+			<Abstract type="html">缓冲进度</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger bufferingProgress</Declaration>
+			
+			
+			<Anchor>//api/name/bufferingProgress</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UCloudPlayback/bufferingProgress</TokenIdentifier>
+			<Abstract type="html">缓冲进度</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger bufferingProgress</Declaration>
+			
+			
+			<Anchor>//api/name/bufferingProgress</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/setIsPreparedToPlay:</TokenIdentifier>
+			<Abstract type="html">是否准备好播放</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isPreparedToPlay</Declaration>
+			
+			
+			<Anchor>//api/name/isPreparedToPlay</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/isPreparedToPlay</TokenIdentifier>
+			<Abstract type="html">是否准备好播放</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isPreparedToPlay</Declaration>
+			
+			
+			<Anchor>//api/name/isPreparedToPlay</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UCloudPlayback/isPreparedToPlay</TokenIdentifier>
+			<Abstract type="html">是否准备好播放</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isPreparedToPlay</Declaration>
+			
+			
+			<Anchor>//api/name/isPreparedToPlay</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/setPlaybackState:</TokenIdentifier>
+			<Abstract type="html">媒体播放状态</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MPMoviePlaybackState playbackState</Declaration>
+			
+			
+			<Anchor>//api/name/playbackState</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/playbackState</TokenIdentifier>
+			<Abstract type="html">媒体播放状态</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MPMoviePlaybackState playbackState</Declaration>
+			
+			
+			<Anchor>//api/name/playbackState</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UCloudPlayback/playbackState</TokenIdentifier>
+			<Abstract type="html">媒体播放状态</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MPMoviePlaybackState playbackState</Declaration>
+			
+			
+			<Anchor>//api/name/playbackState</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/setLoadState:</TokenIdentifier>
+			<Abstract type="html">网络媒体加载状态</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MPMovieLoadState loadState</Declaration>
+			
+			
+			<Anchor>//api/name/loadState</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/loadState</TokenIdentifier>
+			<Abstract type="html">网络媒体加载状态</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MPMovieLoadState loadState</Declaration>
+			
+			
+			<Anchor>//api/name/loadState</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UCloudPlayback/loadState</TokenIdentifier>
+			<Abstract type="html">网络媒体加载状态</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MPMovieLoadState loadState</Declaration>
+			
+			
+			<Anchor>//api/name/loadState</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/setControlStyle:</TokenIdentifier>
+			<Abstract type="html">控制面板风格，枚举类型：</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) MPMovieControlStyle controlStyle</Declaration>
+			
+			
+			<Anchor>//api/name/controlStyle</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/controlStyle</TokenIdentifier>
+			<Abstract type="html">控制面板风格，枚举类型：</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) MPMovieControlStyle controlStyle</Declaration>
+			
+			
+			<Anchor>//api/name/controlStyle</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UCloudPlayback/controlStyle</TokenIdentifier>
+			<Abstract type="html">控制面板风格，枚举类型：</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) MPMovieControlStyle controlStyle</Declaration>
+			
+			
+			<Anchor>//api/name/controlStyle</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/setScalingMode:</TokenIdentifier>
+			<Abstract type="html">视频缩放填充模式，枚举类型：</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) MPMovieScalingMode scalingMode</Declaration>
+			
+			
+			<Anchor>//api/name/scalingMode</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/scalingMode</TokenIdentifier>
+			<Abstract type="html">视频缩放填充模式，枚举类型：</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) MPMovieScalingMode scalingMode</Declaration>
+			
+			
+			<Anchor>//api/name/scalingMode</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UCloudPlayback/scalingMode</TokenIdentifier>
+			<Abstract type="html">视频缩放填充模式，枚举类型：</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) MPMovieScalingMode scalingMode</Declaration>
+			
+			
+			<Anchor>//api/name/scalingMode</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/setShouldAutoplay:</TokenIdentifier>
+			<Abstract type="html">是否自动播放</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) BOOL shouldAutoplay</Declaration>
+			
+			
+			<Anchor>//api/name/shouldAutoplay</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/shouldAutoplay</TokenIdentifier>
+			<Abstract type="html">是否自动播放</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) BOOL shouldAutoplay</Declaration>
+			
+			
+			<Anchor>//api/name/shouldAutoplay</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UCloudPlayback/shouldAutoplay</TokenIdentifier>
+			<Abstract type="html">是否自动播放</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) BOOL shouldAutoplay</Declaration>
+			
+			
+			<Anchor>//api/name/shouldAutoplay</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/setAllowsMediaAirPlay:</TokenIdentifier>
+			<Abstract type="html">是否允许通过AirPlay播放</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) BOOL allowsMediaAirPlay</Declaration>
+			
+			
+			<Anchor>//api/name/allowsMediaAirPlay</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/allowsMediaAirPlay</TokenIdentifier>
+			<Abstract type="html">是否允许通过AirPlay播放</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) BOOL allowsMediaAirPlay</Declaration>
+			
+			
+			<Anchor>//api/name/allowsMediaAirPlay</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UCloudPlayback/allowsMediaAirPlay</TokenIdentifier>
+			<Abstract type="html">是否允许通过AirPlay播放</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) BOOL allowsMediaAirPlay</Declaration>
+			
+			
+			<Anchor>//api/name/allowsMediaAirPlay</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/setAirPlayMediaActive:</TokenIdentifier>
+			<Abstract type="html">当前媒体是否正在通过AirPlay播放</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL airPlayMediaActive</Declaration>
+			
+			
+			<Anchor>//api/name/airPlayMediaActive</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/airPlayMediaActive</TokenIdentifier>
+			<Abstract type="html">当前媒体是否正在通过AirPlay播放</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL airPlayMediaActive</Declaration>
+			
+			
+			<Anchor>//api/name/airPlayMediaActive</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UCloudPlayback/airPlayMediaActive</TokenIdentifier>
+			<Abstract type="html">当前媒体是否正在通过AirPlay播放</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL airPlayMediaActive</Declaration>
+			
+			
+			<Anchor>//api/name/airPlayMediaActive</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/prepareToPlay</TokenIdentifier>
+			<Abstract type="html">准备播放</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>- (void)prepareToPlay</Declaration>
+			
+			
+			<Anchor>//api/name/prepareToPlay</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/play</TokenIdentifier>
+			<Abstract type="html">播放</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>- (void)play</Declaration>
+			
+			
+			<Anchor>//api/name/play</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/pause</TokenIdentifier>
+			<Abstract type="html">暂停</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>- (void)pause</Declaration>
+			
+			
+			<Anchor>//api/name/pause</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/stop</TokenIdentifier>
+			<Abstract type="html">停止</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>- (void)stop</Declaration>
+			
+			
+			<Anchor>//api/name/stop</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/isPlaying</TokenIdentifier>
+			<Abstract type="html">播放状态</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isPlaying</Declaration>
+			
+			
+			<Anchor>//api/name/isPlaying</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/shutdown</TokenIdentifier>
+			<Abstract type="html">关闭播放器</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>- (void)shutdown</Declaration>
+			
+			
+			<Anchor>//api/name/shutdown</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/setPauseInBackground:</TokenIdentifier>
+			<Abstract type="html">进入后台自动暂停</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>- (void)setPauseInBackground:(BOOL)pause</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pause</Name>
+					<Abstract type="html">是否暂停</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setPauseInBackground:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UCloudPlayback/thumbnailImageAtCurrentTime</TokenIdentifier>
+			<Abstract type="html">截图</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			
+			<Declaration>- (UIImage *)thumbnailImageAtCurrentTime</Declaration>
+			
+			
+			<Anchor>//api/name/thumbnailImageAtCurrentTime</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

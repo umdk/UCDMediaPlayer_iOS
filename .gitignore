@@ -1,0 +1,10 @@
+# OSX
+.DS_Store
+
+# Xcode
+*.ipa
+*.xcuserstate
+*.xccheckout
+*.pbxuser
+*.xcuserdata
+xcuserdata

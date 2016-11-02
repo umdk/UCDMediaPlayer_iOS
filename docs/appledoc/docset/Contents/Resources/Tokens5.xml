@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/Definition.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/Definition</TokenIdentifier>
+			<Abstract type="html">清晰度</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+            
+			
+			<NodeRef refid="5"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Definition_fhd</TokenIdentifier>
+            <Abstract type="html">蓝光</Abstract>
+            <Declaration>Definition_fhd</Declaration>
+            
+            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Definition_shd</TokenIdentifier>
+            <Abstract type="html">超清</Abstract>
+            <Declaration>Definition_shd</Declaration>
+            
+            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Definition_hd</TokenIdentifier>
+            <Abstract type="html">高清</Abstract>
+            <Declaration>Definition_hd</Declaration>
+            
+            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Definition_sd</TokenIdentifier>
+            <Abstract type="html">标清</Abstract>
+            <Declaration>Definition_sd</Declaration>
+            
+            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+            
+            <NodeRef refid="5"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

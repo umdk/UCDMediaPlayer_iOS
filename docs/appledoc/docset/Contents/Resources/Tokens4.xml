@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/DecodeMethod.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/DecodeMethod</TokenIdentifier>
+			<Abstract type="html">解码器</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+            
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DecodeMethodSoft</TokenIdentifier>
+            <Abstract type="html">软解码
+     </Abstract>
+            <Declaration>DecodeMethodSoft</Declaration>
+            
+            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+            
+            <NodeRef refid="4"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DecodeMethodHard</TokenIdentifier>
+            <Abstract type="html">硬解码
+     </Abstract>
+            <Declaration>DecodeMethodHard</Declaration>
+            
+            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+            
+            <NodeRef refid="4"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

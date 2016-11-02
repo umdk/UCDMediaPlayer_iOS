@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MHQ-hh-mAk">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Player-->
+        <scene sceneID="SCv-TP-hPt">
+            <objects>
+                <viewController id="MHQ-hh-mAk" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GML-Ok-Sgl"/>
+                        <viewControllerLayoutGuide type="bottom" id="6z3-HW-b1t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z4l-ul-Iea">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8f-hM-rzh">
+                                <rect key="frame" x="285" y="285" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="amg-Gr-DjX"/>
+                                    <constraint firstAttribute="height" constant="30" id="vRP-eG-Eal"/>
+                                </constraints>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="play:" destination="MHQ-hh-mAk" eventType="touchUpInside" id="be1-6l-XJb"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rk8-sL-aXG">
+                                <rect key="frame" x="181" y="232" width="239" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="239" id="OaR-dY-Eql"/>
+                                    <constraint firstAttribute="height" constant="30" id="XSR-BR-Aqv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="D8f-hM-rzh" firstAttribute="top" secondItem="Rk8-sL-aXG" secondAttribute="bottom" constant="23" id="DCm-ME-Bp9"/>
+                            <constraint firstAttribute="centerX" secondItem="D8f-hM-rzh" secondAttribute="centerX" id="cdX-sc-Vw6"/>
+                            <constraint firstAttribute="centerX" secondItem="Rk8-sL-aXG" secondAttribute="centerX" id="gar-bU-4Jq"/>
+                            <constraint firstAttribute="centerY" secondItem="D8f-hM-rzh" secondAttribute="centerY" id="o2R-Cm-CfD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Player" id="bZ2-tQ-TEs"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="textField" destination="Rk8-sL-aXG" id="u1y-Rn-x6O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k4l-sG-pub" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2483" y="420"/>
+        </scene>
+    </scenes>
+</document>

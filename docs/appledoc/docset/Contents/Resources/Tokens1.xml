@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/UCloudMediaPlayer.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/UCloudMediaPlayer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/setDefaultScalingMode:</TokenIdentifier>
+			<Abstract type="html">画面填充方式</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) MPMovieScalingMode defaultScalingMode</Declaration>
+			
+			
+			<Anchor>//api/name/defaultScalingMode</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/defaultScalingMode</TokenIdentifier>
+			<Abstract type="html">画面填充方式</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) MPMovieScalingMode defaultScalingMode</Declaration>
+			
+			
+			<Anchor>//api/name/defaultScalingMode</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UCloudMediaPlayer/defaultScalingMode</TokenIdentifier>
+			<Abstract type="html">画面填充方式</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) MPMovieScalingMode defaultScalingMode</Declaration>
+			
+			
+			<Anchor>//api/name/defaultScalingMode</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/setDefaultDecodeMethod:</TokenIdentifier>
+			<Abstract type="html">默认的解码方式</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) DecodeMethod defaultDecodeMethod</Declaration>
+			
+			
+			<Anchor>//api/name/defaultDecodeMethod</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/defaultDecodeMethod</TokenIdentifier>
+			<Abstract type="html">默认的解码方式</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) DecodeMethod defaultDecodeMethod</Declaration>
+			
+			
+			<Anchor>//api/name/defaultDecodeMethod</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UCloudMediaPlayer/defaultDecodeMethod</TokenIdentifier>
+			<Abstract type="html">默认的解码方式</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) DecodeMethod defaultDecodeMethod</Declaration>
+			
+			
+			<Anchor>//api/name/defaultDecodeMethod</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/setUrl:</TokenIdentifier>
+			<Abstract type="html">播放地址</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) NSURL *url</Declaration>
+			
+			
+			<Anchor>//api/name/url</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/url</TokenIdentifier>
+			<Abstract type="html">播放地址</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) NSURL *url</Declaration>
+			
+			
+			<Anchor>//api/name/url</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UCloudMediaPlayer/url</TokenIdentifier>
+			<Abstract type="html">播放地址</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) NSURL *url</Declaration>
+			
+			
+			<Anchor>//api/name/url</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/setUrlType:</TokenIdentifier>
+			<Abstract type="html">视频来源类型</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) UrlType urlType</Declaration>
+			
+			
+			<Anchor>//api/name/urlType</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/urlType</TokenIdentifier>
+			<Abstract type="html">视频来源类型</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) UrlType urlType</Declaration>
+			
+			
+			<Anchor>//api/name/urlType</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UCloudMediaPlayer/urlType</TokenIdentifier>
+			<Abstract type="html">视频来源类型</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) UrlType urlType</Declaration>
+			
+			
+			<Anchor>//api/name/urlType</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/setPlayer:</TokenIdentifier>
+			<Abstract type="html">播放器控制器</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) id&lt;UCloudMediaPlayback&gt; player</Declaration>
+			
+			
+			<Anchor>//api/name/player</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/player</TokenIdentifier>
+			<Abstract type="html">播放器控制器</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) id&lt;UCloudMediaPlayback&gt; player</Declaration>
+			
+			
+			<Anchor>//api/name/player</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UCloudMediaPlayer/player</TokenIdentifier>
+			<Abstract type="html">播放器控制器</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) id&lt;UCloudMediaPlayback&gt; player</Declaration>
+			
+			
+			<Anchor>//api/name/player</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/UCloudMediaPlayer/ucloudMediaPlayer</TokenIdentifier>
+			<Abstract type="html">初始化mediaPlayer</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)ucloudMediaPlayer</Declaration>
+			
+			<ReturnValue><Abstract type="html">UCloudMediaPlayer</Abstract></ReturnValue>
+			<Anchor>//api/name/ucloudMediaPlayer</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/showMediaPlayer:urltype:frame:view:completion:</TokenIdentifier>
+			<Abstract type="html">配置播放view</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>- (void)showMediaPlayer:(NSString *)url urltype:(UrlType)urltype frame:(CGRect)frame view:(UIView *)view completion:(UCloudMediaCompletionBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">播放url</Abstract>
+				</Parameter><Parameter>
+					<Name>urltype</Name>
+					<Abstract type="html">播放类型</Abstract>
+				</Parameter><Parameter>
+					<Name>frame</Name>
+					<Abstract type="html">playerView视图大小，默认传入CGRectNull</Abstract>
+				</Parameter><Parameter>
+					<Name>view</Name>
+					<Abstract type="html">player</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">初始化完成</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/showMediaPlayer:urltype:frame:view:completion:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/showInview:definition:</TokenIdentifier>
+			<Abstract type="html">配置播放view</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>- (void)showInview:(UIView *)view definition:(void ( ^ ) ( NSInteger defaultNum , NSArray *data ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>view</Name>
+					<Abstract type="html">父view</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">回掉清晰度信息</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/showInview:definition:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/selectDecodeMethod:</TokenIdentifier>
+			<Abstract type="html">切换解码方式</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>- (void)selectDecodeMethod:(DecodeMethod)decode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>decode</Name>
+					<Abstract type="html">切换后的解码方式</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/selectDecodeMethod:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/selectDefinition:</TokenIdentifier>
+			<Abstract type="html">切换清晰度</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>- (void)selectDefinition:(Definition)definition</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>definition</Name>
+					<Abstract type="html">切换后的清晰度</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/selectDefinition:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/refreshView</TokenIdentifier>
+			<Abstract type="html">刷新视图</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>- (void)refreshView</Declaration>
+			
+			
+			<Anchor>//api/name/refreshView</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>
