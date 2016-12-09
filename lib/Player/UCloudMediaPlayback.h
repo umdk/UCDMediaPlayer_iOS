@@ -26,11 +26,6 @@ UCLOUD_EXTERN NSString *const UCloudMoviePlayerClickBack;
 UCLOUD_EXTERN NSString *const UCloudMoviePlayerSeekCompleted;
 
 /**
- *  缓冲进度变更
- */
-UCLOUD_EXTERN NSString *const UCloudMoviePlayerBufferingUpdate;
-
-/**
  *  播放器所在的视图控制器旋转完成的时候发布这个通知
  */
 UCLOUD_EXTERN NSString *const UCloudViewControllerDidRotate;

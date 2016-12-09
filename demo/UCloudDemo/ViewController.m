@@ -40,8 +40,7 @@
 {
     [super viewWillAppear:animated];
     
-    if (self.playerManager)
-    {
+    if (self.playerManager) {
         [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
         [[self navigationController] setNavigationBarHidden:YES];
     }
@@ -60,10 +59,8 @@
     
     NSString *str = self.textField.text;
     
-    if (str.length == 0)
-    {
-        out:
-        {
+    if (str.length == 0) {
+        out: {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"注意" message:@"URL不可用" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
             [alert show];
             [self.textField becomeFirstResponder];
@@ -74,8 +71,7 @@
     str = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *theMovieURL =[NSURL URLWithString:str];
 
-    if (theMovieURL == nil)
-    {
+    if (theMovieURL == nil) {
         goto out;
     }
     
@@ -83,13 +79,11 @@
     self.btn.hidden = YES;
     self.textField.hidden = YES;
     
-    if ([theMovieURL isFileURL])
-    {
+    if ([theMovieURL isFileURL]) {
         NSLog(@"is file url");
     }
     
-    if ([theMovieURL checkResourceIsReachableAndReturnError:nil])
-    {
+    if ([theMovieURL checkResourceIsReachableAndReturnError:nil]) {
         NSLog(@"error");
     }
     
@@ -100,14 +94,12 @@
     self.playerManager.viewContorller = self;
     
     float height = 0.f;
-    if (PlayPortrait)
-    {
+    if (PlayPortrait) {
         [self.playerManager setSupportAutomaticRotation:NO];
         [self.playerManager setSupportAngleChange:NO];
         height = self.view.frame.size.height/2.f;
     }
-    else
-    {
+    else {
         [self.playerManager setSupportAutomaticRotation:YES];
         [self.playerManager setSupportAngleChange:YES];
         height = self.view.frame.size.height;
@@ -119,8 +111,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if ([self.textField isFirstResponder])
-    {
+    if ([self.textField isFirstResponder]) {
         [self.textField resignFirstResponder];
     }
 }
@@ -128,8 +119,7 @@
 - (void)noti:(NSNotification *)noti
 {
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
-    if ([noti.name isEqualToString:UCloudMoviePlayerClickBack])
-    {
+    if ([noti.name isEqualToString:UCloudMoviePlayerClickBack]) {
         self.btn.hidden = NO;
         self.textField.hidden = NO;
         
@@ -156,12 +146,10 @@
  */
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
-    if (self.playerManager)
-    {
+    if (self.playerManager) {
         return self.playerManager.supportInterOrtation;
     }
-    else
-    {
+    else {
         /**
          *  这个在播放之外的程序支持的设备方向
          */
