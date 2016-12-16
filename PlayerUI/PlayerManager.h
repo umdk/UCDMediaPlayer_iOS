@@ -46,7 +46,7 @@
  */
 @property (assign, nonatomic) BOOL supportAngleChange;
 
-- (void)buildMediaPlayer:(NSString *)path;
+- (void)buildMediaPlayer:(NSString *)path urlType:(UrlType)urlType;
 - (void)rotateBegain:(UIInterfaceOrientation)noti;
 - (void)rotateEnd;
 - (void)awakeSupportInterOrtation:(UIViewController *)showVC completion:(void(^)(void))block;

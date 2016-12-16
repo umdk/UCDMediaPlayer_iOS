@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MHQ-hh-mAk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MHQ-hh-mAk">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Player-->
@@ -13,17 +13,18 @@
                         <viewControllerLayoutGuide type="top" id="GML-Ok-Sgl"/>
                         <viewControllerLayoutGuide type="bottom" id="6z3-HW-b1t"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Z4l-ul-Iea">
+                    <view key="view" contentMode="scaleToFill" id="Z4l-ul-Iea" propertyAccessControl="all">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8f-hM-rzh">
-                                <rect key="frame" x="285" y="285" width="30" height="30"/>
+                                <rect key="frame" x="225" y="325" width="150" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="amg-Gr-DjX"/>
+                                    <constraint firstAttribute="width" constant="150" id="amg-Gr-DjX"/>
                                     <constraint firstAttribute="height" constant="30" id="vRP-eG-Eal"/>
                                 </constraints>
-                                <state key="normal" title="Play">
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="播     放" backgroundImage="bg_screen_shot_complete.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -31,27 +32,61 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rk8-sL-aXG">
-                                <rect key="frame" x="181" y="232" width="239" height="30"/>
+                                <rect key="frame" x="20" y="235" width="560" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="239" id="OaR-dY-Eql"/>
                                     <constraint firstAttribute="height" constant="30" id="XSR-BR-Aqv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="URL"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2O3-Ko-sxs">
+                                <rect key="frame" x="332" y="280" width="38" height="30"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="直  播">
+                                    <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="switchPlayType:" destination="MHQ-hh-mAk" eventType="touchUpInside" id="fQ3-8H-Xnk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kw3-PQ-1wR">
+                                <rect key="frame" x="230" y="280" width="38" height="30"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="点  播">
+                                    <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected" title="点  播">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="switchPlayType:" destination="MHQ-hh-mAk" eventType="touchUpInside" id="teJ-P5-eih"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="D8f-hM-rzh" firstAttribute="top" secondItem="Rk8-sL-aXG" secondAttribute="bottom" constant="23" id="DCm-ME-Bp9"/>
+                            <constraint firstItem="Kw3-PQ-1wR" firstAttribute="centerX" secondItem="Z4l-ul-Iea" secondAttribute="centerX" constant="-51" id="5Vq-6x-osK"/>
+                            <constraint firstAttribute="trailing" secondItem="Rk8-sL-aXG" secondAttribute="trailing" constant="20" id="5z3-ac-hrM"/>
+                            <constraint firstItem="D8f-hM-rzh" firstAttribute="top" secondItem="Rk8-sL-aXG" secondAttribute="bottom" constant="60" id="DCm-ME-Bp9"/>
+                            <constraint firstItem="Kw3-PQ-1wR" firstAttribute="top" secondItem="Rk8-sL-aXG" secondAttribute="bottom" constant="15" id="LbE-en-Fo2"/>
+                            <constraint firstItem="2O3-Ko-sxs" firstAttribute="centerX" secondItem="Z4l-ul-Iea" secondAttribute="centerX" constant="51" id="Qkf-R6-2Hp"/>
                             <constraint firstAttribute="centerX" secondItem="D8f-hM-rzh" secondAttribute="centerX" id="cdX-sc-Vw6"/>
+                            <constraint firstItem="2O3-Ko-sxs" firstAttribute="top" secondItem="Rk8-sL-aXG" secondAttribute="bottom" constant="15" id="clI-7z-R8T"/>
                             <constraint firstAttribute="centerX" secondItem="Rk8-sL-aXG" secondAttribute="centerX" id="gar-bU-4Jq"/>
-                            <constraint firstAttribute="centerY" secondItem="D8f-hM-rzh" secondAttribute="centerY" id="o2R-Cm-CfD"/>
+                            <constraint firstAttribute="centerY" secondItem="D8f-hM-rzh" secondAttribute="centerY" constant="-40" id="o2R-Cm-CfD"/>
+                            <constraint firstItem="Rk8-sL-aXG" firstAttribute="leading" secondItem="Z4l-ul-Iea" secondAttribute="leading" constant="20" id="x9h-3O-HSL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Player" id="bZ2-tQ-TEs"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
+                        <outlet property="btnLive" destination="2O3-Ko-sxs" id="hgg-xn-B83"/>
+                        <outlet property="btnVod" destination="Kw3-PQ-1wR" id="Cti-CW-ZhL"/>
                         <outlet property="textField" destination="Rk8-sL-aXG" id="u1y-Rn-x6O"/>
                     </connections>
                 </viewController>
@@ -60,4 +95,7 @@
             <point key="canvasLocation" x="2483" y="420"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg_screen_shot_complete.png" width="240" height="96"/>
+    </resources>
 </document>

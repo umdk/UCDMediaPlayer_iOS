@@ -12,9 +12,14 @@
 
 @interface ViewController ()
 @property (strong, nonatomic) UIButton *btn;
+@property (weak, nonatomic) IBOutlet UIButton    *btnLive;
+@property (weak, nonatomic) IBOutlet UIButton    *btnVod;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @property (nonatomic) BOOL barHidden;
+
+- (IBAction)switchPlayType:(id)sender;
+
 @end
 
 @implementation ViewController
@@ -25,9 +30,12 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noti:) name:UCloudMoviePlayerClickBack object:nil];
     
+    [self switchPlayType:nil];
+    
     self.textField.text =
     //点播测试地址范例，urltype设置为UrlTypeAuto或UrlTypeHttp即可
-    @"http://mediademo.ufile.ucloud.com.cn/ucloud_promo_140s.mp4";//未加密
+    @"https://mediademo.ufile.ucloud.com.cn/ucloud_promo_140s.mp4";//https播放
+//    @"http://mediademo.ufile.ucloud.com.cn/ucloud_promo_140s.mp4";//http播放
     //【推荐使用】测试http-flv直播地址范例，因从url上无法判断是直播还是点播，在创建播放器时需要手动设置url类型，demo中可到PlayerManager.m 设置urltype为UrlTypeLive
 //    @"http://vlive3.rtmp.cdn.ucloud.com.cn/ucloud/streamId.flv";
     //测试rtmp直播地址范例，urltype设置为UrlTypeAuto或UrlTypeLive即可
@@ -40,7 +48,8 @@
 {
     [super viewWillAppear:animated];
     
-    if (self.playerManager) {
+    if (self.playerManager)
+    {
         [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
         [[self navigationController] setNavigationBarHidden:YES];
     }
@@ -55,12 +64,15 @@
 {
 //    隐藏导航栏
     self.barHidden = YES;
+    
     [self setNeedsStatusBarAppearanceUpdate];
     
     NSString *str = self.textField.text;
     
-    if (str.length == 0) {
-        out: {
+    if (str.length == 0)
+    {
+        out:
+        {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"注意" message:@"URL不可用" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
             [alert show];
             [self.textField becomeFirstResponder];
@@ -71,19 +83,24 @@
     str = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *theMovieURL =[NSURL URLWithString:str];
 
-    if (theMovieURL == nil) {
+    if (theMovieURL == nil)
+    {
         goto out;
     }
     
     self.btn = sender;
-    self.btn.hidden = YES;
-    self.textField.hidden = YES;
+    self.btn.hidden         = YES;
+    self.textField.hidden   = YES;
+    self.btnVod.hidden      = YES;
+    self.btnLive.hidden     = YES;
     
-    if ([theMovieURL isFileURL]) {
+    if ([theMovieURL isFileURL])
+    {
         NSLog(@"is file url");
     }
     
-    if ([theMovieURL checkResourceIsReachableAndReturnError:nil]) {
+    if ([theMovieURL checkResourceIsReachableAndReturnError:nil])
+    {
         NSLog(@"error");
     }
     
@@ -94,24 +111,27 @@
     self.playerManager.viewContorller = self;
     
     float height = 0.f;
-    if (PlayPortrait) {
+    if (PlayPortrait)
+    {
         [self.playerManager setSupportAutomaticRotation:NO];
         [self.playerManager setSupportAngleChange:NO];
         height = self.view.frame.size.height/2.f;
     }
-    else {
+    else
+    {
         [self.playerManager setSupportAutomaticRotation:YES];
         [self.playerManager setSupportAngleChange:YES];
         height = self.view.frame.size.height;
     }
     
     [self.playerManager setPortraitViewHeight:height];
-    [self.playerManager buildMediaPlayer:self.textField.text];
+    [self.playerManager buildMediaPlayer:self.textField.text urlType:_btnLive.selected==YES?UrlTypeLive:UrlTypeHttp];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if ([self.textField isFirstResponder]) {
+    if ([self.textField isFirstResponder])
+    {
         [self.textField resignFirstResponder];
     }
 }
@@ -119,9 +139,12 @@
 - (void)noti:(NSNotification *)noti
 {
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
-    if ([noti.name isEqualToString:UCloudMoviePlayerClickBack]) {
-        self.btn.hidden = NO;
-        self.textField.hidden = NO;
+    if ([noti.name isEqualToString:UCloudMoviePlayerClickBack])
+    {
+        self.btn.hidden         = NO;
+        self.textField.hidden   = NO;
+        self.btnVod.hidden      = NO;
+        self.btnLive.hidden     = NO;
         
         /**
          *  一定要置空
@@ -146,10 +169,12 @@
  */
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
-    if (self.playerManager) {
+    if (self.playerManager)
+    {
         return self.playerManager.supportInterOrtation;
     }
-    else {
+    else
+    {
         /**
          *  这个在播放之外的程序支持的设备方向
          */
@@ -168,25 +193,14 @@
     [self.playerManager rotateBegain:toInterfaceOrientation];
 }
 
-/*ios8之后 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration 被弃用(但是还会调用)，可以使用下面的代理
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
-{
-    UIInterfaceOrientation or = UIInterfaceOrientationUnknown;
-    if (size.width > size.height)
-    {
-        or = UIInterfaceOrientationLandscapeLeft;
+- (IBAction)switchPlayType:(id)sender {
+    if(sender != _btnLive) {
+        _btnVod.selected = YES;
+        _btnLive.selected = NO;
     }
-    else
-    {
-        or = UIInterfaceOrientationPortrait;
+    else {
+        _btnVod.selected = NO;
+        _btnLive.selected = YES;
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:UCloudViewControllerWillRotate object:@(or)];
-   
-    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        
-    } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:UCloudViewControllerDidRotate object:nil];
-    }];
 }
-*/
 @end

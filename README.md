@@ -286,6 +286,7 @@ typedef NS_ENUM(NSInteger, UrlType)
 
 | 版本号 | 发布日期 | 说明 |
 |---|---|---|
+| 1.3.0  | 2016.12.16 | 1、增加对https播放的支持<br/> 2、demo中增加直播、点播类型选择|
 | 1.2.5  | 2016.12.08 | 增加delayOptimization、cacheDuration、bufferDuration设置选项|
 | 1.2.4  | 2016.09.18 | 增加对FCSubscribe指令播放支持 |
 | 1.2.3  | 2016.09.08 | 区分直播与点播的hls播放方式；hls播放流畅度优化 |
