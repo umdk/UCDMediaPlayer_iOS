@@ -54,8 +54,16 @@
  */
 @property(nonatomic, readonly)  MPMovieLoadState loadState;
 
-
 @property(nonatomic, readonly) int64_t numberOfBytesTransferred;
+
+/*
+ * 视频真实分辨
+ */
+@property(nonatomic, readonly) CGSize naturalSize;
+/*
+ *播放速率
+ */
+@property (nonatomic) float playbackRate;
 
 /**
  *  控制面板风格，枚举类型：
@@ -140,10 +148,10 @@
 UCLOUD_EXTERN NSString *const UCloudPlaybackIsPreparedToPlayDidChangeNotification;
 
 /**
- *  开始播放时候的这种状态改变通知(object 是实现该代理的对象，取loadState得到状态)
+ *  视频缩放填充模式改变通知：
  */
-UCLOUD_EXTERN NSString *const UCloudPlayerLoadStateDidChangeNotification;
 
+UCLOUD_EXTERN NSString* const UCloudPlayerScalingModeDidChangeNotification;
 /**
  *  结束播放的各种状态改变通知
  *  userInfo:
@@ -151,15 +159,29 @@ UCLOUD_EXTERN NSString *const UCloudPlayerLoadStateDidChangeNotification;
  MPMoviePlayerPlaybackDidFinishReasonUserInfoKey    MPMovieFinishReason
  error                                              NSError
  */
-UCLOUD_EXTERN NSString *const UCloudPlayerPlaybackDidFinishNotification;
+UCLOUD_EXTERN NSString* const UCloudPlayerPlaybackDidFinishNotification;
+
+
 /**
  *  播放过程中的各种状态改变通知(object 是实现该代理的对象，取playbackState得到状态)
  */
-UCLOUD_EXTERN NSString *const UCloudPlayerPlaybackStateDidChangeNotification;
+UCLOUD_EXTERN NSString* const UCloudPlayerPlaybackStateDidChangeNotification;
+
+/*
+* 播放时网络加载状态的通知
+*/
+UCLOUD_EXTERN NSString* const UCloudPlayerLoadStateDidChangeNotification;
+
 /**
- *  KVO_AVPlayer_airplay
+ * KVO_AVPlayer_airplay
  */
-UCLOUD_EXTERN NSString *const UCloudPlayerIsAirPlayVideoActiveDidChangeNotification;
+UCLOUD_EXTERN NSString* const UCloudPlayerIsAirPlayVideoActiveDidChangeNotification;
+
+/**
+ * 视频真实分辨率可用的通知
+ */
+UCLOUD_EXTERN NSString* const UCloudNaturalSizeAvailableNotification;
+
 /**
  *  底层开始解析视频
  */
@@ -168,6 +190,15 @@ UCLOUD_EXTERN NSString *const UCloudPlayerVideoDecoderOpenNotification;
  *  直播推流端旋转方向
  */
 UCLOUD_EXTERN NSString *const UCloudPlayerVideoChangeRotationNotification;
+
+/**
+ *  第一视频帧播放出来
+ */
+UCLOUD_EXTERN NSString *const UCloudPlayerFirstVideoFrameRenderedNotification;
+/**
+*  第一音频帧播放出来
+*/
+UCLOUD_EXTERN NSString *const UCloudPlayerFirstAudioFrameRenderedNotification;
 
 /**
  *
@@ -182,6 +213,23 @@ UCLOUD_EXTERN NSString *const UCloudPlayerBufferingUpdateNotification;
  *
  */
 UCLOUD_EXTERN NSString *const UCloudPlayerBufferStateKey;
+/*
+ *seek完成的通知
+ *
+ */
+UCLOUD_EXTERN NSString *const UCloudPlayerDidSeekCompleteNotification;
+
+/*
+ *seek完成的通知的key
+ *
+ */
+UCLOUD_EXTERN NSString *const UCloudPlayerDidSeekCompleteTargetKey;
+
+/*
+ *seek完成错误原因的Key
+ *
+ */
+UCLOUD_EXTERN NSString *const UCloudPlayerDidSeekCompleteErrorKey;
 
 @end
 
@@ -192,3 +240,7 @@ UCLOUD_EXTERN NSString *const UCloudPlayerBufferStateKey;
 - (NSString *)urlOfSegment:(int)segmentPosition;
 
 @end
+
+
+
+

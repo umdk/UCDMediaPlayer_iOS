@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C107EC2B1E1FBEB7008CDCDE /* libUCloudMediaPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C107EC251E1FBEB7008CDCDE /* libUCloudMediaPlayer.a */; };
 		E9208C861B8FFBA100B4CFF4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9208C851B8FFBA100B4CFF4 /* AudioToolbox.framework */; };
-		E9271D1D1C3CACB4000DBADF /* libUCloudMediaPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9271CE81C3CACB4000DBADF /* libUCloudMediaPlayer.a */; };
 		E9271D1F1C3CACB4000DBADF /* UIWindow+YzdHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E9271CF21C3CACB4000DBADF /* UIWindow+YzdHUD.m */; };
 		E9271D201C3CACB4000DBADF /* YzdHUDBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9271CF41C3CACB4000DBADF /* YzdHUDBackgroundView.m */; };
 		E9271D211C3CACB4000DBADF /* YzdHUDImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9271CF61C3CACB4000DBADF /* YzdHUDImageView.m */; };
@@ -53,14 +53,27 @@
 		E9E58B1F1BAFAC9F00A93FC7 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9208C831B8FFB9100B4CFF4 /* CoreMedia.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C107EA941E1F7B55008CDCDE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		C1F47A7D1CDA08BE00563409 /* UCloudMediaModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudMediaModule.h; sourceTree = "<group>"; };
+		C107EC251E1FBEB7008CDCDE /* libUCloudMediaPlayer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUCloudMediaPlayer.a; sourceTree = "<group>"; };
+		C107EC261E1FBEB7008CDCDE /* UCloudMediaModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudMediaModule.h; sourceTree = "<group>"; };
+		C107EC271E1FBEB7008CDCDE /* UCloudMediaPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudMediaPlayback.h; sourceTree = "<group>"; };
+		C107EC281E1FBEB7008CDCDE /* UCloudMediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudMediaPlayer.h; sourceTree = "<group>"; };
+		C107EC2A1E1FBEB7008CDCDE /* UCloudPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudPlayback.h; sourceTree = "<group>"; };
 		E9208C831B8FFB9100B4CFF4 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		E9208C851B8FFBA100B4CFF4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		E9271CE81C3CACB4000DBADF /* libUCloudMediaPlayer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUCloudMediaPlayer.a; sourceTree = "<group>"; };
-		E9271CE91C3CACB4000DBADF /* UCloudMediaPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudMediaPlayback.h; sourceTree = "<group>"; };
-		E9271CEA1C3CACB4000DBADF /* UCloudMediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudMediaPlayer.h; sourceTree = "<group>"; };
-		E9271CEB1C3CACB4000DBADF /* UCloudPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCloudPlayback.h; sourceTree = "<group>"; };
 		E9271CF11C3CACB4000DBADF /* UIWindow+YzdHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+YzdHUD.h"; sourceTree = "<group>"; };
 		E9271CF21C3CACB4000DBADF /* UIWindow+YzdHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+YzdHUD.m"; sourceTree = "<group>"; };
 		E9271CF31C3CACB4000DBADF /* YzdHUDBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YzdHUDBackgroundView.h; sourceTree = "<group>"; };
@@ -127,11 +140,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E95E590D1C04135500FB3102 /* libz.tbd in Frameworks */,
-				E9271D1D1C3CACB4000DBADF /* libUCloudMediaPlayer.a in Frameworks */,
 				E9E58B1F1BAFAC9F00A93FC7 /* CoreMedia.framework in Frameworks */,
 				E97524DB1BE9DF040041AED1 /* VideoToolbox.framework in Frameworks */,
 				E98710D41BAC22D500BF4EB8 /* AVFoundation.framework in Frameworks */,
 				E9208C861B8FFBA100B4CFF4 /* AudioToolbox.framework in Frameworks */,
+				C107EC2B1E1FBEB7008CDCDE /* libUCloudMediaPlayer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,11 +163,11 @@
 		E9271CE61C3CACB4000DBADF /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				E9271CE81C3CACB4000DBADF /* libUCloudMediaPlayer.a */,
-				C1F47A7D1CDA08BE00563409 /* UCloudMediaModule.h */,
-				E9271CE91C3CACB4000DBADF /* UCloudMediaPlayback.h */,
-				E9271CEA1C3CACB4000DBADF /* UCloudMediaPlayer.h */,
-				E9271CEB1C3CACB4000DBADF /* UCloudPlayback.h */,
+				C107EC251E1FBEB7008CDCDE /* libUCloudMediaPlayer.a */,
+				C107EC261E1FBEB7008CDCDE /* UCloudMediaModule.h */,
+				C107EC271E1FBEB7008CDCDE /* UCloudMediaPlayback.h */,
+				C107EC281E1FBEB7008CDCDE /* UCloudMediaPlayer.h */,
+				C107EC2A1E1FBEB7008CDCDE /* UCloudPlayback.h */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -310,6 +323,7 @@
 				E9C02DAF1B8F1B1F0020AE04 /* Sources */,
 				E9C02DB01B8F1B1F0020AE04 /* Frameworks */,
 				E9C02DB11B8F1B1F0020AE04 /* Resources */,
+				C107EA941E1F7B55008CDCDE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -468,7 +482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
@@ -494,8 +508,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -508,7 +522,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -524,10 +538,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CFP9KY4MGC;
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../lib/Player",
+				);
 				INFOPLIST_FILE = UCloudDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -545,13 +562,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = CFP9KY4MGC;
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../lib/Player",
+				);
 				INFOPLIST_FILE = UCloudDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

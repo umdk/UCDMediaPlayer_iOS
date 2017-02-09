@@ -46,15 +46,13 @@
     
     if (urlType == UrlTypeLive) {
         if ([path.pathExtension hasSuffix:@"m3u8"]) {
-            //HLS如果对累积延时没要求，建议把setDelayOptimization设置为NO，这样播放过程中卡顿率会更低
-            [self.mediaPlayer setDelayOptimization:YES];
-            [self.mediaPlayer setCachedDuration:5000];
+            //HLS如果对累积延时没要求，建议把setCachedDuration设置为0(即关闭消除累积延时功能)，这样播放过程中卡顿率会更低
+            [self.mediaPlayer setCachedDuration:0];
             [self.mediaPlayer setBufferDuration:3000];
         }
         else {
-            [self.mediaPlayer setDelayOptimization:YES];
-            [self.mediaPlayer setCachedDuration:2000];
-            [self.mediaPlayer setBufferDuration:2000];
+            [self.mediaPlayer setCachedDuration:3000];
+            [self.mediaPlayer setBufferDuration:3000];
         }
     }
     
