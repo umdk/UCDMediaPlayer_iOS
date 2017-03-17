@@ -60,7 +60,6 @@
         if (self.mediaPlayer) {
             [weakSelf buildMediaControl:defaultNum data:data];
             [weakSelf configurePlayer];
-            self.view.frame = CGRectMake(0, 0, 100, 100);
         }
     }];
 }

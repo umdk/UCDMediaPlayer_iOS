@@ -286,6 +286,7 @@ typedef NS_ENUM(NSInteger, UrlType)
 
 | 版本号 | 发布日期 | 说明 |
 |---|---|---|
+| 1.4.1  | 2017.03.17 | 1、增加对speex支持<br/>2、优化内存消耗|
 | 1.4.0  | 2017.02.09 | 1、升级播放器解码内核<br/> 2、支持bitcode、动态库 <br/> 3、修复selectDecodeMethod接口问题|
 | 1.3.0  | 2016.12.16 | 1、增加对https播放的支持<br/> 2、demo中增加直播、点播类型选择|
 | 1.2.5  | 2016.12.08 | 增加delayOptimization、cacheDuration、bufferDuration设置选项|
