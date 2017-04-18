@@ -17,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @property (nonatomic) BOOL barHidden;
+@property (assign, nonatomic) NSInteger liveId;
+@property (strong, nonatomic) NSString *vodUrlString;
+@property (strong, nonatomic) NSString *liveUrlString;
 
 - (IBAction)switchPlayType:(id)sender;
 
@@ -28,20 +31,27 @@
 {
     [super viewDidLoad];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noti:) name:UCloudMoviePlayerClickBack object:nil];
+    srand((unsigned)time(NULL));
+    _liveId = rand()%10000;
+    //直播播放地址为http://vlive3.rtmp.cdn.ucloud.com.cn/ucloud/%@.flv或者 rtmp://publish3.cdn.ucloud.com.cn/ucloud/%@，其中%@为推流的liveID
+    _liveUrlString = [NSString stringWithFormat:@"rtmp://publish3.cdn.ucloud.com.cn/ucloud/%ld", (long)_liveId];
     
-    [self switchPlayType:nil];
-    
-    self.textField.text =
+    _vodUrlString =
     //点播测试地址范例，urltype设置为UrlTypeAuto或UrlTypeHttp即可
     @"https://mediademo.ufile.ucloud.com.cn/ucloud_promo_140s.mp4";//https播放
 //    @"http://mediademo.ufile.ucloud.com.cn/ucloud_promo_140s.mp4";//http播放
-    //【推荐使用】测试http-flv直播地址范例，因从url上无法判断是直播还是点播，在创建播放器时需要手动设置url类型，demo中可到PlayerManager.m 设置urltype为UrlTypeLive
+//【推荐使用】测试http-flv直播地址范例，因从url上无法判断是直播还是点播，在创建播放器时需要手动设置url类型，demo中可到PlayerManager.m 设置urltype为UrlTypeLive
 //    @"http://vlive3.rtmp.cdn.ucloud.com.cn/ucloud/streamId.flv";
-    //测试rtmp直播地址范例，urltype设置为UrlTypeAuto或UrlTypeLive即可
+//测试rtmp直播地址范例，urltype设置为UrlTypeAuto或UrlTypeLive即可
 //    @"rtmp://vlive3.rtmp.cdn.ucloud.com.cn/ucloud/streamId";
-    //测试hls直播地址范例，urltype设置为UrlTypeAuto或UrlTypeLive即可
+//测试hls直播地址范例，urltype设置为UrlTypeAuto或UrlTypeLive即可
 //    @"http://vlive3.hls.cdn.ucloud.com.cn/ucloud/streamId/playlist.m3u8";
+    
+    self.textField.text = _vodUrlString;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noti:) name:UCloudMoviePlayerClickBack object:nil];
+    
+    [self switchPlayType:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -197,10 +207,12 @@
     if(sender != _btnLive) {
         _btnVod.selected = YES;
         _btnLive.selected = NO;
+        self.textField.text = _vodUrlString;
     }
     else {
         _btnVod.selected = NO;
         _btnLive.selected = YES;
+        self.textField.text = _liveUrlString;
     }
 }
 @end

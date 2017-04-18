@@ -813,7 +813,7 @@ static bool centerBug;
 {
     if (self.delegateAction && [self.delegateAction respondsToSelector:@selector(clickFull:)])
     {
-        [self.delegateAction clickFull:^(WebRes state, id data, NSError *error) {
+        [self.delegateAction clickFull:^(WebState state, id data, NSError *error) {
             
         }];
     }

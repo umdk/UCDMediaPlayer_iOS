@@ -20,6 +20,7 @@
 {
     [self zdInit];
     [self zdFrame:self.frame];
+    [super awakeFromNib];
 }
 
 - (id)initWithFrame:(CGRect)frame

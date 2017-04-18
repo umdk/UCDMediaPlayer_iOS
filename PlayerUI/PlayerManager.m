@@ -7,8 +7,8 @@
 //
 
 #import "PlayerManager.h"
-#import "UIWindow+YzdHUD.h"
 #import "ViewController.h"
+#import "JGProgressHUD.h"
 
 #define UISCREEN_WIDTH      MIN([UIApplication sharedApplication].keyWindow.bounds.size.width, [UIApplication sharedApplication].keyWindow.bounds.size.height)
 #define UISCREEN_HEIGHT     MAX([UIApplication sharedApplication].keyWindow.bounds.size.width, [UIApplication sharedApplication].keyWindow.bounds.size.height)
@@ -21,6 +21,7 @@
 @interface PlayerManager()<UCloudPlayerUIDelegate>
 
 @property (strong, nonatomic) NSArray *contrants;
+@property (strong, nonatomic) JGProgressHUD *jgHud;
 
 @end
 
@@ -48,7 +49,7 @@
         if ([path.pathExtension hasSuffix:@"m3u8"]) {
             //HLS如果对累积延时没要求，建议把setCachedDuration设置为0(即关闭消除累积延时功能)，这样播放过程中卡顿率会更低
             [self.mediaPlayer setCachedDuration:0];
-            [self.mediaPlayer setBufferDuration:3000];
+            [self.mediaPlayer setBufferDuration:5000];
         }
         else {
             [self.mediaPlayer setCachedDuration:3000];
@@ -88,7 +89,10 @@
     
     self.controlVC.fileName = @"Test";
     self.controlVC.movieInfos = data;
-    self.controlVC.view.frame = CGRectMake(0, 0, self.view.frame.size.height, self.view.frame.size.width);
+    if (self.mediaPlayer.urlType != UrlTypeLive) {
+        self.controlVC.view.frame = CGRectMake(0, 0, self.view.frame.size.height, self.view.frame.size.width);
+    }
+
     self.controlVC.delegateAction = self;
     self.controlVC.delegatePlayer = self.mediaPlayer.player;
     
@@ -392,7 +396,7 @@
     //调整缓冲提示的位置
     if (shouldChangeFrame)
     {
-        [self.controlVC.view.window changeFrame:interfaceOrientation];
+//        [self.controlVC.view.window changeFrame:interfaceOrientation];
     }
     
     //重绘画面
@@ -542,17 +546,16 @@ static bool showing = NO;
     {
         showing = YES;
         
-        CGAffineTransform trans = self.view.transform;
-        
-        [self.controlVC.view.window showHUDWithText:@"加载中" Type:ShowLoading Enabled:NO transForm:trans];
+        _jgHud = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleDark];
+        _jgHud.textLabel.text = @"加载中";
+        [_jgHud showInView:self.controlVC.hudView];
     }
 }
 
 - (void)hideLoadingView
 {
     showing = NO;
-    CGAffineTransform trans = self.view.transform;
-    [self.controlVC.view.window showHUDWithText:@"加载成功" Type:ShowPhotoYes Enabled:YES transForm:trans];
+    [_jgHud dismissAnimated:YES];
 }
 
 #pragma mark - notification
@@ -634,19 +637,23 @@ static bool showing = NO;
     else if ([noti.name isEqualToString:UCloudPlayerPlaybackDidFinishNotification])
     {
         MPMovieFinishReason reson = [[noti.userInfo objectForKey:MPMoviePlayerPlaybackDidFinishReasonUserInfoKey] integerValue];
-        
-        SubErrorCode subErrorCode = [[noti.userInfo objectForKey:@"error"] integerValue];
-        
+        SubErrorCode subErrorCode;
+        id erroVaule =  [noti.userInfo objectForKey:@"error"];
+        if (erroVaule &&([erroVaule isKindOfClass:[NSString class]]|| [erroVaule isKindOfClass:[NSNumber class]])) {
+           subErrorCode =  [erroVaule integerValue];
+        } 
+       
         if (reson == MPMovieFinishReasonPlaybackEnded)
         {
             [self.controlVC stop];
         }
         else if (reson == MPMovieFinishReasonPlaybackError)
         {
-            NSLog(@"player manager finish reason playback error! subErrorCode:%d",subErrorCode);
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"注意" message:@"视频播放错误" delegate:self cancelButtonTitle:@"知道了"   otherButtonTitles: nil, nil];
-            alert.tag = AlertViewPlayerError;
-            [alert show];
+            NSLog(@"player manager finish reason playback error! subErrorCode:%ld",(long)subErrorCode);
+            JGProgressHUD *erroHud = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleDark];
+            erroHud.textLabel.text = @"加载中";
+            [erroHud showInView:self.view];
+            [erroHud dismissAfterDelay:2.0f animated:YES];
         }
         
         self.view.backgroundColor = [UIColor whiteColor];
@@ -745,6 +752,7 @@ static bool showing = NO;
     [self.controlVC.view removeFromSuperview];
     [self.mediaPlayer.player shutdown];
 
+    self.mediaPlayer.player = nil;
     self.mediaPlayer = nil;
     
     {
@@ -825,7 +833,7 @@ static bool showing = NO;
     [self reConfigurePlayer:0];
 }
 
-- (void)clickFull:(UCoudWebBlock)block
+- (void)clickFull:(void(^)(WebState state, id data, NSError *error))block
 {
     [self.mediaPlayer.player pause];
     

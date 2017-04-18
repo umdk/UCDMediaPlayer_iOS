@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UCloudHeader.h"
 #import "UCloudMediaPlayer.h"
+
+typedef NS_ENUM(NSInteger, WebState)
+{
+    WebSucess,
+    WebFailure,
+};
 
 @protocol UCloudMediaPlayback;
 
@@ -34,7 +39,7 @@
 - (void)selectedDefinition:(Definition)definition;
 - (void)selectedScalingMode:(MPMovieScalingMode)scalingMode;
 
-- (void)clickFull:(UCoudWebBlock)block;
+- (void)clickFull:(void (^)(NSInteger state, id data, NSError *error))block;
 - (BOOL)screenState;
 - (void)clickDanmu:(BOOL)show;
 
@@ -44,6 +49,7 @@
 
 @interface UCloudMediaViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *hudView;
 @property (nonatomic, weak) id<UCloudMediaPlayback> delegatePlayer;
 @property (nonatomic, weak) id<UCloudPlayerUIDelegate> delegateAction;
 @property (strong, nonatomic) NSArray* movieInfos;

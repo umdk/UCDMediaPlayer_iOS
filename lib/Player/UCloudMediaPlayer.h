@@ -136,6 +136,49 @@ typedef void(^UCloudMediaCompletionBlock)(NSInteger defaultNum, NSArray *data);
  @abstract 暂时适用于直播，获取音频或视频帧超时设置，单位 ms，默认10000，推荐范围5000-150000，超时会收到UCloudPlayerPlaybackDidFinishNotification消息
  */
 @property (assign, nonatomic) NSInteger             getAVFrameTimeout;
+
+/**
+ @property enableLogFile
+ @abstract 是否开启日志文件，默认开启
+ */
+@property (assign, nonatomic) bool enableLogFile;
+
+/**
+ @property logFiles
+ @abstract 所有日志文件名
+ */
+@property (strong, nonatomic, readonly) NSArray *logFiles;
+
+/**
+ @property logsDirectory
+ @abstract 日志文件路径，
+ */
+@property (strong, nonatomic, readonly) NSString *logsDirectory;
+
+/**
+ @property lastLogFilePath
+ @abstract 最近的日志文件路径
+ */
+@property (strong, nonatomic, readonly) NSString *lastLogFilePath;
+
+/**
+ @property lastLogFileName
+ @abstract 最近的日志文件名
+ */
+@property (strong, nonatomic, readonly) NSString *lastLogFileName;
+
+/**
+ @property logFileSize
+ @abstract 每个日志文件的大小，每个日志文件如若达到该大小将会进行一次压缩保存，减少沙盒使用量，默认1M
+ */
+@property (assign, nonatomic) NSInteger logFileSize;
+
+/**
+ @property logFilesMaxSize
+ @abstract 日志文件夹大小，超过会清理日志，默认20M
+ */
+@property (assign, nonatomic) NSInteger logFilesMaxSize;
+
 /**
  *  播放器控制器
  */

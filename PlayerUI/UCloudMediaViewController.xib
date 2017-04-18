@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UCloudMediaViewController">
@@ -14,6 +18,7 @@
                 <outlet property="danmuButton" destination="Dgk-hB-Dfh" id="CTu-FT-1su"/>
                 <outlet property="fileNameLabel" destination="MpV-Eh-Jkh" id="5bF-9m-B6F"/>
                 <outlet property="fullButton" destination="194-YZ-8OD" id="lxp-ar-8Sa"/>
+                <outlet property="hudView" destination="0m9-X8-KY4" id="CfM-dR-6fE"/>
                 <outlet property="overlayPanel" destination="Gyz-tE-hk3" id="3qY-4Q-FYH"/>
                 <outlet property="pauseButton" destination="nXt-1J-Snf" id="b81-ZY-N5x"/>
                 <outlet property="playButton" destination="TOv-nu-gJC" id="ThR-Xp-OeO"/>
@@ -33,6 +38,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gyz-tE-hk3" userLabel="Overlay" customClass="UIControl">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0m9-X8-KY4">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcu-OI-JYp" userLabel="Button: Play">
                             <rect key="frame" x="218" y="138" width="66" height="66"/>
                             <constraints>
@@ -62,12 +71,12 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <state key="normal" image="icon_topview_left_button_normal.png">
-                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <state key="selected" image="icon_topview_left__button_selected.png"/>
                                     <state key="highlighted">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="onClickBack:" destination="-1" eventType="touchUpInside" id="ELe-Jd-1dq"/>
@@ -80,7 +89,7 @@
                                         <constraint firstAttribute="height" constant="21" id="V6k-K6-maY"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="194-YZ-8OD" userLabel="Button:Full">
@@ -90,7 +99,7 @@
                                         <constraint firstAttribute="width" constant="30" id="IGk-jX-gaL"/>
                                     </constraints>
                                     <state key="normal" image="icon_topview_right_button_normal.png">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <state key="selected" image="icon_topview_right_button_selected.png"/>
                                     <connections>
@@ -109,7 +118,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="Dgk-hB-Dfh" firstAttribute="top" secondItem="hoS-i8-6wg" secondAttribute="top" constant="9" id="4tG-mk-uSB"/>
                                 <constraint firstAttribute="trailing" secondItem="194-YZ-8OD" secondAttribute="trailing" constant="8" id="5hG-Sb-sGB"/>
@@ -133,11 +142,11 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <state key="normal" image="icon_bottomview_play_button_normal.png">
-                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <state key="highlighted">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="onClickPlay:" destination="-1" eventType="touchUpInside" id="uZp-jt-COD"/>
@@ -151,11 +160,11 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <state key="normal" image="icon_bottomview_pause_button_normal.png">
-                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <state key="highlighted">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="onClickPause:" destination="-1" eventType="touchUpInside" id="GPU-h4-4z6"/>
@@ -164,7 +173,7 @@
                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RpZ-KD-uha" userLabel="Button:Volume">
                                     <rect key="frame" x="436" y="0.0" width="44" height="44"/>
                                     <state key="normal" image="icon_bottomview_volume_button_normal.png">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <state key="selected" image="icon_bottomview_volume_button_selected.png"/>
                                     <connections>
@@ -174,7 +183,7 @@
                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJV-aL-ZMw" userLabel="Button:Bright">
                                     <rect key="frame" x="388" y="0.0" width="44" height="44"/>
                                     <state key="normal" image="icon_bottomview_brightness_button_normal.png">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <state key="selected" image="icon_bottomview_brightness_button_selected.png"/>
                                     <connections>
@@ -188,7 +197,7 @@
                                         <constraint firstAttribute="width" constant="53" id="SWe-5F-z1M"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cz7-ao-a7B" userLabel="Label: Current Time">
@@ -198,11 +207,11 @@
                                         <constraint firstAttribute="height" constant="21" id="5Tb-kt-dDg"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="RpZ-KD-uha" firstAttribute="leading" secondItem="KJV-aL-ZMw" secondAttribute="trailing" constant="4" id="5i5-hb-X3m"/>
                                 <constraint firstItem="KJV-aL-ZMw" firstAttribute="top" secondItem="RpZ-KD-uha" secondAttribute="top" id="64m-Ps-e27"/>
@@ -226,18 +235,22 @@
                                 <constraint firstAttribute="width" constant="44" id="vLj-fO-60i"/>
                             </constraints>
                             <state key="normal" image="icon_screen_shot_action.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
                                 <action selector="clickShot:" destination="-1" eventType="touchUpInside" id="qaO-ec-duZ"/>
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="centerY" secondItem="Kcu-OI-JYp" secondAttribute="centerY" constant="-11" id="0Ty-3g-4ba"/>
+                        <constraint firstItem="0m9-X8-KY4" firstAttribute="top" secondItem="Gyz-tE-hk3" secondAttribute="top" id="6Bf-9v-6Id"/>
                         <constraint firstAttribute="trailing" secondItem="MN7-22-JC6" secondAttribute="trailing" id="A7f-ky-bCw"/>
+                        <constraint firstAttribute="bottom" secondItem="0m9-X8-KY4" secondAttribute="bottom" id="BkR-aL-EEx"/>
                         <constraint firstAttribute="bottom" secondItem="MN7-22-JC6" secondAttribute="bottom" id="Gds-Zv-tL0"/>
+                        <constraint firstAttribute="trailing" secondItem="0m9-X8-KY4" secondAttribute="trailing" id="N6o-bb-ZnT"/>
+                        <constraint firstItem="0m9-X8-KY4" firstAttribute="leading" secondItem="Gyz-tE-hk3" secondAttribute="leading" id="P6e-Gw-ogF"/>
                         <constraint firstAttribute="centerY" secondItem="UZS-nx-Pix" secondAttribute="centerY" id="UV3-GO-E1z"/>
                         <constraint firstAttribute="centerX" secondItem="Kcu-OI-JYp" secondAttribute="centerX" constant="-11" id="X97-xo-KYy"/>
                         <constraint firstItem="hoS-i8-6wg" firstAttribute="top" secondItem="Gyz-tE-hk3" secondAttribute="top" id="hG6-lt-YNU"/>
@@ -257,19 +270,19 @@
                                 <constraint firstAttribute="width" constant="58" id="r1C-hs-ql4"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="afX-pb-5ZY">
                             <rect key="frame" x="0.0" y="45" width="90" height="275"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="90" id="2e1-wW-rpw"/>
                             </constraints>
                         </tableView>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="52H-aU-Vev">
                             <rect key="frame" x="90" y="45" width="90" height="275"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="90" id="y1b-Fr-vEh"/>
                             </constraints>
@@ -281,11 +294,11 @@
                                 <constraint firstAttribute="height" constant="21" id="nBD-GT-WDX"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="52H-aU-Vev" secondAttribute="trailing" id="1wb-gA-VL2"/>
                         <constraint firstItem="afX-pb-5ZY" firstAttribute="top" secondItem="GpS-j5-kSp" secondAttribute="bottom" constant="8" id="5oV-g7-efX"/>
@@ -301,7 +314,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Gyz-tE-hk3" secondAttribute="trailing" id="5SC-aV-M2v"/>
@@ -313,7 +326,6 @@
                 <constraint firstItem="Gyz-tE-hk3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="klx-Kn-2Pr"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="224" y="407"/>
         </view>
@@ -333,4 +345,9 @@
         <image name="icon_topview_right_button_normal.png" width="44" height="44"/>
         <image name="icon_topview_right_button_selected.png" width="44" height="44"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>
