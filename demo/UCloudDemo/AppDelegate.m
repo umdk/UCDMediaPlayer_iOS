@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <UMMobClick/MobClick.h>
 
 @interface AppDelegate ()
 
@@ -25,6 +26,9 @@ void uncaughtExceptionHandler(NSException *exception) {
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
 //    [self configurePre];
 //    [self performSelectorOnMainThread:@selector(noti) withObject:self waitUntilDone:YES];
+    UMConfigInstance.appKey = @"58f87c76677baa3b840005fa";
+    [MobClick startWithConfigure:UMConfigInstance];
+    
     return YES;
 }
 

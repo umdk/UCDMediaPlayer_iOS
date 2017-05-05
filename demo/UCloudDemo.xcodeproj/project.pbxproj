@@ -53,6 +53,9 @@
 		E93332131E8E42120079791C /* YzdHUDImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E933320C1E8E42120079791C /* YzdHUDImageView.m */; };
 		E93332141E8E42120079791C /* YzdHUDIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = E933320E1E8E42120079791C /* YzdHUDIndicator.m */; };
 		E93332151E8E42120079791C /* YzdHUDLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E93332101E8E42120079791C /* YzdHUDLabel.m */; };
+		E94CF9861EB1E20A00D9F862 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94CF9851EB1E20A00D9F862 /* UMMobClick.framework */; };
+		E94CF9891EB1E24A00D9F862 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E94CF9881EB1E24A00D9F862 /* libsqlite3.tbd */; };
+		E94CF98B1EB1E26200D9F862 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94CF98A1EB1E26200D9F862 /* CoreTelephony.framework */; };
 		E95E590D1C04135500FB3102 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E95E590C1C04135500FB3102 /* libz.tbd */; };
 		E97524DB1BE9DF040041AED1 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97524D91BE9DEFD0041AED1 /* VideoToolbox.framework */; };
 		E98710D41BAC22D500BF4EB8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98710D21BAC22CD00BF4EB8 /* AVFoundation.framework */; };
@@ -152,6 +155,9 @@
 		E933320E1E8E42120079791C /* YzdHUDIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YzdHUDIndicator.m; sourceTree = "<group>"; };
 		E933320F1E8E42120079791C /* YzdHUDLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YzdHUDLabel.h; sourceTree = "<group>"; };
 		E93332101E8E42120079791C /* YzdHUDLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YzdHUDLabel.m; sourceTree = "<group>"; };
+		E94CF9851EB1E20A00D9F862 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
+		E94CF9881EB1E24A00D9F862 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		E94CF98A1EB1E26200D9F862 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		E95E590C1C04135500FB3102 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		E97524D91BE9DEFD0041AED1 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		E98710D21BAC22CD00BF4EB8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -174,9 +180,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E94CF98B1EB1E26200D9F862 /* CoreTelephony.framework in Frameworks */,
+				E94CF9891EB1E24A00D9F862 /* libsqlite3.tbd in Frameworks */,
 				E95E590D1C04135500FB3102 /* libz.tbd in Frameworks */,
 				E9E58B1F1BAFAC9F00A93FC7 /* CoreMedia.framework in Frameworks */,
 				E97524DB1BE9DF040041AED1 /* VideoToolbox.framework in Frameworks */,
+				E94CF9861EB1E20A00D9F862 /* UMMobClick.framework in Frameworks */,
 				E98710D41BAC22D500BF4EB8 /* AVFoundation.framework in Frameworks */,
 				E9208C861B8FFBA100B4CFF4 /* AudioToolbox.framework in Frameworks */,
 				C107EC2B1E1FBEB7008CDCDE /* libUCloudMediaPlayer.a in Frameworks */,
@@ -314,6 +323,15 @@
 			name = YzdHUD;
 			sourceTree = "<group>";
 		};
+		E94CF9871EB1E24A00D9F862 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E94CF98A1EB1E26200D9F862 /* CoreTelephony.framework */,
+				E94CF9881EB1E24A00D9F862 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E9C02DAA1B8F1B1F0020AE04 = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +339,7 @@
 				E9C02DCF1B8F1B1F0020AE04 /* UCloudDemoTests */,
 				E9DD43B81BAA734E005B2ADC /* FrameWorks */,
 				E9C02DB41B8F1B1F0020AE04 /* Products */,
+				E94CF9871EB1E24A00D9F862 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -335,6 +354,7 @@
 		E9C02DB51B8F1B1F0020AE04 /* UCloudDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E94CF9851EB1E20A00D9F862 /* UMMobClick.framework */,
 				E9C02DBA1B8F1B1F0020AE04 /* AppDelegate.h */,
 				E9C02DBB1B8F1B1F0020AE04 /* AppDelegate.m */,
 				E9271CE51C3CACB4000DBADF /* lib */,
@@ -629,6 +649,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/../lib/Player",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/UCloudDemo",
 				);
 				INFOPLIST_FILE = UCloudDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -657,6 +678,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/../lib/Player",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/UCloudDemo",
 				);
 				INFOPLIST_FILE = UCloudDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

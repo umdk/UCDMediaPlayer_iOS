@@ -94,7 +94,7 @@ typedef void(^UCloudMediaCompletionBlock)(NSInteger defaultNum, NSArray *data);
 /**
  *  默认的解码方式
  */
-@property (assign, nonatomic) DecodeMethod           defaultDecodeMethod;
+@property (assign, nonatomic) DecodeMethod          defaultDecodeMethod;
 
 /**
  *  播放地址
@@ -136,6 +136,12 @@ typedef void(^UCloudMediaCompletionBlock)(NSInteger defaultNum, NSArray *data);
  @abstract 暂时适用于直播，获取音频或视频帧超时设置，单位 ms，默认10000，推荐范围5000-150000，超时会收到UCloudPlayerPlaybackDidFinishNotification消息
  */
 @property (assign, nonatomic) NSInteger             getAVFrameTimeout;
+
+/*!
+ @property videoToolboxEnabled
+ @abstract 在软解模式下，是否开启对视频部分的硬件解码，默认为YES。PS：纯硬解模式是播放协议、音视频都使用硬件解码。
+ */
+@property (assign, nonatomic) bool                  videoToolboxEnabled;
 
 /**
  @property enableLogFile
