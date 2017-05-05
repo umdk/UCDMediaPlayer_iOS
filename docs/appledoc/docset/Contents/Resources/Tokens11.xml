@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/UCloudMediaSegmentResolver.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/UCloudMediaSegmentResolver</TokenIdentifier>
+			<Abstract type="html">缓冲buffer变更的Key，直播下cachedDuration&gt;0才生效</Abstract>
+			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+            
+			
+			<NodeRef refid="11"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>

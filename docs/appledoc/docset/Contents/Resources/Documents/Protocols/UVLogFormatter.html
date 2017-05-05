@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>UVLogFormatter Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">IJKMediaPlayer-static </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">UCloud</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/didaddToLogger:">- didaddToLogger:</option>
+		
+		<option value="//api/name/didaddToLogger:inQueue:">- didaddToLogger:inQueue:</option>
+		
+		<option value="//api/name/formatLogMessage:NS_SWIFT_NAME:">- formatLogMessage:NS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/willRemoveFromLogger:">- willRemoveFromLogger:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">UVLogFormatter Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>UVLog.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This protocol describes the behavior of a log formatter</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/formatLogMessage:NS_SWIFT_NAME:" title="formatLogMessage:NS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/formatLogMessage:NS_SWIFT_NAME:">&ndash;&nbsp;formatLogMessage:NS_SWIFT_NAME:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Formatters may optionally be added to any logger.
+This allows for increased flexibility in the logging environment.
+For example, log messages for log files may be formatted differently than log messages for the console.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *__nullable)formatLogMessage:(UVLogMessage *)<em>logMessage</em> NS_SWIFT_NAME</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>For more information about formatters, see the &ldquo;Custom Formatters&rdquo; page:
+Documentation/CustomFormatters.md</p>
+
+<p>The formatter may also optionally filter the log message by returning nil,
+in which case the logger will not log the message.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didaddToLogger:" title="didaddToLogger:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didaddToLogger:">&ndash;&nbsp;didaddToLogger:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A single formatter instance can be added to multiple loggers.
+These methods provides hooks to notify the formatter of when it&rsquo;s added/removed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didaddToLogger:(id&lt;UVLogger&gt;)<em>logger</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This is primarily for thread-safety.
+If a formatter is explicitly not thread-safe, it may wish to throw an exception if added to multiple loggers.
+Or if a formatter has potentially thread-unsafe code (e.g. NSDateFormatter),
+it could possibly use these hooks to switch to thread-safe versions of the code.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didaddToLogger:inQueue:" title="didaddToLogger:inQueue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didaddToLogger:inQueue:">&ndash;&nbsp;didaddToLogger:inQueue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>A single formatter instance can be added to multiple loggers.</li>
+<li>These methods provides hooks to notify the formatter of when it&rsquo;s added/removed.
+*</li>
+<li>This is primarily for thread-safety.</li>
+<li>If a formatter is explicitly not thread-safe, it may wish to throw an exception if added to multiple loggers.</li>
+<li>Or if a formatter has potentially thread-unsafe code (e.g. NSDateFormatter),</li>
+<li>it could possibly use these hooks to switch to thread-safe versions of the code or use dispatch_set_specific()
+.* to add its own specific values.
+*</li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didaddToLogger:(id&lt;UVLogger&gt;)<em>logger</em> inQueue:(dispatch_queue_t)<em>queue</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/willRemoveFromLogger:" title="willRemoveFromLogger:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/willRemoveFromLogger:">&ndash;&nbsp;willRemoveFromLogger:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>See the above description for <a href="#//api/name/didaddToLogger:"><code>didaddToLogger:</code></a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)willRemoveFromLogger:(id&lt;UVLogger&gt;)<em>logger</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 UCloud. All rights reserved. Updated: 2017-04-18</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

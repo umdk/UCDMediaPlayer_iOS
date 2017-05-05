@@ -14,7 +14,7 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">IJKMediaPlayer </a>
+				<a href="../index.html">IJKMediaPlayer-static </a>
 			</h1>
 
 			<p id="developer-home">
@@ -54,11 +54,35 @@
 	
 	<optgroup label="Properties">
 		
+		<option value="//api/name/bufferDuration">bufferDuration</option>
+		
+		<option value="//api/name/cachedDuration">cachedDuration</option>
+		
 		<option value="//api/name/defaultDecodeMethod">defaultDecodeMethod</option>
 		
 		<option value="//api/name/defaultScalingMode">defaultScalingMode</option>
 		
+		<option value="//api/name/enableLogFile">enableLogFile</option>
+		
+		<option value="//api/name/getAVFrameTimeout">getAVFrameTimeout</option>
+		
+		<option value="//api/name/lastLogFileName">lastLogFileName</option>
+		
+		<option value="//api/name/lastLogFilePath">lastLogFilePath</option>
+		
+		<option value="//api/name/logFileSize">logFileSize</option>
+		
+		<option value="//api/name/logFiles">logFiles</option>
+		
+		<option value="//api/name/logFilesMaxSize">logFilesMaxSize</option>
+		
+		<option value="//api/name/logsDirectory">logsDirectory</option>
+		
 		<option value="//api/name/player">player</option>
+		
+		<option value="//api/name/prepareTimeout">prepareTimeout</option>
+		
+		<option value="//api/name/rtmpSubscribe">rtmpSubscribe</option>
 		
 		<option value="//api/name/url">url</option>
 		
@@ -77,6 +101,8 @@
 
 	
 	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/getSDKVersion">- getSDKVersion</option>
 		
 		<option value="//api/name/refreshView">- refreshView</option>
 		
@@ -264,12 +290,514 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>视频来源类型</p>
+				<p>视频类型（直播、点播）</p>
 			</div>
 			
 		    
 
 			<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) UrlType urlType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudMediaPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rtmpSubscribe" title="rtmpSubscribe"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rtmpSubscribe">&nbsp;&nbsp;rtmpSubscribe</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>适用于rtmp直播协议，向服务器发送FCSubscribe命令,一般填写streamID，比如播放地址为rtmp://xxx.com/app/id,此处填写id</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *rtmpSubscribe</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudMediaPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cachedDuration" title="cachedDuration"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cachedDuration">&nbsp;&nbsp;cachedDuration</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>丢帧策略缓存时长阀值，适用于直播，单位 ms，建议范围:0-5000，默认为3000。</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) NSInteger cachedDuration</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>当 cachedDuration > 0，播放器会触发追帧策略，缩短播放延时。cachedDuration &lt;= 0 不启用。</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudMediaPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/bufferDuration" title="bufferDuration"></a>
+	<h3 class="method-title"><code><a href="#//api/name/bufferDuration">&nbsp;&nbsp;bufferDuration</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>卡顿时的缓存时长，适用于直播，单位 ms，建议范围：1000-6000，默认为3000。</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) NSInteger bufferDuration</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>当播放器发生卡顿开始缓存时，缓冲视频数据时长为bufferDuration。该值越大卡顿缓冲时间越长，但是后续卡顿率会所有降低。当bufferDuration设置为0时，播放器将不发生缓冲，有数据则即刻播放，对网络比较敏感，容易发生卡顿，如果对延时要求不高的可以适当设置cachedDuration缓存一定量的音视频数据</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudMediaPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/prepareTimeout" title="prepareTimeout"></a>
+	<h3 class="method-title"><code><a href="#//api/name/prepareTimeout">&nbsp;&nbsp;prepareTimeout</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>暂时适用于直播，播放准备完成超时时间设置，单位 ms，默认10000，推荐范围5000-150000，超时会收到UCloudPlayerPlaybackDidFinishNotification消息</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) NSInteger prepareTimeout</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudMediaPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getAVFrameTimeout" title="getAVFrameTimeout"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getAVFrameTimeout">&nbsp;&nbsp;getAVFrameTimeout</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>暂时适用于直播，获取音频或视频帧超时设置，单位 ms，默认10000，推荐范围5000-150000，超时会收到UCloudPlayerPlaybackDidFinishNotification消息</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) NSInteger getAVFrameTimeout</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudMediaPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/enableLogFile" title="enableLogFile"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enableLogFile">&nbsp;&nbsp;enableLogFile</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>是否开启日志文件，默认开启</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) bool enableLogFile</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudMediaPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/logFiles" title="logFiles"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logFiles">&nbsp;&nbsp;logFiles</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>所有日志文件名</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic, readonly) NSArray *logFiles</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudMediaPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/logsDirectory" title="logsDirectory"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logsDirectory">&nbsp;&nbsp;logsDirectory</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>日志文件路径，</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic, readonly) NSString *logsDirectory</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudMediaPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lastLogFilePath" title="lastLogFilePath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastLogFilePath">&nbsp;&nbsp;lastLogFilePath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>最近的日志文件路径</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic, readonly) NSString *lastLogFilePath</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudMediaPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lastLogFileName" title="lastLogFileName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastLogFileName">&nbsp;&nbsp;lastLogFileName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>最近的日志文件名</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic, readonly) NSString *lastLogFileName</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudMediaPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/logFileSize" title="logFileSize"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logFileSize">&nbsp;&nbsp;logFileSize</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>每个日志文件的大小，每个日志文件如若达到该大小将会进行一次压缩保存，减少沙盒使用量，默认1M</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) NSInteger logFileSize</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudMediaPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/logFilesMaxSize" title="logFilesMaxSize"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logFilesMaxSize">&nbsp;&nbsp;logFilesMaxSize</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>日志文件夹大小，超过会清理日志，默认20M</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) NSInteger logFilesMaxSize</code></div>
 
 		    
 			
@@ -618,6 +1146,47 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/getSDKVersion" title="getSDKVersion"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getSDKVersion">&ndash;&nbsp;getSDKVersion</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>获取播放器SDK版本号</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)getSDKVersion</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UCloudMediaPlayer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/refreshView" title="refreshView"></a>
 	<h3 class="method-title"><code><a href="#//api/name/refreshView">&ndash;&nbsp;refreshView</a></code>
 </h3>
@@ -673,7 +1242,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 UCloud. All rights reserved. Updated: 2016-10-25</p>
+						<p class="copyright">Copyright &copy; 2017 UCloud. All rights reserved. Updated: 2017-04-18</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

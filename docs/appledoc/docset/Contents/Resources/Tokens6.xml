@@ -1,137 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ErrorNum.html">
+	<File path="Classes/UVLogFileFormatterDefault.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ErrorNum</TokenIdentifier>
-			<Abstract type="html">错误码</Abstract>
-			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/UVLogFileFormatterDefault</TokenIdentifier>
+			<Abstract type="html">Most users will want file log messages to be prepended with the date and time.
+Rather than forcing the majority of users to write their own formatter,
+we will supply a logical default formatter.
+Users can easily replace this formatter with their own by invoking the setLogFormatter: method.
+It can also be removed by calling setLogFormatter:, and passing a nil parameter.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
             
 			
 			<NodeRef refid="6"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ErrorNumShowViewIsNull</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ErrorNumShowViewIsNull</Declaration>
-            
-            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLogFileFormatterDefault/init</TokenIdentifier>
+			<Abstract type="html">Default initializer</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)init</Declaration>
+			
+			
+			<Anchor>//api/name/init</Anchor>
             <NodeRef refid="6"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ErrorNumUrlIsNull</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ErrorNumUrlIsNull</Declaration>
-            
-            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLogFileFormatterDefault/initWithDateFormatter:</TokenIdentifier>
+			<Abstract type="html">Designated initializer, requires a date formatter</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithDateFormatter:(NSDateFormatter *)dateFormatter</Declaration>
+			
+			
+			<Anchor>//api/name/initWithDateFormatter:</Anchor>
             <NodeRef refid="6"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ErrorNumSaveShotError</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ErrorNumSaveShotError</Declaration>
-            
-            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
-            
-            <NodeRef refid="6"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ErrorNumUrlIsWrong</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ErrorNumUrlIsWrong</Declaration>
-            
-            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
-            
-            <NodeRef refid="6"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ErrorNumdrm</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ErrorNumdrm</Declaration>
-            
-            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
-            
-            <NodeRef refid="6"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ErrorNumCgiLostPars</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ErrorNumCgiLostPars</Declaration>
-            
-            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
-            
-            <NodeRef refid="6"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ErrorNumCgiRequest</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ErrorNumCgiRequest</Declaration>
-            
-            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
-            
-            <NodeRef refid="6"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ErrorNumCgiAuthFail</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ErrorNumCgiAuthFail</Declaration>
-            
-            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
-            
-            <NodeRef refid="6"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ErrorNumCgiMovieCannotFound</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ErrorNumCgiMovieCannotFound</Declaration>
-            
-            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
-            
-            <NodeRef refid="6"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ErrorNumCgiDomainError</TokenIdentifier>
-            <Abstract type="html">不会构建videoview</Abstract>
-            <Declaration>ErrorNumCgiDomainError</Declaration>
-            
-            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
-            
-            <NodeRef refid="6"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ErrorNumCgiServerError</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ErrorNumCgiServerError</Declaration>
-            
-            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
-            
-            <NodeRef refid="6"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ErrorNumCgiTimeOut</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ErrorNumCgiTimeOut</Declaration>
-            
-            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
-            
-            <NodeRef refid="6"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

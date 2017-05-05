@@ -122,7 +122,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/setUrlType:</TokenIdentifier>
-			<Abstract type="html">视频来源类型</Abstract>
+			<Abstract type="html">视频类型（直播、点播）</Abstract>
 			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
 			
 			<Declaration>@property (assign, nonatomic) UrlType urlType</Declaration>
@@ -134,7 +134,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/urlType</TokenIdentifier>
-			<Abstract type="html">视频来源类型</Abstract>
+			<Abstract type="html">视频类型（直播、点播）</Abstract>
 			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
 			
 			<Declaration>@property (assign, nonatomic) UrlType urlType</Declaration>
@@ -146,13 +146,445 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/UCloudMediaPlayer/urlType</TokenIdentifier>
-			<Abstract type="html">视频来源类型</Abstract>
+			<Abstract type="html">视频类型（直播、点播）</Abstract>
 			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
 			
 			<Declaration>@property (assign, nonatomic) UrlType urlType</Declaration>
 			
 			
 			<Anchor>//api/name/urlType</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/setRtmpSubscribe:</TokenIdentifier>
+			<Abstract type="html">适用于rtmp直播协议，向服务器发送FCSubscribe命令,一般填写streamID，比如播放地址为rtmp://xxx.com/app/id,此处填写id</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) NSString *rtmpSubscribe</Declaration>
+			
+			
+			<Anchor>//api/name/rtmpSubscribe</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/rtmpSubscribe</TokenIdentifier>
+			<Abstract type="html">适用于rtmp直播协议，向服务器发送FCSubscribe命令,一般填写streamID，比如播放地址为rtmp://xxx.com/app/id,此处填写id</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) NSString *rtmpSubscribe</Declaration>
+			
+			
+			<Anchor>//api/name/rtmpSubscribe</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UCloudMediaPlayer/rtmpSubscribe</TokenIdentifier>
+			<Abstract type="html">适用于rtmp直播协议，向服务器发送FCSubscribe命令,一般填写streamID，比如播放地址为rtmp://xxx.com/app/id,此处填写id</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) NSString *rtmpSubscribe</Declaration>
+			
+			
+			<Anchor>//api/name/rtmpSubscribe</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/setCachedDuration:</TokenIdentifier>
+			<Abstract type="html">丢帧策略缓存时长阀值，适用于直播，单位 ms，建议范围:0-5000，默认为3000。</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSInteger cachedDuration</Declaration>
+			
+			
+			<Anchor>//api/name/cachedDuration</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/cachedDuration</TokenIdentifier>
+			<Abstract type="html">丢帧策略缓存时长阀值，适用于直播，单位 ms，建议范围:0-5000，默认为3000。</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSInteger cachedDuration</Declaration>
+			
+			
+			<Anchor>//api/name/cachedDuration</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UCloudMediaPlayer/cachedDuration</TokenIdentifier>
+			<Abstract type="html">丢帧策略缓存时长阀值，适用于直播，单位 ms，建议范围:0-5000，默认为3000。</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSInteger cachedDuration</Declaration>
+			
+			
+			<Anchor>//api/name/cachedDuration</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/setBufferDuration:</TokenIdentifier>
+			<Abstract type="html">卡顿时的缓存时长，适用于直播，单位 ms，建议范围：1000-6000，默认为3000。</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSInteger bufferDuration</Declaration>
+			
+			
+			<Anchor>//api/name/bufferDuration</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/bufferDuration</TokenIdentifier>
+			<Abstract type="html">卡顿时的缓存时长，适用于直播，单位 ms，建议范围：1000-6000，默认为3000。</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSInteger bufferDuration</Declaration>
+			
+			
+			<Anchor>//api/name/bufferDuration</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UCloudMediaPlayer/bufferDuration</TokenIdentifier>
+			<Abstract type="html">卡顿时的缓存时长，适用于直播，单位 ms，建议范围：1000-6000，默认为3000。</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSInteger bufferDuration</Declaration>
+			
+			
+			<Anchor>//api/name/bufferDuration</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/setPrepareTimeout:</TokenIdentifier>
+			<Abstract type="html">暂时适用于直播，播放准备完成超时时间设置，单位 ms，默认10000，推荐范围5000-150000，超时会收到UCloudPlayerPlaybackDidFinishNotification消息</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSInteger prepareTimeout</Declaration>
+			
+			
+			<Anchor>//api/name/prepareTimeout</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/prepareTimeout</TokenIdentifier>
+			<Abstract type="html">暂时适用于直播，播放准备完成超时时间设置，单位 ms，默认10000，推荐范围5000-150000，超时会收到UCloudPlayerPlaybackDidFinishNotification消息</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSInteger prepareTimeout</Declaration>
+			
+			
+			<Anchor>//api/name/prepareTimeout</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UCloudMediaPlayer/prepareTimeout</TokenIdentifier>
+			<Abstract type="html">暂时适用于直播，播放准备完成超时时间设置，单位 ms，默认10000，推荐范围5000-150000，超时会收到UCloudPlayerPlaybackDidFinishNotification消息</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSInteger prepareTimeout</Declaration>
+			
+			
+			<Anchor>//api/name/prepareTimeout</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/setGetAVFrameTimeout:</TokenIdentifier>
+			<Abstract type="html">暂时适用于直播，获取音频或视频帧超时设置，单位 ms，默认10000，推荐范围5000-150000，超时会收到UCloudPlayerPlaybackDidFinishNotification消息</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSInteger getAVFrameTimeout</Declaration>
+			
+			
+			<Anchor>//api/name/getAVFrameTimeout</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/getAVFrameTimeout</TokenIdentifier>
+			<Abstract type="html">暂时适用于直播，获取音频或视频帧超时设置，单位 ms，默认10000，推荐范围5000-150000，超时会收到UCloudPlayerPlaybackDidFinishNotification消息</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSInteger getAVFrameTimeout</Declaration>
+			
+			
+			<Anchor>//api/name/getAVFrameTimeout</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UCloudMediaPlayer/getAVFrameTimeout</TokenIdentifier>
+			<Abstract type="html">暂时适用于直播，获取音频或视频帧超时设置，单位 ms，默认10000，推荐范围5000-150000，超时会收到UCloudPlayerPlaybackDidFinishNotification消息</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSInteger getAVFrameTimeout</Declaration>
+			
+			
+			<Anchor>//api/name/getAVFrameTimeout</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/setEnableLogFile:</TokenIdentifier>
+			<Abstract type="html">是否开启日志文件，默认开启</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) bool enableLogFile</Declaration>
+			
+			
+			<Anchor>//api/name/enableLogFile</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/enableLogFile</TokenIdentifier>
+			<Abstract type="html">是否开启日志文件，默认开启</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) bool enableLogFile</Declaration>
+			
+			
+			<Anchor>//api/name/enableLogFile</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UCloudMediaPlayer/enableLogFile</TokenIdentifier>
+			<Abstract type="html">是否开启日志文件，默认开启</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) bool enableLogFile</Declaration>
+			
+			
+			<Anchor>//api/name/enableLogFile</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/setLogFiles:</TokenIdentifier>
+			<Abstract type="html">所有日志文件名</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSArray *logFiles</Declaration>
+			
+			
+			<Anchor>//api/name/logFiles</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/logFiles</TokenIdentifier>
+			<Abstract type="html">所有日志文件名</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSArray *logFiles</Declaration>
+			
+			
+			<Anchor>//api/name/logFiles</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UCloudMediaPlayer/logFiles</TokenIdentifier>
+			<Abstract type="html">所有日志文件名</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSArray *logFiles</Declaration>
+			
+			
+			<Anchor>//api/name/logFiles</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/setLogsDirectory:</TokenIdentifier>
+			<Abstract type="html">日志文件路径，</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSString *logsDirectory</Declaration>
+			
+			
+			<Anchor>//api/name/logsDirectory</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/logsDirectory</TokenIdentifier>
+			<Abstract type="html">日志文件路径，</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSString *logsDirectory</Declaration>
+			
+			
+			<Anchor>//api/name/logsDirectory</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UCloudMediaPlayer/logsDirectory</TokenIdentifier>
+			<Abstract type="html">日志文件路径，</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSString *logsDirectory</Declaration>
+			
+			
+			<Anchor>//api/name/logsDirectory</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/setLastLogFilePath:</TokenIdentifier>
+			<Abstract type="html">最近的日志文件路径</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSString *lastLogFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/lastLogFilePath</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/lastLogFilePath</TokenIdentifier>
+			<Abstract type="html">最近的日志文件路径</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSString *lastLogFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/lastLogFilePath</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UCloudMediaPlayer/lastLogFilePath</TokenIdentifier>
+			<Abstract type="html">最近的日志文件路径</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSString *lastLogFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/lastLogFilePath</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/setLastLogFileName:</TokenIdentifier>
+			<Abstract type="html">最近的日志文件名</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSString *lastLogFileName</Declaration>
+			
+			
+			<Anchor>//api/name/lastLogFileName</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/lastLogFileName</TokenIdentifier>
+			<Abstract type="html">最近的日志文件名</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSString *lastLogFileName</Declaration>
+			
+			
+			<Anchor>//api/name/lastLogFileName</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UCloudMediaPlayer/lastLogFileName</TokenIdentifier>
+			<Abstract type="html">最近的日志文件名</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSString *lastLogFileName</Declaration>
+			
+			
+			<Anchor>//api/name/lastLogFileName</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/setLogFileSize:</TokenIdentifier>
+			<Abstract type="html">每个日志文件的大小，每个日志文件如若达到该大小将会进行一次压缩保存，减少沙盒使用量，默认1M</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSInteger logFileSize</Declaration>
+			
+			
+			<Anchor>//api/name/logFileSize</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/logFileSize</TokenIdentifier>
+			<Abstract type="html">每个日志文件的大小，每个日志文件如若达到该大小将会进行一次压缩保存，减少沙盒使用量，默认1M</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSInteger logFileSize</Declaration>
+			
+			
+			<Anchor>//api/name/logFileSize</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UCloudMediaPlayer/logFileSize</TokenIdentifier>
+			<Abstract type="html">每个日志文件的大小，每个日志文件如若达到该大小将会进行一次压缩保存，减少沙盒使用量，默认1M</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSInteger logFileSize</Declaration>
+			
+			
+			<Anchor>//api/name/logFileSize</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/setLogFilesMaxSize:</TokenIdentifier>
+			<Abstract type="html">日志文件夹大小，超过会清理日志，默认20M</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSInteger logFilesMaxSize</Declaration>
+			
+			
+			<Anchor>//api/name/logFilesMaxSize</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/logFilesMaxSize</TokenIdentifier>
+			<Abstract type="html">日志文件夹大小，超过会清理日志，默认20M</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSInteger logFilesMaxSize</Declaration>
+			
+			
+			<Anchor>//api/name/logFilesMaxSize</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UCloudMediaPlayer/logFilesMaxSize</TokenIdentifier>
+			<Abstract type="html">日志文件夹大小，超过会清理日志，默认20M</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) NSInteger logFilesMaxSize</Declaration>
+			
+			
+			<Anchor>//api/name/logFilesMaxSize</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
@@ -284,6 +716,18 @@
 			</Parameters>
 			
 			<Anchor>//api/name/selectDefinition:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UCloudMediaPlayer/getSDKVersion</TokenIdentifier>
+			<Abstract type="html">获取播放器SDK版本号</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)getSDKVersion</Declaration>
+			
+			
+			<Anchor>//api/name/getSDKVersion</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		

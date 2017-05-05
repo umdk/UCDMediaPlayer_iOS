@@ -1,7 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="">
+	<File path="Classes/UVLogFileManagerDefault.html">
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/UVLogFileManagerDefault</TokenIdentifier>
+			<Abstract type="html">Default log file manager.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+            
+			
+			<NodeRef refid="8"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLogFileManagerDefault/init</TokenIdentifier>
+			<Abstract type="html">Default initializer</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)init</Declaration>
+			
+			
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLogFileManagerDefault/initWithLogsDirectory:</TokenIdentifier>
+			<Abstract type="html">Designated initialized, requires the logs directory</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithLogsDirectory:(NSString *)logsDirectory</Declaration>
+			
+			
+			<Anchor>//api/name/initWithLogsDirectory:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLogFileManagerDefault/setNewLogFileName:</TokenIdentifier>
+			<Abstract type="html">Generates log file name with default format &quot;&lt;bundle identifier&gt; &lt;date&gt; &lt;time&gt;.log&quot;
+Example: MobileSafari 2013-12-03 17-14.log</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, copy) NSString *newLogFileName</Declaration>
+			
+			
+			<Anchor>//api/name/newLogFileName</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLogFileManagerDefault/newLogFileName</TokenIdentifier>
+			<Abstract type="html">Generates log file name with default format &quot;&lt;bundle identifier&gt; &lt;date&gt; &lt;time&gt;.log&quot;
+Example: MobileSafari 2013-12-03 17-14.log</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, copy) NSString *newLogFileName</Declaration>
+			
+			
+			<Anchor>//api/name/newLogFileName</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UVLogFileManagerDefault/newLogFileName</TokenIdentifier>
+			<Abstract type="html">Generates log file name with default format &quot;&lt;bundle identifier&gt; &lt;date&gt; &lt;time&gt;.log&quot;
+Example: MobileSafari 2013-12-03 17-14.log</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, copy) NSString *newLogFileName</Declaration>
+			
+			
+			<Anchor>//api/name/newLogFileName</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLogFileManagerDefault/isLogFile:NS_SWIFT_NAME:</TokenIdentifier>
+			<Abstract type="html">Default log file name is &quot;&lt;bundle identifier&gt; &lt;date&gt; &lt;time&gt;.log&quot;.
+Example: MobileSafari 2013-12-03 17-14.log</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isLogFile:(NSString *)fileName NS_SWIFT_NAME</Declaration>
+			
+			
+			<Anchor>//api/name/isLogFile:NS_SWIFT_NAME:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
 		
         
         

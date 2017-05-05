@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/UVLogMessageOptions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/UVLogMessageOptions</TokenIdentifier>
+			<Abstract type="html">Log message options, allow copying certain log elements</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+            
+			
+			<NodeRef refid="24"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UVLogMessageCopyFile</TokenIdentifier>
+            <Abstract type="html">Use this to use a copy of the file path
+     </Abstract>
+            <Declaration>UVLogMessageCopyFile</Declaration>
+            
+            <DeclaredIn>UVLog.h</DeclaredIn>
+            
+            <NodeRef refid="24"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UVLogMessageCopyFunction</TokenIdentifier>
+            <Abstract type="html">Use this to use a copy of the function name
+     </Abstract>
+            <Declaration>UVLogMessageCopyFunction</Declaration>
+            
+            <DeclaredIn>UVLog.h</DeclaredIn>
+            
+            <NodeRef refid="24"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UVLogMessageDontCopyMessage</TokenIdentifier>
+            <Abstract type="html">Use this to use avoid a copy of the message
+     </Abstract>
+            <Declaration>UVLogMessageDontCopyMessage</Declaration>
+            
+            <DeclaredIn>UVLog.h</DeclaredIn>
+            
+            <NodeRef refid="24"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

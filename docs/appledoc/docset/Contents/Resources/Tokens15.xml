@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/UVLogger.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/UVLogger</TokenIdentifier>
+			<Abstract type="html">This protocol describes a basic logger behavior.
+Basically, it can log messages, store a logFormatter plus a bunch of optional behaviors.
+(i.e. flush, get its loggerQueue, get its name, ...</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+            
+			
+			<NodeRef refid="15"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogger/logMessage:NS_SWIFT_NAME:</TokenIdentifier>
+			<Abstract type="html">The log message method</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (void)logMessage:(UVLogMessage *)logMessage NS_SWIFT_NAME</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>logMessage</Name>
+					<Abstract type="html">the message (model)</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/logMessage:NS_SWIFT_NAME:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogger/setLogFormatter:</TokenIdentifier>
+			<Abstract type="html">Formatters may optionally be added to any logger.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) id&lt;UVLogFormatter&gt; logFormatter</Declaration>
+			
+			
+			<Anchor>//api/name/logFormatter</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogger/logFormatter</TokenIdentifier>
+			<Abstract type="html">Formatters may optionally be added to any logger.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) id&lt;UVLogFormatter&gt; logFormatter</Declaration>
+			
+			
+			<Anchor>//api/name/logFormatter</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UVLogger/logFormatter</TokenIdentifier>
+			<Abstract type="html">Formatters may optionally be added to any logger.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) id&lt;UVLogFormatter&gt; logFormatter</Declaration>
+			
+			
+			<Anchor>//api/name/logFormatter</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogger/didAddLogger</TokenIdentifier>
+			<Abstract type="html">Since logging is asynchronous, adding and removing loggers is also asynchronous.
+In other words, the loggers are added and removed at appropriate times with regards to log messages.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (void)didAddLogger</Declaration>
+			
+			
+			<Anchor>//api/name/didAddLogger</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogger/didAddLoggerInQueue:</TokenIdentifier>
+			<Abstract type="html">Since logging is asynchronous, adding and removing loggers is also asynchronous.
+In other words, the loggers are added and removed at appropriate times with regards to log messages.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (void)didAddLoggerInQueue:(dispatch_queue_t)queue</Declaration>
+			
+			
+			<Anchor>//api/name/didAddLoggerInQueue:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogger/willRemoveLogger</TokenIdentifier>
+			<Abstract type="html">See the above description for didaddLoger</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (void)willRemoveLogger</Declaration>
+			
+			
+			<Anchor>//api/name/willRemoveLogger</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogger/flush</TokenIdentifier>
+			<Abstract type="html">Some loggers may buffer IO for optimization purposes.
+For example, a database logger may only save occasionaly as the disk IO is slow.
+In such loggers, this method should be implemented to flush any pending IO.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (void)flush</Declaration>
+			
+			
+			<Anchor>//api/name/flush</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogger/setLoggerQueue:</TokenIdentifier>
+			<Abstract type="html">Each logger is executed concurrently with respect to the other loggers.
+Thus, a dedicated dispatch queue is used for each logger.
+Logger implementations may optionally choose to provide their own dispatch queue.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, DISPATCH_QUEUE_REFERENCE_TYPE, readonly) dispatch_queue_t loggerQueue</Declaration>
+			
+			
+			<Anchor>//api/name/loggerQueue</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogger/loggerQueue</TokenIdentifier>
+			<Abstract type="html">Each logger is executed concurrently with respect to the other loggers.
+Thus, a dedicated dispatch queue is used for each logger.
+Logger implementations may optionally choose to provide their own dispatch queue.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, DISPATCH_QUEUE_REFERENCE_TYPE, readonly) dispatch_queue_t loggerQueue</Declaration>
+			
+			
+			<Anchor>//api/name/loggerQueue</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UVLogger/loggerQueue</TokenIdentifier>
+			<Abstract type="html">Each logger is executed concurrently with respect to the other loggers.
+Thus, a dedicated dispatch queue is used for each logger.
+Logger implementations may optionally choose to provide their own dispatch queue.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, DISPATCH_QUEUE_REFERENCE_TYPE, readonly) dispatch_queue_t loggerQueue</Declaration>
+			
+			
+			<Anchor>//api/name/loggerQueue</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogger/setLoggerName:</TokenIdentifier>
+			<Abstract type="html">If the logger implementation does not choose to provide its own queue,
+one will automatically be created for it.
+The created queue will receive its name from this method.
+This may be helpful for debugging or profiling reasons.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *loggerName</Declaration>
+			
+			
+			<Anchor>//api/name/loggerName</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogger/loggerName</TokenIdentifier>
+			<Abstract type="html">If the logger implementation does not choose to provide its own queue,
+one will automatically be created for it.
+The created queue will receive its name from this method.
+This may be helpful for debugging or profiling reasons.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *loggerName</Declaration>
+			
+			
+			<Anchor>//api/name/loggerName</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UVLogger/loggerName</TokenIdentifier>
+			<Abstract type="html">If the logger implementation does not choose to provide its own queue,
+one will automatically be created for it.
+The created queue will receive its name from this method.
+This may be helpful for debugging or profiling reasons.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *loggerName</Declaration>
+			
+			
+			<Anchor>//api/name/loggerName</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

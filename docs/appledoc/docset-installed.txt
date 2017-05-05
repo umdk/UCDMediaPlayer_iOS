@@ -1,4 +1,4 @@
 Documentation set was installed to Xcode!
 
-Path: /Users/Sidney/Library/Developer/Shared/Documentation/DocSets/cn.UCloud.IJKMediaPlayer.docset
-Time: 2016-10-25 10:15:35 +0000
+Path: /Users/Sidney/Library/Developer/Shared/Documentation/DocSets/cn.UCloud.IJKMediaPlayer-static.docset
+Time: 2017-04-18 10:19:24 +0000

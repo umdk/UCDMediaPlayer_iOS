@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>UVLogFileManager Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">IJKMediaPlayer-static </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">UCloud</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/logFilesDiskQuota">logFilesDiskQuota</option>
+		
+		<option value="//api/name/logsDirectory">logsDirectory</option>
+		
+		<option value="//api/name/maximumNumberOfLogFiles">maximumNumberOfLogFiles</option>
+		
+		<option value="//api/name/sortedLogFileInfos">sortedLogFileInfos</option>
+		
+		<option value="//api/name/sortedLogFileNames">sortedLogFileNames</option>
+		
+		<option value="//api/name/sortedLogFilePaths">sortedLogFilePaths</option>
+		
+		<option value="//api/name/unsortedLogFileInfos">unsortedLogFileInfos</option>
+		
+		<option value="//api/name/unsortedLogFileNames">unsortedLogFileNames</option>
+		
+		<option value="//api/name/unsortedLogFilePaths">unsortedLogFilePaths</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/createNewLogFile">- createNewLogFile</option>
+		
+		<option value="//api/name/didArchiveLogFile:NS_SWIFT_NAME:">- didArchiveLogFile:NS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/didRollAndArchiveLogFile:NS_SWIFT_NAME:">- didRollAndArchiveLogFile:NS_SWIFT_NAME:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">UVLogFileManager Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>UVFileLogger.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The LogFileManager protocol is designed to allow you to control all aspects of your log files.</p>
+
+<p>The primary purpose of this is to allow you to do something with the log files after they have been rolled.
+Perhaps you want to compress them to save disk space.
+Perhaps you want to upload them to an FTP server.
+Perhaps you want to run some analytics on the file.</p>
+
+<p>A default LogFileManager is, of course, provided.
+The default LogFileManager simply deletes old log files according to the <a href="#//api/name/maximumNumberOfLogFiles">maximumNumberOfLogFiles</a> property.</p>
+
+<p>This protocol provides various methods to fetch the list of log files.</p>
+
+<p>There are two variants: sorted and unsorted.
+If sorting is not necessary, the unsorted variant is obviously faster.
+The sorted variant will return an array sorted by when the log files were created,
+with the most recently created log file at index 0, and the oldest log file at the end of the array.</p>
+
+<p>You can fetch only the log file paths (full path inclUVing name), log file names (name only),
+or an array of <a href="../Classes/UVLogFileInfo.html"><code>UVLogFileInfo</code></a> objects.
+The <a href="../Classes/UVLogFileInfo.html"><code>UVLogFileInfo</code></a> class is documented below, and provides a handy wrapper that
+gives you easy access to various file attributes such as the creation date or the file size.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/maximumNumberOfLogFiles" title="maximumNumberOfLogFiles"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maximumNumberOfLogFiles">&nbsp;&nbsp;maximumNumberOfLogFiles</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The maximum number of archived log files to keep on disk.
+For example, if this property is set to 3,
+then the LogFileManager will only keep 3 archived log files (plus the current active log file) on disk.
+Once the active log file is rolled/archived, then the oldest of the existing 3 rolled/archived log files is deleted.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, assign, atomic) NSUInteger maximumNumberOfLogFiles</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>You may optionally disable this option by setting it to zero.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVFileLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/logFilesDiskQuota" title="logFilesDiskQuota"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logFilesDiskQuota">&nbsp;&nbsp;logFilesDiskQuota</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The maximum space that logs can take. On rolling logfile all old logfiles that exceed logFilesDiskQuota will
+be deleted.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readwrite, assign, atomic) unsigned long long logFilesDiskQuota</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>You may optionally disable this option by setting it to zero.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVFileLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/logsDirectory" title="logsDirectory"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logsDirectory">&nbsp;&nbsp;logsDirectory</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the logs directory (path)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy) NSString *logsDirectory</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVFileLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unsortedLogFilePaths" title="unsortedLogFilePaths"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unsortedLogFilePaths">&nbsp;&nbsp;unsortedLogFilePaths</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array of <code>NSString</code> objects,
+each of which is the filePath to an existing log file on disk.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, strong) NSArray&lt;NSString*&gt; *unsortedLogFilePaths</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVFileLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unsortedLogFileNames" title="unsortedLogFileNames"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unsortedLogFileNames">&nbsp;&nbsp;unsortedLogFileNames</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array of <code>NSString</code> objects,
+each of which is the fileName of an existing log file on disk.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, strong) NSArray&lt;NSString*&gt; *unsortedLogFileNames</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVFileLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unsortedLogFileInfos" title="unsortedLogFileInfos"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unsortedLogFileInfos">&nbsp;&nbsp;unsortedLogFileInfos</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array of <a href="../Classes/UVLogFileInfo.html"><code>UVLogFileInfo</code></a> objects,
+each representing an existing log file on disk,
+and containing important information about the log file such as it&rsquo;s modification date and size.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, strong) NSArray&lt;UVLogFileInfo*&gt; *unsortedLogFileInfos</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVFileLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sortedLogFilePaths" title="sortedLogFilePaths"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sortedLogFilePaths">&nbsp;&nbsp;sortedLogFilePaths</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Just like the <a href="#//api/name/unsortedLogFilePaths"><code>unsortedLogFilePaths</code></a> method, but sorts the array.
+The items in the array are sorted by creation date.
+The first item in the array will be the most recently created log file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, strong) NSArray&lt;NSString*&gt; *sortedLogFilePaths</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVFileLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sortedLogFileNames" title="sortedLogFileNames"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sortedLogFileNames">&nbsp;&nbsp;sortedLogFileNames</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Just like the <a href="#//api/name/unsortedLogFileNames"><code>unsortedLogFileNames</code></a> method, but sorts the array.
+The items in the array are sorted by creation date.
+The first item in the array will be the most recently created log file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, strong) NSArray&lt;NSString*&gt; *sortedLogFileNames</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVFileLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sortedLogFileInfos" title="sortedLogFileInfos"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sortedLogFileInfos">&nbsp;&nbsp;sortedLogFileInfos</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Just like the <a href="#//api/name/unsortedLogFileInfos"><code>unsortedLogFileInfos</code></a> method, but sorts the array.
+The items in the array are sorted by creation date.
+The first item in the array will be the most recently created log file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, strong) NSArray&lt;UVLogFileInfo*&gt; *sortedLogFileInfos</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVFileLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createNewLogFile" title="createNewLogFile"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createNewLogFile">&ndash;&nbsp;createNewLogFile</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Generates a new unique log file path, and creates the corresponding log file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)createNewLogFile</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVFileLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didArchiveLogFile:NS_SWIFT_NAME:" title="didArchiveLogFile:NS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didArchiveLogFile:NS_SWIFT_NAME:">&ndash;&nbsp;didArchiveLogFile:NS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when a log file was archieved</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didArchiveLogFile:(NSString *)<em>logFilePath</em> NS_SWIFT_NAME</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVFileLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didRollAndArchiveLogFile:NS_SWIFT_NAME:" title="didRollAndArchiveLogFile:NS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didRollAndArchiveLogFile:NS_SWIFT_NAME:">&ndash;&nbsp;didRollAndArchiveLogFile:NS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when the roll action was executed and the log was archieved</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didRollAndArchiveLogFile:(NSString *)<em>logFilePath</em> NS_SWIFT_NAME</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVFileLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 UCloud. All rights reserved. Updated: 2017-04-18</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

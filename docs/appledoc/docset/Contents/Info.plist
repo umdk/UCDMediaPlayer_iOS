@@ -5,9 +5,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleIdentifier</key>
-	<string>cn.UCloud.IJKMediaPlayer</string>
+	<string>cn.UCloud.IJKMediaPlayer-static</string>
 	<key>CFBundleName</key>
-	<string>IJKMediaPlayer Documentation</string>
+	<string>IJKMediaPlayer-static Documentation</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -16,11 +16,11 @@
 	
 	
 	<key>DocSetFallbackURL</key>
-	<string>http://ucloud.cn/UCloud</string>
+	<string>https://ucloud.cn//UCloud</string>
 	<key>DocSetFeedName</key>
-	<string>IJKMediaPlayer Documentation</string>
+	<string>IJKMediaPlayer-static Documentation</string>
 	<key>DocSetFeedURL</key>
-	<string>http://ucloud.cn/UCloud/cn.UCloud.IJKMediaPlayer.atom</string>
+	<string>https://ucloud.cn//UCloud/cn.UCloud.IJKMediaPlayer-static.atom</string>
 	<key>DocSetMinimumXcodeVersion</key>
 	<string>3.0</string>
 	<key>DocSetPlatformFamily</key>
@@ -32,6 +32,6 @@
 	<key>DocSetPublisherName</key>
 	<string>UCloud</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2016 UCloud. All rights reserved.</string>
+	<string>Copyright © 2017 UCloud. All rights reserved.</string>
 </dict>
 </plist>

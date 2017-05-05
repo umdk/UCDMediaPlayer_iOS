@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/UVLogFlag.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/UVLogFlag</TokenIdentifier>
+			<Abstract type="html">Flags accompany each log. They are used together with levels to filter out logs.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+            
+			
+			<NodeRef refid="22"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UVLogFlagError</TokenIdentifier>
+            <Abstract type="html">0...00001 UVLogFlagError
+     </Abstract>
+            <Declaration>UVLogFlagError</Declaration>
+            
+            <DeclaredIn>UVLog.h</DeclaredIn>
+            
+            <NodeRef refid="22"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UVLogFlagWarning</TokenIdentifier>
+            <Abstract type="html">0...00010 UVLogFlagWarning
+     </Abstract>
+            <Declaration>UVLogFlagWarning</Declaration>
+            
+            <DeclaredIn>UVLog.h</DeclaredIn>
+            
+            <NodeRef refid="22"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UVLogFlagInfo</TokenIdentifier>
+            <Abstract type="html">0...00100 UVLogFlagInfo
+     </Abstract>
+            <Declaration>UVLogFlagInfo</Declaration>
+            
+            <DeclaredIn>UVLog.h</DeclaredIn>
+            
+            <NodeRef refid="22"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UVLogFlagDebug</TokenIdentifier>
+            <Abstract type="html">0...01000 UVLogFlagDebug
+     </Abstract>
+            <Declaration>UVLogFlagDebug</Declaration>
+            
+            <DeclaredIn>UVLog.h</DeclaredIn>
+            
+            <NodeRef refid="22"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UVLogFlagVerbose</TokenIdentifier>
+            <Abstract type="html">0...10000 UVLogFlagVerbose
+     </Abstract>
+            <Declaration>UVLogFlagVerbose</Declaration>
+            
+            <DeclaredIn>UVLog.h</DeclaredIn>
+            
+            <NodeRef refid="22"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

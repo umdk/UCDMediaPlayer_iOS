@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/UVRegistereUVynamicLogging.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/UVRegistereUVynamicLogging</TokenIdentifier>
+			<Abstract type="html">This protocol describes a dynamic logging component</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+            
+			
+			<NodeRef refid="16"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVRegistereUVynamicLogging/UVSetLogLevel:</TokenIdentifier>
+			<Abstract type="html">Implement these methods to allow a file&apos;s log level to be managed from a central location.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, readwrite, setter=UVSetLogLevel:)  UVLogLevel</Declaration>
+			
+			
+			<Anchor>//api/name/UVLogLevel</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVRegistereUVynamicLogging/UVLogLevel</TokenIdentifier>
+			<Abstract type="html">Implement these methods to allow a file&apos;s log level to be managed from a central location.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, readwrite, setter=UVSetLogLevel:)  UVLogLevel</Declaration>
+			
+			
+			<Anchor>//api/name/UVLogLevel</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UVRegistereUVynamicLogging/UVLogLevel</TokenIdentifier>
+			<Abstract type="html">Implement these methods to allow a file&apos;s log level to be managed from a central location.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, readwrite, setter=UVSetLogLevel:)  UVLogLevel</Declaration>
+			
+			
+			<Anchor>//api/name/UVLogLevel</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

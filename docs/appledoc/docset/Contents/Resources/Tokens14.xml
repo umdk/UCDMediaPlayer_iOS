@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/UVLogFormatter.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/UVLogFormatter</TokenIdentifier>
+			<Abstract type="html">This protocol describes the behavior of a log formatter</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+            
+			
+			<NodeRef refid="14"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFormatter/formatLogMessage:NS_SWIFT_NAME:</TokenIdentifier>
+			<Abstract type="html">Formatters may optionally be added to any logger.
+This allows for increased flexibility in the logging environment.
+For example, log messages for log files may be formatted differently than log messages for the console.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (NSString *__nullable)formatLogMessage:(UVLogMessage *)logMessage NS_SWIFT_NAME</Declaration>
+			
+			
+			<Anchor>//api/name/formatLogMessage:NS_SWIFT_NAME:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFormatter/didaddToLogger:</TokenIdentifier>
+			<Abstract type="html">A single formatter instance can be added to multiple loggers.
+These methods provides hooks to notify the formatter of when it&apos;s added/removed.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (void)didaddToLogger:(id&lt;UVLogger&gt;)logger</Declaration>
+			
+			
+			<Anchor>//api/name/didaddToLogger:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFormatter/didaddToLogger:inQueue:</TokenIdentifier>
+			<Abstract type="html">* A single formatter instance can be added to multiple loggers.
+* These methods provides hooks to notify the formatter of when it&apos;s added/removed.
+*
+* This is primarily for thread-safety.
+* If a formatter is explicitly not thread-safe, it may wish to throw an exception if added to multiple loggers.
+* Or if a formatter has potentially thread-unsafe code (e.g. NSDateFormatter),
+* it could possibly use these hooks to switch to thread-safe versions of the code or use dispatchsetspecific()
+.* to add its own specific values.
+*</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (void)didaddToLogger:(id&lt;UVLogger&gt;)logger inQueue:(dispatch_queue_t)queue</Declaration>
+			
+			
+			<Anchor>//api/name/didaddToLogger:inQueue:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFormatter/willRemoveFromLogger:</TokenIdentifier>
+			<Abstract type="html">See the above description for didaddToLogger:</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (void)willRemoveFromLogger:(id&lt;UVLogger&gt;)logger</Declaration>
+			
+			
+			<Anchor>//api/name/willRemoveFromLogger:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

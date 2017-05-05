@@ -2,7 +2,7 @@
 <DocSetNodes version="1.0">
     <TOC>
         <Node type="folder">
-            <Name>IJKMediaPlayer</Name>
+            <Name>IJKMediaPlayer-static</Name>
             <Path>index.html</Path>
 			<Subnodes>
                 
@@ -12,6 +12,15 @@
 					<Path>index.html</Path>
 					<Subnodes>
 						<NodeRef refid="1"/>
+						<NodeRef refid="2"/>
+						<NodeRef refid="3"/>
+						<NodeRef refid="4"/>
+						<NodeRef refid="5"/>
+						<NodeRef refid="6"/>
+						<NodeRef refid="7"/>
+						<NodeRef refid="8"/>
+						<NodeRef refid="9"/>
+						<NodeRef refid="10"/>
 						
 					</Subnodes>
 				</Node>
@@ -22,8 +31,12 @@
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="2"/>
-						<NodeRef refid="3"/>
+						<NodeRef refid="11"/>
+						<NodeRef refid="12"/>
+						<NodeRef refid="13"/>
+						<NodeRef refid="14"/>
+						<NodeRef refid="15"/>
+						<NodeRef refid="16"/>
 						
 					</Subnodes>
 				</Node>
@@ -33,10 +46,15 @@
 					<Name>Constants</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="4"/>
-						<NodeRef refid="5"/>
-						<NodeRef refid="6"/>
-						<NodeRef refid="7"/>
+						<NodeRef refid="17"/>
+						<NodeRef refid="18"/>
+						<NodeRef refid="19"/>
+						<NodeRef refid="20"/>
+						<NodeRef refid="21"/>
+						<NodeRef refid="22"/>
+						<NodeRef refid="23"/>
+						<NodeRef refid="24"/>
+						<NodeRef refid="25"/>
 						
 					</Subnodes>
 				</Node>
@@ -46,7 +64,7 @@
                     <Name>Blocks</Name>
                     <Path>index.html</Path>
                     <Subnodes>
-                        <NodeRef refid="8"/>
+                        <NodeRef refid="26"/>
                         
                     </Subnodes>
                 </Node>
@@ -95,14 +113,277 @@
             </Subnodes>
             
         </Node>
+		<Node id="2" type="file" documentType="reference">
+            <Name>UDAbstractDatabaseLogger</Name>
+            <Path>Classes/UDAbstractDatabaseLogger.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/UDAbstractDatabaseLogger.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/UDAbstractDatabaseLogger.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/UDAbstractDatabaseLogger.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/UDAbstractDatabaseLogger.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="3" type="file" documentType="reference">
+            <Name>UVAbstractLogger</Name>
+            <Path>Classes/UVAbstractLogger.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/UVAbstractLogger.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/UVAbstractLogger.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/UVAbstractLogger.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="4" type="file" documentType="reference">
+            <Name>UVFileLogger</Name>
+            <Path>Classes/UVFileLogger.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/UVFileLogger.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/UVFileLogger.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/UVFileLogger.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/UVFileLogger.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="5" type="file" documentType="reference">
+            <Name>UVLog</Name>
+            <Path>Classes/UVLog.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/UVLog.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/UVLog.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/UVLog.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/UVLog.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/UVLog.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="6" type="file" documentType="reference">
+            <Name>UVLogFileFormatterDefault</Name>
+            <Path>Classes/UVLogFileFormatterDefault.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/UVLogFileFormatterDefault.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/UVLogFileFormatterDefault.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/UVLogFileFormatterDefault.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="7" type="file" documentType="reference">
+            <Name>UVLogFileInfo</Name>
+            <Path>Classes/UVLogFileInfo.html</Path>
+            
+        </Node>
+		<Node id="8" type="file" documentType="reference">
+            <Name>UVLogFileManagerDefault</Name>
+            <Path>Classes/UVLogFileManagerDefault.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/UVLogFileManagerDefault.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/UVLogFileManagerDefault.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/UVLogFileManagerDefault.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/UVLogFileManagerDefault.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="9" type="file" documentType="reference">
+            <Name>UVLogMessage</Name>
+            <Path>Classes/UVLogMessage.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/UVLogMessage.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/UVLogMessage.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/UVLogMessage.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/UVLogMessage.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="10" type="file" documentType="reference">
+            <Name>UVTTYLogger</Name>
+            <Path>Classes/UVTTYLogger.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/UVTTYLogger.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/UVTTYLogger.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/UVTTYLogger.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/UVTTYLogger.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
 		
 		
-        <Node id="2" type="file" documentType="reference">
+        <Node id="11" type="file" documentType="reference">
             <Name>UCloudMediaSegmentResolver</Name>
             <Path>Protocols/UCloudMediaSegmentResolver.html</Path>
             
         </Node>
-		<Node id="3" type="file" documentType="reference">
+		<Node id="12" type="file" documentType="reference">
             <Name>UCloudPlayback</Name>
             <Path>Protocols/UCloudPlayback.html</Path>
             
@@ -135,29 +416,174 @@
             </Subnodes>
             
         </Node>
+		<Node id="13" type="file" documentType="reference">
+            <Name>UVLogFileManager</Name>
+            <Path>Protocols/UVLogFileManager.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/UVLogFileManager.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/UVLogFileManager.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Protocols/UVLogFileManager.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/UVLogFileManager.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="14" type="file" documentType="reference">
+            <Name>UVLogFormatter</Name>
+            <Path>Protocols/UVLogFormatter.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/UVLogFormatter.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/UVLogFormatter.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/UVLogFormatter.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="15" type="file" documentType="reference">
+            <Name>UVLogger</Name>
+            <Path>Protocols/UVLogger.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/UVLogger.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/UVLogger.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Protocols/UVLogger.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/UVLogger.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="16" type="file" documentType="reference">
+            <Name>UVRegistereUVynamicLogging</Name>
+            <Path>Protocols/UVRegistereUVynamicLogging.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/UVRegistereUVynamicLogging.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/UVRegistereUVynamicLogging.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Protocols/UVRegistereUVynamicLogging.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
 		
-        <Node id="4" type="file" documentType="reference">
+        <Node id="17" type="file" documentType="reference">
             <Name>DecodeMethod</Name>
             <Path>Constants/DecodeMethod.html</Path>
             
         </Node>
-		<Node id="5" type="file" documentType="reference">
+		<Node id="18" type="file" documentType="reference">
             <Name>Definition</Name>
             <Path>Constants/Definition.html</Path>
             
         </Node>
-		<Node id="6" type="file" documentType="reference">
+		<Node id="19" type="file" documentType="reference">
             <Name>ErrorNum</Name>
             <Path>Constants/ErrorNum.html</Path>
             
         </Node>
-		<Node id="7" type="file" documentType="reference">
+		<Node id="20" type="file" documentType="reference">
+            <Name>SubErrorCode</Name>
+            <Path>Constants/SubErrorCode.html</Path>
+            
+        </Node>
+		<Node id="21" type="file" documentType="reference">
+            <Name>UCloudMediaEvent</Name>
+            <Path>Constants/UCloudMediaEvent.html</Path>
+            
+        </Node>
+		<Node id="22" type="file" documentType="reference">
+            <Name>UVLogFlag</Name>
+            <Path>Constants/UVLogFlag.html</Path>
+            
+        </Node>
+		<Node id="23" type="file" documentType="reference">
+            <Name>UVLogLevel</Name>
+            <Path>Constants/UVLogLevel.html</Path>
+            
+        </Node>
+		<Node id="24" type="file" documentType="reference">
+            <Name>UVLogMessageOptions</Name>
+            <Path>Constants/UVLogMessageOptions.html</Path>
+            
+        </Node>
+		<Node id="25" type="file" documentType="reference">
             <Name>UrlType</Name>
             <Path>Constants/UrlType.html</Path>
             
         </Node>
 		
-        <Node id="8" type="file" documentType="reference">
+        <Node id="26" type="file" documentType="reference">
             <Name>UCloudMediaCompletionBlock</Name>
             <Path>Blocks/UCloudMediaCompletionBlock.html</Path>
             

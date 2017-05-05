@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>UDAbstractDatabaseLogger Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">IJKMediaPlayer-static </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">UCloud</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/deleteInterval">deleteInterval</option>
+		
+		<option value="//api/name/deleteOnEverySave">deleteOnEverySave</option>
+		
+		<option value="//api/name/maxAge">maxAge</option>
+		
+		<option value="//api/name/saveInterval">saveInterval</option>
+		
+		<option value="//api/name/saveThreshold">saveThreshold</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/deleteOldLogEntries">- deleteOldLogEntries</option>
+		
+		<option value="//api/name/savePendingLogEntries">- savePendingLogEntries</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">UDAbstractDatabaseLogger Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>UDAbstractLogger</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>UDAbstractDatabaseLogger.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class provides an abstract implementation of a database logger.</p>
+
+<p>That is, it provides the base implementation for a database logger to build atop of.
+All that is needed for a concrete database logger is to extend this class
+and override the methods in the implementation file that are prefixed with &ldquo;db_&rdquo;.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/saveThreshold" title="saveThreshold"></a>
+	<h3 class="method-title"><code><a href="#//api/name/saveThreshold">&nbsp;&nbsp;saveThreshold</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Specifies how often to save the data to disk.
+Since saving is an expensive operation (disk io) it is not done after every log statement.
+These properties allow you to configure how/when the logger saves to disk.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign, readwrite) NSUInteger saveThreshold</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>A save is done when either (whichever happens first):</p>
+
+<ul>
+<li>The number of unsaved log entries reaches saveThreshold</li>
+<li>The amount of time since the oldest unsaved log entry was created reaches <a href="#//api/name/saveInterval">saveInterval</a></li>
+</ul>
+
+
+<p>You can optionally disable the saveThreshold by setting it to zero.
+If you disable the saveThreshold you are entirely dependent on the <a href="#//api/name/saveInterval">saveInterval</a>.</p>
+
+<p>You can optionally disable the <a href="#//api/name/saveInterval">saveInterval</a> by setting it to zero (or a negative value).
+If you disable the <a href="#//api/name/saveInterval">saveInterval</a> you are entirely dependent on the saveThreshold.</p>
+
+<p>It&rsquo;s not wise to disable both saveThreshold and <a href="#//api/name/saveInterval">saveInterval</a>.</p>
+
+<p>The default saveThreshold is 500.
+The default <a href="#//api/name/saveInterval">saveInterval</a> is 60 seconds.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UDAbstractDatabaseLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/saveInterval" title="saveInterval"></a>
+	<h3 class="method-title"><code><a href="#//api/name/saveInterval">&nbsp;&nbsp;saveInterval</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>See the description for the <a href="#//api/name/saveThreshold"><code>saveThreshold</code></a> property</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign, readwrite) NSTimeInterval saveInterval</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UDAbstractDatabaseLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/maxAge" title="maxAge"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maxAge">&nbsp;&nbsp;maxAge</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>It is likely you don&rsquo;t want the log entries to persist forever.
+Doing so would allow the database to grow infinitely large over time.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign, readwrite) NSTimeInterval maxAge</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The maxAge property provides a way to specify how old a log statement can get
+before it should get deleted from the database.</p>
+
+<p>The <a href="#//api/name/deleteInterval">deleteInterval</a> specifies how often to sweep for old log entries.
+Since deleting is an expensive operation (disk io) is is done on a fixed interval.</p>
+
+<p>An alternative to the <a href="#//api/name/deleteInterval">deleteInterval</a> is the <a href="#//api/name/deleteOnEverySave">deleteOnEverySave</a> option.
+This specifies that old log entries should be deleted during every save operation.</p>
+
+<p>You can optionally disable the maxAge by setting it to zero (or a negative value).
+If you disable the maxAge then old log statements are not deleted.</p>
+
+<p>You can optionally disable the <a href="#//api/name/deleteInterval">deleteInterval</a> by setting it to zero (or a negative value).</p>
+
+<p>If you disable both <a href="#//api/name/deleteInterval">deleteInterval</a> and <a href="#//api/name/deleteOnEverySave">deleteOnEverySave</a> then old log statements are not deleted.</p>
+
+<p>It&rsquo;s not wise to enable both <a href="#//api/name/deleteInterval">deleteInterval</a> and <a href="#//api/name/deleteOnEverySave">deleteOnEverySave</a>.</p>
+
+<p>The default maxAge is 7 days.
+The default <a href="#//api/name/deleteInterval">deleteInterval</a> is 5 minutes.
+The default <a href="#//api/name/deleteOnEverySave">deleteOnEverySave</a> is NO.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UDAbstractDatabaseLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deleteInterval" title="deleteInterval"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deleteInterval">&nbsp;&nbsp;deleteInterval</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>See the description for the <a href="#//api/name/maxAge"><code>maxAge</code></a> property</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign, readwrite) NSTimeInterval deleteInterval</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UDAbstractDatabaseLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deleteOnEverySave" title="deleteOnEverySave"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deleteOnEverySave">&nbsp;&nbsp;deleteOnEverySave</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>See the description for the <a href="#//api/name/maxAge"><code>maxAge</code></a> property</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign, readwrite) BOOL deleteOnEverySave</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UDAbstractDatabaseLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/savePendingLogEntries" title="savePendingLogEntries"></a>
+	<h3 class="method-title"><code><a href="#//api/name/savePendingLogEntries">&ndash;&nbsp;savePendingLogEntries</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Forces a save of any pending log entries (flushes log entries to disk).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)savePendingLogEntries</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UDAbstractDatabaseLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deleteOldLogEntries" title="deleteOldLogEntries"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deleteOldLogEntries">&ndash;&nbsp;deleteOldLogEntries</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes any log entries that are older than <a href="#//api/name/maxAge">maxAge</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deleteOldLogEntries</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UDAbstractDatabaseLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 UCloud. All rights reserved. Updated: 2017-04-18</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

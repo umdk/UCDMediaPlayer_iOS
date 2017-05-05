@@ -1,16 +1,229 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/UCloudMediaSegmentResolver.html">
+	<File path="Classes/UDAbstractDatabaseLogger.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/UCloudMediaSegmentResolver</TokenIdentifier>
-			<Abstract type="html">缓冲buffer变更的Key</Abstract>
-			<DeclaredIn>UCloudPlayback.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/UDAbstractDatabaseLogger</TokenIdentifier>
+			<Abstract type="html">This class provides an abstract implementation of a database logger.</Abstract>
+			<DeclaredIn>UDAbstractDatabaseLogger.h</DeclaredIn>
             
 			
 			<NodeRef refid="2"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UDAbstractDatabaseLogger/setSaveThreshold:</TokenIdentifier>
+			<Abstract type="html">Specifies how often to save the data to disk.
+Since saving is an expensive operation (disk io) it is not done after every log statement.
+These properties allow you to configure how/when the logger saves to disk.</Abstract>
+			<DeclaredIn>UDAbstractDatabaseLogger.h</DeclaredIn>
+			
+			<Declaration>@property (assign, readwrite) NSUInteger saveThreshold</Declaration>
+			
+			
+			<Anchor>//api/name/saveThreshold</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UDAbstractDatabaseLogger/saveThreshold</TokenIdentifier>
+			<Abstract type="html">Specifies how often to save the data to disk.
+Since saving is an expensive operation (disk io) it is not done after every log statement.
+These properties allow you to configure how/when the logger saves to disk.</Abstract>
+			<DeclaredIn>UDAbstractDatabaseLogger.h</DeclaredIn>
+			
+			<Declaration>@property (assign, readwrite) NSUInteger saveThreshold</Declaration>
+			
+			
+			<Anchor>//api/name/saveThreshold</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UDAbstractDatabaseLogger/saveThreshold</TokenIdentifier>
+			<Abstract type="html">Specifies how often to save the data to disk.
+Since saving is an expensive operation (disk io) it is not done after every log statement.
+These properties allow you to configure how/when the logger saves to disk.</Abstract>
+			<DeclaredIn>UDAbstractDatabaseLogger.h</DeclaredIn>
+			
+			<Declaration>@property (assign, readwrite) NSUInteger saveThreshold</Declaration>
+			
+			
+			<Anchor>//api/name/saveThreshold</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UDAbstractDatabaseLogger/setSaveInterval:</TokenIdentifier>
+			<Abstract type="html">See the description for the saveThreshold property</Abstract>
+			<DeclaredIn>UDAbstractDatabaseLogger.h</DeclaredIn>
+			
+			<Declaration>@property (assign, readwrite) NSTimeInterval saveInterval</Declaration>
+			
+			
+			<Anchor>//api/name/saveInterval</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UDAbstractDatabaseLogger/saveInterval</TokenIdentifier>
+			<Abstract type="html">See the description for the saveThreshold property</Abstract>
+			<DeclaredIn>UDAbstractDatabaseLogger.h</DeclaredIn>
+			
+			<Declaration>@property (assign, readwrite) NSTimeInterval saveInterval</Declaration>
+			
+			
+			<Anchor>//api/name/saveInterval</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UDAbstractDatabaseLogger/saveInterval</TokenIdentifier>
+			<Abstract type="html">See the description for the saveThreshold property</Abstract>
+			<DeclaredIn>UDAbstractDatabaseLogger.h</DeclaredIn>
+			
+			<Declaration>@property (assign, readwrite) NSTimeInterval saveInterval</Declaration>
+			
+			
+			<Anchor>//api/name/saveInterval</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UDAbstractDatabaseLogger/setMaxAge:</TokenIdentifier>
+			<Abstract type="html">It is likely you don&apos;t want the log entries to persist forever.
+Doing so would allow the database to grow infinitely large over time.</Abstract>
+			<DeclaredIn>UDAbstractDatabaseLogger.h</DeclaredIn>
+			
+			<Declaration>@property (assign, readwrite) NSTimeInterval maxAge</Declaration>
+			
+			
+			<Anchor>//api/name/maxAge</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UDAbstractDatabaseLogger/maxAge</TokenIdentifier>
+			<Abstract type="html">It is likely you don&apos;t want the log entries to persist forever.
+Doing so would allow the database to grow infinitely large over time.</Abstract>
+			<DeclaredIn>UDAbstractDatabaseLogger.h</DeclaredIn>
+			
+			<Declaration>@property (assign, readwrite) NSTimeInterval maxAge</Declaration>
+			
+			
+			<Anchor>//api/name/maxAge</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UDAbstractDatabaseLogger/maxAge</TokenIdentifier>
+			<Abstract type="html">It is likely you don&apos;t want the log entries to persist forever.
+Doing so would allow the database to grow infinitely large over time.</Abstract>
+			<DeclaredIn>UDAbstractDatabaseLogger.h</DeclaredIn>
+			
+			<Declaration>@property (assign, readwrite) NSTimeInterval maxAge</Declaration>
+			
+			
+			<Anchor>//api/name/maxAge</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UDAbstractDatabaseLogger/setDeleteInterval:</TokenIdentifier>
+			<Abstract type="html">See the description for the maxAge property</Abstract>
+			<DeclaredIn>UDAbstractDatabaseLogger.h</DeclaredIn>
+			
+			<Declaration>@property (assign, readwrite) NSTimeInterval deleteInterval</Declaration>
+			
+			
+			<Anchor>//api/name/deleteInterval</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UDAbstractDatabaseLogger/deleteInterval</TokenIdentifier>
+			<Abstract type="html">See the description for the maxAge property</Abstract>
+			<DeclaredIn>UDAbstractDatabaseLogger.h</DeclaredIn>
+			
+			<Declaration>@property (assign, readwrite) NSTimeInterval deleteInterval</Declaration>
+			
+			
+			<Anchor>//api/name/deleteInterval</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UDAbstractDatabaseLogger/deleteInterval</TokenIdentifier>
+			<Abstract type="html">See the description for the maxAge property</Abstract>
+			<DeclaredIn>UDAbstractDatabaseLogger.h</DeclaredIn>
+			
+			<Declaration>@property (assign, readwrite) NSTimeInterval deleteInterval</Declaration>
+			
+			
+			<Anchor>//api/name/deleteInterval</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UDAbstractDatabaseLogger/setDeleteOnEverySave:</TokenIdentifier>
+			<Abstract type="html">See the description for the maxAge property</Abstract>
+			<DeclaredIn>UDAbstractDatabaseLogger.h</DeclaredIn>
+			
+			<Declaration>@property (assign, readwrite) BOOL deleteOnEverySave</Declaration>
+			
+			
+			<Anchor>//api/name/deleteOnEverySave</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UDAbstractDatabaseLogger/deleteOnEverySave</TokenIdentifier>
+			<Abstract type="html">See the description for the maxAge property</Abstract>
+			<DeclaredIn>UDAbstractDatabaseLogger.h</DeclaredIn>
+			
+			<Declaration>@property (assign, readwrite) BOOL deleteOnEverySave</Declaration>
+			
+			
+			<Anchor>//api/name/deleteOnEverySave</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UDAbstractDatabaseLogger/deleteOnEverySave</TokenIdentifier>
+			<Abstract type="html">See the description for the maxAge property</Abstract>
+			<DeclaredIn>UDAbstractDatabaseLogger.h</DeclaredIn>
+			
+			<Declaration>@property (assign, readwrite) BOOL deleteOnEverySave</Declaration>
+			
+			
+			<Anchor>//api/name/deleteOnEverySave</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UDAbstractDatabaseLogger/savePendingLogEntries</TokenIdentifier>
+			<Abstract type="html">Forces a save of any pending log entries (flushes log entries to disk).</Abstract>
+			<DeclaredIn>UDAbstractDatabaseLogger.h</DeclaredIn>
+			
+			<Declaration>- (void)savePendingLogEntries</Declaration>
+			
+			
+			<Anchor>//api/name/savePendingLogEntries</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UDAbstractDatabaseLogger/deleteOldLogEntries</TokenIdentifier>
+			<Abstract type="html">Removes any log entries that are older than maxAge.</Abstract>
+			<DeclaredIn>UDAbstractDatabaseLogger.h</DeclaredIn>
+			
+			<Declaration>- (void)deleteOldLogEntries</Declaration>
+			
+			
+			<Anchor>//api/name/deleteOldLogEntries</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
 		
         
         

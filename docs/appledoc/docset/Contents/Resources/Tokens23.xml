@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/UVLogLevel.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/UVLogLevel</TokenIdentifier>
+			<Abstract type="html">Log levels are used to filter out logs. Used together with flags.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+            
+			
+			<NodeRef refid="23"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UVLogLevelOff</TokenIdentifier>
+            <Abstract type="html">No logs
+     </Abstract>
+            <Declaration>UVLogLevelOff</Declaration>
+            
+            <DeclaredIn>UVLog.h</DeclaredIn>
+            
+            <NodeRef refid="23"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UVLogLevelError</TokenIdentifier>
+            <Abstract type="html">Error logs only
+     </Abstract>
+            <Declaration>UVLogLevelError</Declaration>
+            
+            <DeclaredIn>UVLog.h</DeclaredIn>
+            
+            <NodeRef refid="23"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UVLogLevelWarning</TokenIdentifier>
+            <Abstract type="html">Error and warning logs
+     </Abstract>
+            <Declaration>UVLogLevelWarning</Declaration>
+            
+            <DeclaredIn>UVLog.h</DeclaredIn>
+            
+            <NodeRef refid="23"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UVLogLevelInfo</TokenIdentifier>
+            <Abstract type="html">Error, warning and info logs
+     </Abstract>
+            <Declaration>UVLogLevelInfo</Declaration>
+            
+            <DeclaredIn>UVLog.h</DeclaredIn>
+            
+            <NodeRef refid="23"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UVLogLevelDebug</TokenIdentifier>
+            <Abstract type="html">Error, warning, info and debug logs
+     </Abstract>
+            <Declaration>UVLogLevelDebug</Declaration>
+            
+            <DeclaredIn>UVLog.h</DeclaredIn>
+            
+            <NodeRef refid="23"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UVLogLevelVerbose</TokenIdentifier>
+            <Abstract type="html">Error, warning, info, debug and verbose logs
+     </Abstract>
+            <Declaration>UVLogLevelVerbose</Declaration>
+            
+            <DeclaredIn>UVLog.h</DeclaredIn>
+            
+            <NodeRef refid="23"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UVLogLevelAll</TokenIdentifier>
+            <Abstract type="html">All logs (1...11111)
+     </Abstract>
+            <Declaration>UVLogLevelAll</Declaration>
+            
+            <DeclaredIn>UVLog.h</DeclaredIn>
+            
+            <NodeRef refid="23"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

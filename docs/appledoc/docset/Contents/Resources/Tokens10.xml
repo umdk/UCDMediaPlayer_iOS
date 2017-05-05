@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/UVTTYLogger.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/UVTTYLogger</TokenIdentifier>
+			<Abstract type="html">This class provides a logger for Terminal output or Xcode console output,
+depending on where you are running your code.</Abstract>
+			<DeclaredIn>UVTTYLogger.h</DeclaredIn>
+            
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVTTYLogger/setSharedInstance:</TokenIdentifier>
+			<Abstract type="html">Singleton method</Abstract>
+			<DeclaredIn>UVTTYLogger.h</DeclaredIn>
+			
+			<Declaration>@property (class, readonly, strong) UVTTYLogger *sharedInstance</Declaration>
+			
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVTTYLogger/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Singleton method</Abstract>
+			<DeclaredIn>UVTTYLogger.h</DeclaredIn>
+			
+			<Declaration>@property (class, readonly, strong) UVTTYLogger *sharedInstance</Declaration>
+			
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UVTTYLogger/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Singleton method</Abstract>
+			<DeclaredIn>UVTTYLogger.h</DeclaredIn>
+			
+			<Declaration>@property (class, readonly, strong) UVTTYLogger *sharedInstance</Declaration>
+			
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVTTYLogger/setColorsEnabled:</TokenIdentifier>
+			<Abstract type="html">Want to use different colors for different log levels?
+Enable this property.</Abstract>
+			<DeclaredIn>UVTTYLogger.h</DeclaredIn>
+			
+			<Declaration>@property (readwrite, assign) BOOL colorsEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/colorsEnabled</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVTTYLogger/colorsEnabled</TokenIdentifier>
+			<Abstract type="html">Want to use different colors for different log levels?
+Enable this property.</Abstract>
+			<DeclaredIn>UVTTYLogger.h</DeclaredIn>
+			
+			<Declaration>@property (readwrite, assign) BOOL colorsEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/colorsEnabled</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UVTTYLogger/colorsEnabled</TokenIdentifier>
+			<Abstract type="html">Want to use different colors for different log levels?
+Enable this property.</Abstract>
+			<DeclaredIn>UVTTYLogger.h</DeclaredIn>
+			
+			<Declaration>@property (readwrite, assign) BOOL colorsEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/colorsEnabled</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVTTYLogger/setAutomaticallyAppendNewlineForCustomFormatters:</TokenIdentifier>
+			<Abstract type="html">When using a custom formatter you can set the logMessage method not to append
+\n character after each output. This allows for some greater flexibility with
+custom formatters. Default value is YES.</Abstract>
+			<DeclaredIn>UVTTYLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite, assign) BOOL automaticallyAppendNewlineForCustomFormatters</Declaration>
+			
+			
+			<Anchor>//api/name/automaticallyAppendNewlineForCustomFormatters</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVTTYLogger/automaticallyAppendNewlineForCustomFormatters</TokenIdentifier>
+			<Abstract type="html">When using a custom formatter you can set the logMessage method not to append
+\n character after each output. This allows for some greater flexibility with
+custom formatters. Default value is YES.</Abstract>
+			<DeclaredIn>UVTTYLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite, assign) BOOL automaticallyAppendNewlineForCustomFormatters</Declaration>
+			
+			
+			<Anchor>//api/name/automaticallyAppendNewlineForCustomFormatters</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UVTTYLogger/automaticallyAppendNewlineForCustomFormatters</TokenIdentifier>
+			<Abstract type="html">When using a custom formatter you can set the logMessage method not to append
+\n character after each output. This allows for some greater flexibility with
+custom formatters. Default value is YES.</Abstract>
+			<DeclaredIn>UVTTYLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite, assign) BOOL automaticallyAppendNewlineForCustomFormatters</Declaration>
+			
+			
+			<Anchor>//api/name/automaticallyAppendNewlineForCustomFormatters</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVTTYLogger/setForegroundColor:backgroundColor:forFlag:</TokenIdentifier>
+			<Abstract type="html">The default color set (foregroundColor, backgroundColor) is:</Abstract>
+			<DeclaredIn>UVTTYLogger.h</DeclaredIn>
+			
+			<Declaration>- (void)setForegroundColor:(UVColor *)txtColor backgroundColor:(UVColor *)bgColor forFlag:(UVLogFlag)mask</Declaration>
+			
+			
+			<Anchor>//api/name/setForegroundColor:backgroundColor:forFlag:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVTTYLogger/setForegroundColor:backgroundColor:forFlag:context:</TokenIdentifier>
+			<Abstract type="html">Just like setForegroundColor:backgroundColor:flag, but allows you to specify a particular logging context.</Abstract>
+			<DeclaredIn>UVTTYLogger.h</DeclaredIn>
+			
+			<Declaration>- (void)setForegroundColor:(UVColor *)txtColor backgroundColor:(UVColor *)bgColor forFlag:(UVLogFlag)mask context:(NSInteger)ctxt</Declaration>
+			
+			
+			<Anchor>//api/name/setForegroundColor:backgroundColor:forFlag:context:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVTTYLogger/setForegroundColor:backgroundColor:forTag:</TokenIdentifier>
+			<Abstract type="html">Similar to the methods above, but allows you to map UVLogMessage-&gt;tag to a particular color profile.
+For example, you could do something like this:</Abstract>
+			<DeclaredIn>UVTTYLogger.h</DeclaredIn>
+			
+			<Declaration>- (void)setForegroundColor:(UVColor *)txtColor backgroundColor:(UVColor *)bgColor forTag:(id&lt;NSCopying&gt;)tag</Declaration>
+			
+			
+			<Anchor>//api/name/setForegroundColor:backgroundColor:forTag:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVTTYLogger/clearColorsForFlag:</TokenIdentifier>
+			<Abstract type="html">Clearing color profiles.</Abstract>
+			<DeclaredIn>UVTTYLogger.h</DeclaredIn>
+			
+			<Declaration>- (void)clearColorsForFlag:(UVLogFlag)mask</Declaration>
+			
+			
+			<Anchor>//api/name/clearColorsForFlag:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

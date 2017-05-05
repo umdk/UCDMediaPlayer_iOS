@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/UrlType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/UrlType</TokenIdentifier>
+			<Abstract type="html">url类型值</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+            
+			
+			<NodeRef refid="25"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UrlTypeAuto</TokenIdentifier>
+            <Abstract type="html">自动，程序会根据相关规则为你选择播放类型，如果是http-flv直播，请必须设置为UrlTypeLive</Abstract>
+            <Declaration>UrlTypeAuto</Declaration>
+            
+            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UrlTypeLocal</TokenIdentifier>
+            <Abstract type="html">本地视频</Abstract>
+            <Declaration>UrlTypeLocal</Declaration>
+            
+            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UrlTypeHttp</TokenIdentifier>
+            <Abstract type="html">网络视频(非直播)</Abstract>
+            <Declaration>UrlTypeHttp</Declaration>
+            
+            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UrlTypeLive</TokenIdentifier>
+            <Abstract type="html">直播</Abstract>
+            <Declaration>UrlTypeLive</Declaration>
+            
+            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

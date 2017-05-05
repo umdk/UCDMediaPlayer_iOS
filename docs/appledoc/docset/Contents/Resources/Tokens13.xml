@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/UVLogFileManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/UVLogFileManager</TokenIdentifier>
+			<Abstract type="html">The LogFileManager protocol is designed to allow you to control all aspects of your log files.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+            
+			
+			<NodeRef refid="13"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/setMaximumNumberOfLogFiles:</TokenIdentifier>
+			<Abstract type="html">The maximum number of archived log files to keep on disk.
+For example, if this property is set to 3,
+then the LogFileManager will only keep 3 archived log files (plus the current active log file) on disk.
+Once the active log file is rolled/archived, then the oldest of the existing 3 rolled/archived log files is deleted.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (readwrite, assign, atomic) NSUInteger maximumNumberOfLogFiles</Declaration>
+			
+			
+			<Anchor>//api/name/maximumNumberOfLogFiles</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/maximumNumberOfLogFiles</TokenIdentifier>
+			<Abstract type="html">The maximum number of archived log files to keep on disk.
+For example, if this property is set to 3,
+then the LogFileManager will only keep 3 archived log files (plus the current active log file) on disk.
+Once the active log file is rolled/archived, then the oldest of the existing 3 rolled/archived log files is deleted.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (readwrite, assign, atomic) NSUInteger maximumNumberOfLogFiles</Declaration>
+			
+			
+			<Anchor>//api/name/maximumNumberOfLogFiles</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UVLogFileManager/maximumNumberOfLogFiles</TokenIdentifier>
+			<Abstract type="html">The maximum number of archived log files to keep on disk.
+For example, if this property is set to 3,
+then the LogFileManager will only keep 3 archived log files (plus the current active log file) on disk.
+Once the active log file is rolled/archived, then the oldest of the existing 3 rolled/archived log files is deleted.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (readwrite, assign, atomic) NSUInteger maximumNumberOfLogFiles</Declaration>
+			
+			
+			<Anchor>//api/name/maximumNumberOfLogFiles</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/setLogFilesDiskQuota:</TokenIdentifier>
+			<Abstract type="html">The maximum space that logs can take. On rolling logfile all old logfiles that exceed logFilesDiskQuota will
+be deleted.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (readwrite, assign, atomic) unsigned long long logFilesDiskQuota</Declaration>
+			
+			
+			<Anchor>//api/name/logFilesDiskQuota</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/logFilesDiskQuota</TokenIdentifier>
+			<Abstract type="html">The maximum space that logs can take. On rolling logfile all old logfiles that exceed logFilesDiskQuota will
+be deleted.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (readwrite, assign, atomic) unsigned long long logFilesDiskQuota</Declaration>
+			
+			
+			<Anchor>//api/name/logFilesDiskQuota</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UVLogFileManager/logFilesDiskQuota</TokenIdentifier>
+			<Abstract type="html">The maximum space that logs can take. On rolling logfile all old logfiles that exceed logFilesDiskQuota will
+be deleted.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (readwrite, assign, atomic) unsigned long long logFilesDiskQuota</Declaration>
+			
+			
+			<Anchor>//api/name/logFilesDiskQuota</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/setLogsDirectory:</TokenIdentifier>
+			<Abstract type="html">Returns the logs directory (path)</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *logsDirectory</Declaration>
+			
+			
+			<Anchor>//api/name/logsDirectory</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/logsDirectory</TokenIdentifier>
+			<Abstract type="html">Returns the logs directory (path)</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *logsDirectory</Declaration>
+			
+			
+			<Anchor>//api/name/logsDirectory</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UVLogFileManager/logsDirectory</TokenIdentifier>
+			<Abstract type="html">Returns the logs directory (path)</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *logsDirectory</Declaration>
+			
+			
+			<Anchor>//api/name/logsDirectory</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/setUnsortedLogFilePaths:</TokenIdentifier>
+			<Abstract type="html">Returns an array of NSString objects,
+each of which is the filePath to an existing log file on disk.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSArray&lt;NSString*&gt; *unsortedLogFilePaths</Declaration>
+			
+			
+			<Anchor>//api/name/unsortedLogFilePaths</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/unsortedLogFilePaths</TokenIdentifier>
+			<Abstract type="html">Returns an array of NSString objects,
+each of which is the filePath to an existing log file on disk.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSArray&lt;NSString*&gt; *unsortedLogFilePaths</Declaration>
+			
+			
+			<Anchor>//api/name/unsortedLogFilePaths</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UVLogFileManager/unsortedLogFilePaths</TokenIdentifier>
+			<Abstract type="html">Returns an array of NSString objects,
+each of which is the filePath to an existing log file on disk.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSArray&lt;NSString*&gt; *unsortedLogFilePaths</Declaration>
+			
+			
+			<Anchor>//api/name/unsortedLogFilePaths</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/setUnsortedLogFileNames:</TokenIdentifier>
+			<Abstract type="html">Returns an array of NSString objects,
+each of which is the fileName of an existing log file on disk.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSArray&lt;NSString*&gt; *unsortedLogFileNames</Declaration>
+			
+			
+			<Anchor>//api/name/unsortedLogFileNames</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/unsortedLogFileNames</TokenIdentifier>
+			<Abstract type="html">Returns an array of NSString objects,
+each of which is the fileName of an existing log file on disk.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSArray&lt;NSString*&gt; *unsortedLogFileNames</Declaration>
+			
+			
+			<Anchor>//api/name/unsortedLogFileNames</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UVLogFileManager/unsortedLogFileNames</TokenIdentifier>
+			<Abstract type="html">Returns an array of NSString objects,
+each of which is the fileName of an existing log file on disk.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSArray&lt;NSString*&gt; *unsortedLogFileNames</Declaration>
+			
+			
+			<Anchor>//api/name/unsortedLogFileNames</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/setUnsortedLogFileInfos:</TokenIdentifier>
+			<Abstract type="html">Returns an array of UVLogFileInfo objects,
+each representing an existing log file on disk,
+and containing important information about the log file such as it&apos;s modification date and size.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSArray&lt;UVLogFileInfo*&gt; *unsortedLogFileInfos</Declaration>
+			
+			
+			<Anchor>//api/name/unsortedLogFileInfos</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/unsortedLogFileInfos</TokenIdentifier>
+			<Abstract type="html">Returns an array of UVLogFileInfo objects,
+each representing an existing log file on disk,
+and containing important information about the log file such as it&apos;s modification date and size.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSArray&lt;UVLogFileInfo*&gt; *unsortedLogFileInfos</Declaration>
+			
+			
+			<Anchor>//api/name/unsortedLogFileInfos</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UVLogFileManager/unsortedLogFileInfos</TokenIdentifier>
+			<Abstract type="html">Returns an array of UVLogFileInfo objects,
+each representing an existing log file on disk,
+and containing important information about the log file such as it&apos;s modification date and size.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSArray&lt;UVLogFileInfo*&gt; *unsortedLogFileInfos</Declaration>
+			
+			
+			<Anchor>//api/name/unsortedLogFileInfos</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/setSortedLogFilePaths:</TokenIdentifier>
+			<Abstract type="html">Just like the unsortedLogFilePaths method, but sorts the array.
+The items in the array are sorted by creation date.
+The first item in the array will be the most recently created log file.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSArray&lt;NSString*&gt; *sortedLogFilePaths</Declaration>
+			
+			
+			<Anchor>//api/name/sortedLogFilePaths</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/sortedLogFilePaths</TokenIdentifier>
+			<Abstract type="html">Just like the unsortedLogFilePaths method, but sorts the array.
+The items in the array are sorted by creation date.
+The first item in the array will be the most recently created log file.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSArray&lt;NSString*&gt; *sortedLogFilePaths</Declaration>
+			
+			
+			<Anchor>//api/name/sortedLogFilePaths</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UVLogFileManager/sortedLogFilePaths</TokenIdentifier>
+			<Abstract type="html">Just like the unsortedLogFilePaths method, but sorts the array.
+The items in the array are sorted by creation date.
+The first item in the array will be the most recently created log file.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSArray&lt;NSString*&gt; *sortedLogFilePaths</Declaration>
+			
+			
+			<Anchor>//api/name/sortedLogFilePaths</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/setSortedLogFileNames:</TokenIdentifier>
+			<Abstract type="html">Just like the unsortedLogFileNames method, but sorts the array.
+The items in the array are sorted by creation date.
+The first item in the array will be the most recently created log file.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSArray&lt;NSString*&gt; *sortedLogFileNames</Declaration>
+			
+			
+			<Anchor>//api/name/sortedLogFileNames</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/sortedLogFileNames</TokenIdentifier>
+			<Abstract type="html">Just like the unsortedLogFileNames method, but sorts the array.
+The items in the array are sorted by creation date.
+The first item in the array will be the most recently created log file.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSArray&lt;NSString*&gt; *sortedLogFileNames</Declaration>
+			
+			
+			<Anchor>//api/name/sortedLogFileNames</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UVLogFileManager/sortedLogFileNames</TokenIdentifier>
+			<Abstract type="html">Just like the unsortedLogFileNames method, but sorts the array.
+The items in the array are sorted by creation date.
+The first item in the array will be the most recently created log file.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSArray&lt;NSString*&gt; *sortedLogFileNames</Declaration>
+			
+			
+			<Anchor>//api/name/sortedLogFileNames</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/setSortedLogFileInfos:</TokenIdentifier>
+			<Abstract type="html">Just like the unsortedLogFileInfos method, but sorts the array.
+The items in the array are sorted by creation date.
+The first item in the array will be the most recently created log file.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSArray&lt;UVLogFileInfo*&gt; *sortedLogFileInfos</Declaration>
+			
+			
+			<Anchor>//api/name/sortedLogFileInfos</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/sortedLogFileInfos</TokenIdentifier>
+			<Abstract type="html">Just like the unsortedLogFileInfos method, but sorts the array.
+The items in the array are sorted by creation date.
+The first item in the array will be the most recently created log file.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSArray&lt;UVLogFileInfo*&gt; *sortedLogFileInfos</Declaration>
+			
+			
+			<Anchor>//api/name/sortedLogFileInfos</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UVLogFileManager/sortedLogFileInfos</TokenIdentifier>
+			<Abstract type="html">Just like the unsortedLogFileInfos method, but sorts the array.
+The items in the array are sorted by creation date.
+The first item in the array will be the most recently created log file.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSArray&lt;UVLogFileInfo*&gt; *sortedLogFileInfos</Declaration>
+			
+			
+			<Anchor>//api/name/sortedLogFileInfos</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/createNewLogFile</TokenIdentifier>
+			<Abstract type="html">Generates a new unique log file path, and creates the corresponding log file.</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)createNewLogFile</Declaration>
+			
+			
+			<Anchor>//api/name/createNewLogFile</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/didArchiveLogFile:NS_SWIFT_NAME:</TokenIdentifier>
+			<Abstract type="html">Called when a log file was archieved</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>- (void)didArchiveLogFile:(NSString *)logFilePath NS_SWIFT_NAME</Declaration>
+			
+			
+			<Anchor>//api/name/didArchiveLogFile:NS_SWIFT_NAME:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UVLogFileManager/didRollAndArchiveLogFile:NS_SWIFT_NAME:</TokenIdentifier>
+			<Abstract type="html">Called when the roll action was executed and the log was archieved</Abstract>
+			<DeclaredIn>UVFileLogger.h</DeclaredIn>
+			
+			<Declaration>- (void)didRollAndArchiveLogFile:(NSString *)logFilePath NS_SWIFT_NAME</Declaration>
+			
+			
+			<Anchor>//api/name/didRollAndArchiveLogFile:NS_SWIFT_NAME:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

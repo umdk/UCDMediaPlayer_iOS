@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>UVLog Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">IJKMediaPlayer-static </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">UCloud</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/allLoggers">allLoggers</option>
+		
+		<option value="//api/name/allLoggersWithLevel">allLoggersWithLevel</option>
+		
+		<option value="//api/name/loggingQueue">loggingQueue</option>
+		
+		<option value="//api/name/registeredClassNames">registeredClassNames</option>
+		
+		<option value="//api/name/registeredClasses">registeredClasses</option>
+		
+		<option value="//api/name/sharedInstance">sharedInstance</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/addLogger:">+ addLogger:</option>
+		
+		<option value="//api/name/addLogger:withLevel:">+ addLogger:withLevel:</option>
+		
+		<option value="//api/name/flushLog">+ flushLog</option>
+		
+		<option value="//api/name/levelForClass:">+ levelForClass:</option>
+		
+		<option value="//api/name/levelForClassWithName:">+ levelForClassWithName:</option>
+		
+		<option value="//api/name/log:level:flag:context:file:function:line:tag:format:">+ log:level:flag:context:file:function:line:tag:format:</option>
+		
+		<option value="//api/name/log:level:flag:context:file:function:line:tag:format:args:NS_SWIFT_NAME:">+ log:level:flag:context:file:function:line:tag:format:args:NS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/log:message:NS_SWIFT_NAME:">+ log:message:NS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/removeAllLoggers">+ removeAllLoggers</option>
+		
+		<option value="//api/name/removeLogger:">+ removeLogger:</option>
+		
+		<option value="//api/name/setLevel:forClass:">+ setLevel:forClass:</option>
+		
+		<option value="//api/name/setLevel:forClassWithName:">+ setLevel:forClassWithName:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addLogger:">- addLogger:</option>
+		
+		<option value="//api/name/addLogger:withLevel:">- addLogger:withLevel:</option>
+		
+		<option value="//api/name/flushLog">- flushLog</option>
+		
+		<option value="//api/name/log:level:flag:context:file:function:line:tag:format:">- log:level:flag:context:file:function:line:tag:format:</option>
+		
+		<option value="//api/name/log:level:flag:context:file:function:line:tag:format:args:NS_SWIFT_NAME:">- log:level:flag:context:file:function:line:tag:format:args:NS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/log:message:NS_SWIFT_NAME:">- log:message:NS_SWIFT_NAME:</option>
+		
+		<option value="//api/name/removeAllLoggers">- removeAllLoggers</option>
+		
+		<option value="//api/name/removeLogger:">- removeLogger:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">UVLog Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>UVLog.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The main class, exposes all logging mechanisms, loggers, &hellip;
+For most of the users, this class is hidden behind the logging functions like <code>UVLogInfo</code></p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/sharedInstance" title="sharedInstance"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedInstance">&nbsp;&nbsp;sharedInstance</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the singleton <code>UVLog</code>.
+The instance is used by <code>UVLog</code> class methods.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (class, nonatomic, strong, readonly) UVLog *sharedInstance</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loggingQueue" title="loggingQueue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loggingQueue">&nbsp;&nbsp;loggingQueue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides access to the underlying logging queue.
+This may be helpful to Logger classes for things like thread synchronization.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (class, nonatomic, DISPATCH_QUEUE_REFERENCE_TYPE, readonly) dispatch_queue_t loggingQueue</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/log:level:flag:context:file:function:line:tag:format:" title="log:level:flag:context:file:function:line:tag:format:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/log:level:flag:context:file:function:line:tag:format:">+&nbsp;log:level:flag:context:file:function:line:tag:format:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Logging Primitive.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)log:(BOOL)<em>asynchronous</em> level:(UVLogLevel)<em>level</em> flag:(UVLogFlag)<em>flag</em> context:(NSInteger)<em>context</em> file:(const char *)<em>file</em> function:(const char *)<em>function</em> line:(NSUInteger)<em>line</em> tag:(id __nullable)<em>tag</em> format:(NSString *)<em>format</em>, <em>...</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asynchronous</code></th>
+						<td><p>YES if the logging is done async, NO if you want to force sync</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>level</code></th>
+						<td><p>the log level</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flag</code></th>
+						<td><p>the log flag</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>context</code></th>
+						<td><p>the context (if any is defined)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>file</code></th>
+						<td><p>the current file</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>function</code></th>
+						<td><p>the current function</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>line</code></th>
+						<td><p>the current code line</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tag</code></th>
+						<td><p>potential tag</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>format</code></th>
+						<td><p>the log format</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is used by the macros or logging functions.
+It is suggested you stick with the macros as they&rsquo;re easier to use.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/log:level:flag:context:file:function:line:tag:format:" title="log:level:flag:context:file:function:line:tag:format:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/log:level:flag:context:file:function:line:tag:format:">&ndash;&nbsp;log:level:flag:context:file:function:line:tag:format:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Logging Primitive.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)log:(BOOL)<em>asynchronous</em> level:(UVLogLevel)<em>level</em> flag:(UVLogFlag)<em>flag</em> context:(NSInteger)<em>context</em> file:(const char *)<em>file</em> function:(const char *)<em>function</em> line:(NSUInteger)<em>line</em> tag:(id __nullable)<em>tag</em> format:(NSString *)<em>format</em>, <em>...</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asynchronous</code></th>
+						<td><p>YES if the logging is done async, NO if you want to force sync</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>level</code></th>
+						<td><p>the log level</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flag</code></th>
+						<td><p>the log flag</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>context</code></th>
+						<td><p>the context (if any is defined)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>file</code></th>
+						<td><p>the current file</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>function</code></th>
+						<td><p>the current function</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>line</code></th>
+						<td><p>the current code line</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tag</code></th>
+						<td><p>potential tag</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>format</code></th>
+						<td><p>the log format</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is used by the macros or logging functions.
+It is suggested you stick with the macros as they&rsquo;re easier to use.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/log:level:flag:context:file:function:line:tag:format:args:NS_SWIFT_NAME:" title="log:level:flag:context:file:function:line:tag:format:args:NS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/log:level:flag:context:file:function:line:tag:format:args:NS_SWIFT_NAME:">+&nbsp;log:level:flag:context:file:function:line:tag:format:args:NS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Logging Primitive.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)log:(BOOL)<em>asynchronous</em> level:(UVLogLevel)<em>level</em> flag:(UVLogFlag)<em>flag</em> context:(NSInteger)<em>context</em> file:(const char *)<em>file</em> function:(const char *)<em>function</em> line:(NSUInteger)<em>line</em> tag:(id __nullable)<em>tag</em> format:(NSString *)<em>format</em> args:(va_list)<em>argList</em> NS_SWIFT_NAME</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asynchronous</code></th>
+						<td><p>YES if the logging is done async, NO if you want to force sync</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>level</code></th>
+						<td><p>the log level</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flag</code></th>
+						<td><p>the log flag</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>context</code></th>
+						<td><p>the context (if any is defined)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>file</code></th>
+						<td><p>the current file</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>function</code></th>
+						<td><p>the current function</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>line</code></th>
+						<td><p>the current code line</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tag</code></th>
+						<td><p>potential tag</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>format</code></th>
+						<td><p>the log format</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>argList</code></th>
+						<td><p>the arguments list as a va_list</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method can be used if you have a prepared va_list.
+Similar to <code></code>log:level:flag:context:file:function:line:tag:format:<code>...</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/log:level:flag:context:file:function:line:tag:format:args:NS_SWIFT_NAME:" title="log:level:flag:context:file:function:line:tag:format:args:NS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/log:level:flag:context:file:function:line:tag:format:args:NS_SWIFT_NAME:">&ndash;&nbsp;log:level:flag:context:file:function:line:tag:format:args:NS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Logging Primitive.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)log:(BOOL)<em>asynchronous</em> level:(UVLogLevel)<em>level</em> flag:(UVLogFlag)<em>flag</em> context:(NSInteger)<em>context</em> file:(const char *)<em>file</em> function:(const char *)<em>function</em> line:(NSUInteger)<em>line</em> tag:(id __nullable)<em>tag</em> format:(NSString *)<em>format</em> args:(va_list)<em>argList</em> NS_SWIFT_NAME</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asynchronous</code></th>
+						<td><p>YES if the logging is done async, NO if you want to force sync</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>level</code></th>
+						<td><p>the log level</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flag</code></th>
+						<td><p>the log flag</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>context</code></th>
+						<td><p>the context (if any is defined)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>file</code></th>
+						<td><p>the current file</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>function</code></th>
+						<td><p>the current function</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>line</code></th>
+						<td><p>the current code line</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tag</code></th>
+						<td><p>potential tag</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>format</code></th>
+						<td><p>the log format</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>argList</code></th>
+						<td><p>the arguments list as a va_list</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method can be used if you have a prepared va_list.
+Similar to <code></code>log:level:flag:context:file:function:line:tag:format:<code>...</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/log:message:NS_SWIFT_NAME:" title="log:message:NS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/log:message:NS_SWIFT_NAME:">+&nbsp;log:message:NS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Logging Primitive.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)log:(BOOL)<em>asynchronous</em> message:(UVLogMessage *)<em>logMessage</em> NS_SWIFT_NAME</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asynchronous</code></th>
+						<td><p>YES if the logging is done async, NO if you want to force sync</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>logMessage</code></th>
+						<td><p>the log message stored in a <a href="../Classes/UVLogMessage.html"><code>UVLogMessage</code></a> model object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method can be used if you manualy prepared <a href="../Classes/UVLogMessage.html">UVLogMessage</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/log:message:NS_SWIFT_NAME:" title="log:message:NS_SWIFT_NAME:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/log:message:NS_SWIFT_NAME:">&ndash;&nbsp;log:message:NS_SWIFT_NAME:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Logging Primitive.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)log:(BOOL)<em>asynchronous</em> message:(UVLogMessage *)<em>logMessage</em> NS_SWIFT_NAME</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asynchronous</code></th>
+						<td><p>YES if the logging is done async, NO if you want to force sync</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>logMessage</code></th>
+						<td><p>the log message stored in a <a href="../Classes/UVLogMessage.html"><code>UVLogMessage</code></a> model object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method can be used if you manualy prepared <a href="../Classes/UVLogMessage.html">UVLogMessage</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flushLog" title="flushLog"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flushLog">+&nbsp;flushLog</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Since logging can be asynchronous, there may be times when you want to flush the logs.
+The framework invokes this automatically when the application quits.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)flushLog</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flushLog" title="flushLog"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flushLog">&ndash;&nbsp;flushLog</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Since logging can be asynchronous, there may be times when you want to flush the logs.
+The framework invokes this automatically when the application quits.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)flushLog</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addLogger:" title="addLogger:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addLogger:">+&nbsp;addLogger:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>adds the logger to the system.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)addLogger:(id&lt;UVLogger&gt;)<em>logger</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This is equivalent to invoking <code>[UVLog addLogger:logger withLogLevel:UVLogLevelAll]</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addLogger:" title="addLogger:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addLogger:">&ndash;&nbsp;addLogger:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>adds the logger to the system.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addLogger:(id&lt;UVLogger&gt;)<em>logger</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This is equivalent to invoking <code>[UVLog addLogger:logger withLogLevel:UVLogLevelAll]</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addLogger:withLevel:" title="addLogger:withLevel:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addLogger:withLevel:">+&nbsp;addLogger:withLevel:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>adds the logger to the system.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)addLogger:(id&lt;UVLogger&gt;)<em>logger</em> withLevel:(UVLogLevel)<em>level</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The level that you provide here is a preemptive filter (for performance).
+That is, the level specified here will be used to filter out logMessages so that
+the logger is never even invoked for the messages.</p>
+
+<p>More information:
+When you issue a log statement, the logging framework iterates over each logger,
+and checks to see if it should forward the logMessage to the logger.
+This check is done using the level parameter passed to this method.</p>
+
+<p>For example:</p>
+
+<p><code>[UVLog addLogger:consoleLogger withLogLevel:UVLogLevelVerbose];</code>
+<code>[UVLog addLogger:fileLogger    withLogLevel:UVLogLevelWarning];</code></p>
+
+<p><code>UVLogError(@"oh no");</code> => gets forwarded to consoleLogger &amp; fileLogger
+<code>UVLogInfo(@"hi");</code>     => gets forwarded to consoleLogger only</p>
+
+<p>It is important to remember that Lumberjack uses a BITMASK.
+Many developers &amp; third party frameworks may define extra log levels &amp; flags.
+For example:</p>
+
+<p><code>#define SOME_FRAMEWORK_LOG_FLAG_TRACE (1 &lt;&lt; 6) // 0...1000000</code></p>
+
+<p>So if you specify <code>UVLogLevelVerbose</code> to this method, you won&rsquo;t see the framework&rsquo;s trace messages.</p>
+
+<p><code>(SOME_FRAMEWORK_LOG_FLAG_TRACE &amp; UVLogLevelVerbose) =&gt; (01000000 &amp; 00011111) =&gt; NO</code></p>
+
+<p>Consider passing <code>UVLogLevelAll</code> to this method, which has all bits set.
+You can also use the exclusive-or bitwise operator to get a bitmask that has all flags set,
+except the ones you explicitly don&rsquo;t want. For example, if you wanted everything except verbose &amp; debug:</p>
+
+<p><code>((UVLogLevelAll ^ UVLogLevelVerbose) | UVLogLevelInfo)</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addLogger:withLevel:" title="addLogger:withLevel:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addLogger:withLevel:">&ndash;&nbsp;addLogger:withLevel:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>adds the logger to the system.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addLogger:(id&lt;UVLogger&gt;)<em>logger</em> withLevel:(UVLogLevel)<em>level</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The level that you provide here is a preemptive filter (for performance).
+That is, the level specified here will be used to filter out logMessages so that
+the logger is never even invoked for the messages.</p>
+
+<p>More information:
+When you issue a log statement, the logging framework iterates over each logger,
+and checks to see if it should forward the logMessage to the logger.
+This check is done using the level parameter passed to this method.</p>
+
+<p>For example:</p>
+
+<p><code>[UVLog addLogger:consoleLogger withLogLevel:UVLogLevelVerbose];</code>
+<code>[UVLog addLogger:fileLogger    withLogLevel:UVLogLevelWarning];</code></p>
+
+<p><code>UVLogError(@"oh no");</code> => gets forwarded to consoleLogger &amp; fileLogger
+<code>UVLogInfo(@"hi");</code>     => gets forwarded to consoleLogger only</p>
+
+<p>It is important to remember that Lumberjack uses a BITMASK.
+Many developers &amp; third party frameworks may define extra log levels &amp; flags.
+For example:</p>
+
+<p><code>#define SOME_FRAMEWORK_LOG_FLAG_TRACE (1 &lt;&lt; 6) // 0...1000000</code></p>
+
+<p>So if you specify <code>UVLogLevelVerbose</code> to this method, you won&rsquo;t see the framework&rsquo;s trace messages.</p>
+
+<p><code>(SOME_FRAMEWORK_LOG_FLAG_TRACE &amp; UVLogLevelVerbose) =&gt; (01000000 &amp; 00011111) =&gt; NO</code></p>
+
+<p>Consider passing <code>UVLogLevelAll</code> to this method, which has all bits set.
+You can also use the exclusive-or bitwise operator to get a bitmask that has all flags set,
+except the ones you explicitly don&rsquo;t want. For example, if you wanted everything except verbose &amp; debug:</p>
+
+<p><code>((UVLogLevelAll ^ UVLogLevelVerbose) | UVLogLevelInfo)</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeLogger:" title="removeLogger:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeLogger:">+&nbsp;removeLogger:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove the logger from the system</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)removeLogger:(id&lt;UVLogger&gt;)<em>logger</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeLogger:" title="removeLogger:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeLogger:">&ndash;&nbsp;removeLogger:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove the logger from the system</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeLogger:(id&lt;UVLogger&gt;)<em>logger</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeAllLoggers" title="removeAllLoggers"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeAllLoggers">+&nbsp;removeAllLoggers</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove all the current loggers</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)removeAllLoggers</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeAllLoggers" title="removeAllLoggers"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeAllLoggers">&ndash;&nbsp;removeAllLoggers</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove all the current loggers</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeAllLoggers</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/allLoggers" title="allLoggers"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allLoggers">&nbsp;&nbsp;allLoggers</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return all the current loggers</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (class, nonatomic, copy, readonly) NSArray&lt;id&lt;UVLogger&gt; &gt; *allLoggers</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/allLoggersWithLevel" title="allLoggersWithLevel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allLoggersWithLevel">&nbsp;&nbsp;allLoggersWithLevel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return all the current loggers with their level (aka UVLoggerInformation).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (class, nonatomic, copy, readonly) NSArray&lt;UVLoggerInformation*&gt; *allLoggersWithLevel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registeredClasses" title="registeredClasses"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registeredClasses">&nbsp;&nbsp;registeredClasses</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array with the classes that are using registered dynamic logging</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (class, nonatomic, copy, readonly) NSArray&lt;Class&gt; *registeredClasses</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registeredClassNames" title="registeredClassNames"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registeredClassNames">&nbsp;&nbsp;registeredClassNames</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array with the classes names that are using registered dynamic logging</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (class, nonatomic, copy, readonly) NSArray&lt;NSString*&gt; *registeredClassNames</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/levelForClass:" title="levelForClass:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/levelForClass:">+&nbsp;levelForClass:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the current log level for a certain class</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (UVLogLevel)levelForClass:(Class)<em>aClass</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aClass</code></th>
+						<td><p><code>Class</code> param</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/levelForClassWithName:" title="levelForClassWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/levelForClassWithName:">+&nbsp;levelForClassWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the current log level for a certain class</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (UVLogLevel)levelForClassWithName:(NSString *)<em>aClassName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aClassName</code></th>
+						<td><p>string param</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setLevel:forClass:" title="setLevel:forClass:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setLevel:forClass:">+&nbsp;setLevel:forClass:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the log level for a certain class</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setLevel:(UVLogLevel)<em>level</em> forClass:(Class)<em>aClass</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>level</code></th>
+						<td><p>the new level</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aClass</code></th>
+						<td><p><code>Class</code> param</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setLevel:forClassWithName:" title="setLevel:forClassWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setLevel:forClassWithName:">+&nbsp;setLevel:forClassWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the log level for a certain class</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setLevel:(UVLogLevel)<em>level</em> forClassWithName:(NSString *)<em>aClassName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>level</code></th>
+						<td><p>the new level</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aClassName</code></th>
+						<td><p>string param</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UVLog.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 UCloud. All rights reserved. Updated: 2017-04-18</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

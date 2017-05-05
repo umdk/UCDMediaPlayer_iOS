@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/SubErrorCode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/SubErrorCode</TokenIdentifier>
+			<Abstract type="html">播放错误时的子错误码</Abstract>
+			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+            
+			
+			<NodeRef refid="20"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SubErrorCodeDefault</TokenIdentifier>
+            <Abstract type="html">默认错误</Abstract>
+            <Declaration>SubErrorCodeDefault</Declaration>
+            
+            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+            
+            <NodeRef refid="20"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SubErrorCodePrepareTimeout</TokenIdentifier>
+            <Abstract type="html">准备播放超时</Abstract>
+            <Declaration>SubErrorCodePrepareTimeout</Declaration>
+            
+            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+            
+            <NodeRef refid="20"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SubErrorCodeAVFrameTimeout</TokenIdentifier>
+            <Abstract type="html">获取音频或视频帧超时</Abstract>
+            <Declaration>SubErrorCodeAVFrameTimeout</Declaration>
+            
+            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+            
+            <NodeRef refid="20"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

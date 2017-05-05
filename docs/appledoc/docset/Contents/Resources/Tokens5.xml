@@ -1,57 +1,646 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Definition.html">
+	<File path="Classes/UVLog.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Definition</TokenIdentifier>
-			<Abstract type="html">清晰度</Abstract>
-			<DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/UVLog</TokenIdentifier>
+			<Abstract type="html">The main class, exposes all logging mechanisms, loggers, ...
+For most of the users, this class is hidden behind the logging functions like UVLogInfo</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
             
 			
 			<NodeRef refid="5"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Definition_fhd</TokenIdentifier>
-            <Abstract type="html">蓝光</Abstract>
-            <Declaration>Definition_fhd</Declaration>
-            
-            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/setSharedInstance:</TokenIdentifier>
+			<Abstract type="html">Returns the singleton UVLog.
+The instance is used by UVLog class methods.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, strong, readonly) UVLog *sharedInstance</Declaration>
+			
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Definition_shd</TokenIdentifier>
-            <Abstract type="html">超清</Abstract>
-            <Declaration>Definition_shd</Declaration>
-            
-            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Returns the singleton UVLog.
+The instance is used by UVLog class methods.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, strong, readonly) UVLog *sharedInstance</Declaration>
+			
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Definition_hd</TokenIdentifier>
-            <Abstract type="html">高清</Abstract>
-            <Declaration>Definition_hd</Declaration>
-            
-            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UVLog/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Returns the singleton UVLog.
+The instance is used by UVLog class methods.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, strong, readonly) UVLog *sharedInstance</Declaration>
+			
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
             <NodeRef refid="5"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Definition_sd</TokenIdentifier>
-            <Abstract type="html">标清</Abstract>
-            <Declaration>Definition_sd</Declaration>
-            
-            <DeclaredIn>UCloudMediaPlayer.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/setLoggingQueue:</TokenIdentifier>
+			<Abstract type="html">Provides access to the underlying logging queue.
+This may be helpful to Logger classes for things like thread synchronization.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, DISPATCH_QUEUE_REFERENCE_TYPE, readonly) dispatch_queue_t loggingQueue</Declaration>
+			
+			
+			<Anchor>//api/name/loggingQueue</Anchor>
             <NodeRef refid="5"/>
-        </Token>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/loggingQueue</TokenIdentifier>
+			<Abstract type="html">Provides access to the underlying logging queue.
+This may be helpful to Logger classes for things like thread synchronization.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, DISPATCH_QUEUE_REFERENCE_TYPE, readonly) dispatch_queue_t loggingQueue</Declaration>
+			
+			
+			<Anchor>//api/name/loggingQueue</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UVLog/loggingQueue</TokenIdentifier>
+			<Abstract type="html">Provides access to the underlying logging queue.
+This may be helpful to Logger classes for things like thread synchronization.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, DISPATCH_QUEUE_REFERENCE_TYPE, readonly) dispatch_queue_t loggingQueue</Declaration>
+			
+			
+			<Anchor>//api/name/loggingQueue</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/UVLog/log:level:flag:context:file:function:line:tag:format:</TokenIdentifier>
+			<Abstract type="html">Logging Primitive.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>+ (void)log:(BOOL)asynchronous level:(UVLogLevel)level flag:(UVLogFlag)flag context:(NSInteger)context file:(const char *)file function:(const char *)function line:(NSUInteger)line tag:(id __nullable)tag format:(NSString *)format, ...</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asynchronous</Name>
+					<Abstract type="html">YES if the logging is done async, NO if you want to force sync</Abstract>
+				</Parameter><Parameter>
+					<Name>level</Name>
+					<Abstract type="html">the log level</Abstract>
+				</Parameter><Parameter>
+					<Name>flag</Name>
+					<Abstract type="html">the log flag</Abstract>
+				</Parameter><Parameter>
+					<Name>context</Name>
+					<Abstract type="html">the context (if any is defined)</Abstract>
+				</Parameter><Parameter>
+					<Name>file</Name>
+					<Abstract type="html">the current file</Abstract>
+				</Parameter><Parameter>
+					<Name>function</Name>
+					<Abstract type="html">the current function</Abstract>
+				</Parameter><Parameter>
+					<Name>line</Name>
+					<Abstract type="html">the current code line</Abstract>
+				</Parameter><Parameter>
+					<Name>tag</Name>
+					<Abstract type="html">potential tag</Abstract>
+				</Parameter><Parameter>
+					<Name>format</Name>
+					<Abstract type="html">the log format</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/log:level:flag:context:file:function:line:tag:format:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/log:level:flag:context:file:function:line:tag:format:</TokenIdentifier>
+			<Abstract type="html">Logging Primitive.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (void)log:(BOOL)asynchronous level:(UVLogLevel)level flag:(UVLogFlag)flag context:(NSInteger)context file:(const char *)file function:(const char *)function line:(NSUInteger)line tag:(id __nullable)tag format:(NSString *)format, ...</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asynchronous</Name>
+					<Abstract type="html">YES if the logging is done async, NO if you want to force sync</Abstract>
+				</Parameter><Parameter>
+					<Name>level</Name>
+					<Abstract type="html">the log level</Abstract>
+				</Parameter><Parameter>
+					<Name>flag</Name>
+					<Abstract type="html">the log flag</Abstract>
+				</Parameter><Parameter>
+					<Name>context</Name>
+					<Abstract type="html">the context (if any is defined)</Abstract>
+				</Parameter><Parameter>
+					<Name>file</Name>
+					<Abstract type="html">the current file</Abstract>
+				</Parameter><Parameter>
+					<Name>function</Name>
+					<Abstract type="html">the current function</Abstract>
+				</Parameter><Parameter>
+					<Name>line</Name>
+					<Abstract type="html">the current code line</Abstract>
+				</Parameter><Parameter>
+					<Name>tag</Name>
+					<Abstract type="html">potential tag</Abstract>
+				</Parameter><Parameter>
+					<Name>format</Name>
+					<Abstract type="html">the log format</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/log:level:flag:context:file:function:line:tag:format:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/UVLog/log:level:flag:context:file:function:line:tag:format:args:NS_SWIFT_NAME:</TokenIdentifier>
+			<Abstract type="html">Logging Primitive.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>+ (void)log:(BOOL)asynchronous level:(UVLogLevel)level flag:(UVLogFlag)flag context:(NSInteger)context file:(const char *)file function:(const char *)function line:(NSUInteger)line tag:(id __nullable)tag format:(NSString *)format args:(va_list)argList NS_SWIFT_NAME</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asynchronous</Name>
+					<Abstract type="html">YES if the logging is done async, NO if you want to force sync</Abstract>
+				</Parameter><Parameter>
+					<Name>level</Name>
+					<Abstract type="html">the log level</Abstract>
+				</Parameter><Parameter>
+					<Name>flag</Name>
+					<Abstract type="html">the log flag</Abstract>
+				</Parameter><Parameter>
+					<Name>context</Name>
+					<Abstract type="html">the context (if any is defined)</Abstract>
+				</Parameter><Parameter>
+					<Name>file</Name>
+					<Abstract type="html">the current file</Abstract>
+				</Parameter><Parameter>
+					<Name>function</Name>
+					<Abstract type="html">the current function</Abstract>
+				</Parameter><Parameter>
+					<Name>line</Name>
+					<Abstract type="html">the current code line</Abstract>
+				</Parameter><Parameter>
+					<Name>tag</Name>
+					<Abstract type="html">potential tag</Abstract>
+				</Parameter><Parameter>
+					<Name>format</Name>
+					<Abstract type="html">the log format</Abstract>
+				</Parameter><Parameter>
+					<Name>argList</Name>
+					<Abstract type="html">the arguments list as a va_list</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/log:level:flag:context:file:function:line:tag:format:args:NS_SWIFT_NAME:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/log:level:flag:context:file:function:line:tag:format:args:NS_SWIFT_NAME:</TokenIdentifier>
+			<Abstract type="html">Logging Primitive.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (void)log:(BOOL)asynchronous level:(UVLogLevel)level flag:(UVLogFlag)flag context:(NSInteger)context file:(const char *)file function:(const char *)function line:(NSUInteger)line tag:(id __nullable)tag format:(NSString *)format args:(va_list)argList NS_SWIFT_NAME</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asynchronous</Name>
+					<Abstract type="html">YES if the logging is done async, NO if you want to force sync</Abstract>
+				</Parameter><Parameter>
+					<Name>level</Name>
+					<Abstract type="html">the log level</Abstract>
+				</Parameter><Parameter>
+					<Name>flag</Name>
+					<Abstract type="html">the log flag</Abstract>
+				</Parameter><Parameter>
+					<Name>context</Name>
+					<Abstract type="html">the context (if any is defined)</Abstract>
+				</Parameter><Parameter>
+					<Name>file</Name>
+					<Abstract type="html">the current file</Abstract>
+				</Parameter><Parameter>
+					<Name>function</Name>
+					<Abstract type="html">the current function</Abstract>
+				</Parameter><Parameter>
+					<Name>line</Name>
+					<Abstract type="html">the current code line</Abstract>
+				</Parameter><Parameter>
+					<Name>tag</Name>
+					<Abstract type="html">potential tag</Abstract>
+				</Parameter><Parameter>
+					<Name>format</Name>
+					<Abstract type="html">the log format</Abstract>
+				</Parameter><Parameter>
+					<Name>argList</Name>
+					<Abstract type="html">the arguments list as a va_list</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/log:level:flag:context:file:function:line:tag:format:args:NS_SWIFT_NAME:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/UVLog/log:message:NS_SWIFT_NAME:</TokenIdentifier>
+			<Abstract type="html">Logging Primitive.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>+ (void)log:(BOOL)asynchronous message:(UVLogMessage *)logMessage NS_SWIFT_NAME</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asynchronous</Name>
+					<Abstract type="html">YES if the logging is done async, NO if you want to force sync</Abstract>
+				</Parameter><Parameter>
+					<Name>logMessage</Name>
+					<Abstract type="html">the log message stored in a UVLogMessage model object</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/log:message:NS_SWIFT_NAME:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/log:message:NS_SWIFT_NAME:</TokenIdentifier>
+			<Abstract type="html">Logging Primitive.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (void)log:(BOOL)asynchronous message:(UVLogMessage *)logMessage NS_SWIFT_NAME</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asynchronous</Name>
+					<Abstract type="html">YES if the logging is done async, NO if you want to force sync</Abstract>
+				</Parameter><Parameter>
+					<Name>logMessage</Name>
+					<Abstract type="html">the log message stored in a UVLogMessage model object</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/log:message:NS_SWIFT_NAME:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/UVLog/flushLog</TokenIdentifier>
+			<Abstract type="html">Since logging can be asynchronous, there may be times when you want to flush the logs.
+The framework invokes this automatically when the application quits.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>+ (void)flushLog</Declaration>
+			
+			
+			<Anchor>//api/name/flushLog</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/flushLog</TokenIdentifier>
+			<Abstract type="html">Since logging can be asynchronous, there may be times when you want to flush the logs.
+The framework invokes this automatically when the application quits.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (void)flushLog</Declaration>
+			
+			
+			<Anchor>//api/name/flushLog</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/UVLog/addLogger:</TokenIdentifier>
+			<Abstract type="html">adds the logger to the system.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>+ (void)addLogger:(id&lt;UVLogger&gt;)logger</Declaration>
+			
+			
+			<Anchor>//api/name/addLogger:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/addLogger:</TokenIdentifier>
+			<Abstract type="html">adds the logger to the system.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (void)addLogger:(id&lt;UVLogger&gt;)logger</Declaration>
+			
+			
+			<Anchor>//api/name/addLogger:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/UVLog/addLogger:withLevel:</TokenIdentifier>
+			<Abstract type="html">adds the logger to the system.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>+ (void)addLogger:(id&lt;UVLogger&gt;)logger withLevel:(UVLogLevel)level</Declaration>
+			
+			
+			<Anchor>//api/name/addLogger:withLevel:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/addLogger:withLevel:</TokenIdentifier>
+			<Abstract type="html">adds the logger to the system.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (void)addLogger:(id&lt;UVLogger&gt;)logger withLevel:(UVLogLevel)level</Declaration>
+			
+			
+			<Anchor>//api/name/addLogger:withLevel:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/UVLog/removeLogger:</TokenIdentifier>
+			<Abstract type="html">Remove the logger from the system</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>+ (void)removeLogger:(id&lt;UVLogger&gt;)logger</Declaration>
+			
+			
+			<Anchor>//api/name/removeLogger:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/removeLogger:</TokenIdentifier>
+			<Abstract type="html">Remove the logger from the system</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (void)removeLogger:(id&lt;UVLogger&gt;)logger</Declaration>
+			
+			
+			<Anchor>//api/name/removeLogger:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/UVLog/removeAllLoggers</TokenIdentifier>
+			<Abstract type="html">Remove all the current loggers</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>+ (void)removeAllLoggers</Declaration>
+			
+			
+			<Anchor>//api/name/removeAllLoggers</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/removeAllLoggers</TokenIdentifier>
+			<Abstract type="html">Remove all the current loggers</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (void)removeAllLoggers</Declaration>
+			
+			
+			<Anchor>//api/name/removeAllLoggers</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/setAllLoggers:</TokenIdentifier>
+			<Abstract type="html">Return all the current loggers</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, copy, readonly) NSArray&lt;id&lt;UVLogger&gt; &gt; *allLoggers</Declaration>
+			
+			
+			<Anchor>//api/name/allLoggers</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/allLoggers</TokenIdentifier>
+			<Abstract type="html">Return all the current loggers</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, copy, readonly) NSArray&lt;id&lt;UVLogger&gt; &gt; *allLoggers</Declaration>
+			
+			
+			<Anchor>//api/name/allLoggers</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UVLog/allLoggers</TokenIdentifier>
+			<Abstract type="html">Return all the current loggers</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, copy, readonly) NSArray&lt;id&lt;UVLogger&gt; &gt; *allLoggers</Declaration>
+			
+			
+			<Anchor>//api/name/allLoggers</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/setAllLoggersWithLevel:</TokenIdentifier>
+			<Abstract type="html">Return all the current loggers with their level (aka UVLoggerInformation).</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, copy, readonly) NSArray&lt;UVLoggerInformation*&gt; *allLoggersWithLevel</Declaration>
+			
+			
+			<Anchor>//api/name/allLoggersWithLevel</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/allLoggersWithLevel</TokenIdentifier>
+			<Abstract type="html">Return all the current loggers with their level (aka UVLoggerInformation).</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, copy, readonly) NSArray&lt;UVLoggerInformation*&gt; *allLoggersWithLevel</Declaration>
+			
+			
+			<Anchor>//api/name/allLoggersWithLevel</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UVLog/allLoggersWithLevel</TokenIdentifier>
+			<Abstract type="html">Return all the current loggers with their level (aka UVLoggerInformation).</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, copy, readonly) NSArray&lt;UVLoggerInformation*&gt; *allLoggersWithLevel</Declaration>
+			
+			
+			<Anchor>//api/name/allLoggersWithLevel</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/setRegisteredClasses:</TokenIdentifier>
+			<Abstract type="html">Returns an array with the classes that are using registered dynamic logging</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, copy, readonly) NSArray&lt;Class&gt; *registeredClasses</Declaration>
+			
+			
+			<Anchor>//api/name/registeredClasses</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/registeredClasses</TokenIdentifier>
+			<Abstract type="html">Returns an array with the classes that are using registered dynamic logging</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, copy, readonly) NSArray&lt;Class&gt; *registeredClasses</Declaration>
+			
+			
+			<Anchor>//api/name/registeredClasses</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UVLog/registeredClasses</TokenIdentifier>
+			<Abstract type="html">Returns an array with the classes that are using registered dynamic logging</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, copy, readonly) NSArray&lt;Class&gt; *registeredClasses</Declaration>
+			
+			
+			<Anchor>//api/name/registeredClasses</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/setRegisteredClassNames:</TokenIdentifier>
+			<Abstract type="html">Returns an array with the classes names that are using registered dynamic logging</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, copy, readonly) NSArray&lt;NSString*&gt; *registeredClassNames</Declaration>
+			
+			
+			<Anchor>//api/name/registeredClassNames</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLog/registeredClassNames</TokenIdentifier>
+			<Abstract type="html">Returns an array with the classes names that are using registered dynamic logging</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, copy, readonly) NSArray&lt;NSString*&gt; *registeredClassNames</Declaration>
+			
+			
+			<Anchor>//api/name/registeredClassNames</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UVLog/registeredClassNames</TokenIdentifier>
+			<Abstract type="html">Returns an array with the classes names that are using registered dynamic logging</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (class, nonatomic, copy, readonly) NSArray&lt;NSString*&gt; *registeredClassNames</Declaration>
+			
+			
+			<Anchor>//api/name/registeredClassNames</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/UVLog/levelForClass:</TokenIdentifier>
+			<Abstract type="html">Returns the current log level for a certain class</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>+ (UVLogLevel)levelForClass:(Class)aClass</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>aClass</Name>
+					<Abstract type="html">Class param</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/levelForClass:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/UVLog/levelForClassWithName:</TokenIdentifier>
+			<Abstract type="html">Returns the current log level for a certain class</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>+ (UVLogLevel)levelForClassWithName:(NSString *)aClassName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>aClassName</Name>
+					<Abstract type="html">string param</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/levelForClassWithName:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/UVLog/setLevel:forClass:</TokenIdentifier>
+			<Abstract type="html">Set the log level for a certain class</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>+ (void)setLevel:(UVLogLevel)level forClass:(Class)aClass</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>level</Name>
+					<Abstract type="html">the new level</Abstract>
+				</Parameter><Parameter>
+					<Name>aClass</Name>
+					<Abstract type="html">Class param</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setLevel:forClass:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/UVLog/setLevel:forClassWithName:</TokenIdentifier>
+			<Abstract type="html">Set the log level for a certain class</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>+ (void)setLevel:(UVLogLevel)level forClassWithName:(NSString *)aClassName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>level</Name>
+					<Abstract type="html">the new level</Abstract>
+				</Parameter><Parameter>
+					<Name>aClassName</Name>
+					<Abstract type="html">string param</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setLevel:forClassWithName:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
         
         
 	</File>

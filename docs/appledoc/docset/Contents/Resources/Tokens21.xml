@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/UCloudMediaEvent.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/UCloudMediaEvent</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UCloudMediaUrlOpenData.h</DeclaredIn>
+            
+			
+			<NodeRef refid="21"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UCloudMediaEvent_WillHttpOpen</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>UCloudMediaEvent_WillHttpOpen</Declaration>
+            
+            <DeclaredIn>UCloudMediaUrlOpenData.h</DeclaredIn>
+            
+            <NodeRef refid="21"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UCloudMediaEvent_DidHttpOpen</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>UCloudMediaEvent_DidHttpOpen</Declaration>
+            
+            <DeclaredIn>UCloudMediaUrlOpenData.h</DeclaredIn>
+            
+            <NodeRef refid="21"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UCloudMediaEvent_WillHttpSeek</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>UCloudMediaEvent_WillHttpSeek</Declaration>
+            
+            <DeclaredIn>UCloudMediaUrlOpenData.h</DeclaredIn>
+            
+            <NodeRef refid="21"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UCloudMediaEvent_DidHttpSeek</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>UCloudMediaEvent_DidHttpSeek</Declaration>
+            
+            <DeclaredIn>UCloudMediaUrlOpenData.h</DeclaredIn>
+            
+            <NodeRef refid="21"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UCloudMediaCtrl_WillTcpOpen</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>UCloudMediaCtrl_WillTcpOpen</Declaration>
+            
+            <DeclaredIn>UCloudMediaUrlOpenData.h</DeclaredIn>
+            
+            <NodeRef refid="21"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UCloudMediaCtrl_DidTcpOpen</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>UCloudMediaCtrl_DidTcpOpen</Declaration>
+            
+            <DeclaredIn>UCloudMediaUrlOpenData.h</DeclaredIn>
+            
+            <NodeRef refid="21"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UCloudMediaCtrl_WillHttpOpen</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>UCloudMediaCtrl_WillHttpOpen</Declaration>
+            
+            <DeclaredIn>UCloudMediaUrlOpenData.h</DeclaredIn>
+            
+            <NodeRef refid="21"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UCloudMediaCtrl_WillLiveOpen</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>UCloudMediaCtrl_WillLiveOpen</Declaration>
+            
+            <DeclaredIn>UCloudMediaUrlOpenData.h</DeclaredIn>
+            
+            <NodeRef refid="21"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UCloudMediaCtrl_WillConcatSegmentOpen</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>UCloudMediaCtrl_WillConcatSegmentOpen</Declaration>
+            
+            <DeclaredIn>UCloudMediaUrlOpenData.h</DeclaredIn>
+            
+            <NodeRef refid="21"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

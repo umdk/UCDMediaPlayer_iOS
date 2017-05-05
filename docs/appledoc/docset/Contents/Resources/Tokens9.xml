@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/UVLogMessage.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/UVLogMessage</TokenIdentifier>
+			<Abstract type="html">The UVLogMessage class encapsulates information about the log message.
+If you write custom loggers or formatters, you will be dealing with objects of this class.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+            
+			
+			<NodeRef refid="9"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLogMessage/init</TokenIdentifier>
+			<Abstract type="html">Default init for empty messages.</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)init</Declaration>
+			
+			
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLogMessage/initWithMessage:level:flag:context:file:function:line:tag:options:timestamp:</TokenIdentifier>
+			<Abstract type="html">Standard init method for a log message object.
+Used by the logging primitives. (And the macros use the logging primitives.)</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithMessage:(NSString *)message level:(UVLogLevel)level flag:(UVLogFlag)flag context:(NSInteger)context file:(NSString *)file function:(NSString *__null_unspecified)function line:(NSUInteger)line tag:(id __nullable)tag options:(UVLogMessageOptions)options timestamp:(NSDate *__nullable)timestamp</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>message</Name>
+					<Abstract type="html">the message</Abstract>
+				</Parameter><Parameter>
+					<Name>level</Name>
+					<Abstract type="html">the log level</Abstract>
+				</Parameter><Parameter>
+					<Name>flag</Name>
+					<Abstract type="html">the log flag</Abstract>
+				</Parameter><Parameter>
+					<Name>context</Name>
+					<Abstract type="html">the context (if any is defined)</Abstract>
+				</Parameter><Parameter>
+					<Name>file</Name>
+					<Abstract type="html">the current file</Abstract>
+				</Parameter><Parameter>
+					<Name>function</Name>
+					<Abstract type="html">the current function</Abstract>
+				</Parameter><Parameter>
+					<Name>line</Name>
+					<Abstract type="html">the current code line</Abstract>
+				</Parameter><Parameter>
+					<Name>tag</Name>
+					<Abstract type="html">potential tag</Abstract>
+				</Parameter><Parameter>
+					<Name>options</Name>
+					<Abstract type="html">a bitmask which supports UVLogMessageCopyFile and UVLogMessageCopyFunction.</Abstract>
+				</Parameter><Parameter>
+					<Name>timestamp</Name>
+					<Abstract type="html">the log timestamp</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">a new instance of a log message model object</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithMessage:level:flag:context:file:function:line:tag:options:timestamp:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLogMessage/setMessage:</TokenIdentifier>
+			<Abstract type="html">The log message</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic) NSString *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UVLogMessage/message</TokenIdentifier>
+			<Abstract type="html">The log message</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic) NSString *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UVLogMessage/message</TokenIdentifier>
+			<Abstract type="html">The log message</Abstract>
+			<DeclaredIn>UVLog.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic) NSString *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>
