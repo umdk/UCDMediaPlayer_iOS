@@ -286,7 +286,7 @@ typedef NS_ENUM(NSInteger, UrlType)
 
 | 版本号 | 发布日期 | 说明 |
 |---|---|---|
-| 1.5.1  | 2017.05.05 | 1、在demo层面加入对demo的友盟统计<br/>2、调整播放器的时的默认参数设置<br/>3、UCloudMediaPlayer.h增加videoToolboxEnabled属性|
+| 1.5.1  | 2017.05.05 | 1、在demo层面加入对demo的友盟统计<br/>2、调整播放器的默认参数设置<br/>3、UCloudMediaPlayer.h增加videoToolboxEnabled属性|
 | 1.5.0  | 2017.04.18 | 1、调整播放质量采集<br/>2、入本地日志模块，更方便普通用户定位问题，具体API详见UCloudMediaPlayer.h|
 | 1.4.1  | 2017.03.17 | 1、增加对speex支持<br/>2、优化内存消耗|
 | 1.4.0  | 2017.02.09 | 1、升级播放器解码内核<br/> 2、支持bitcode、动态库 <br/> 3、修复selectDecodeMethod接口问题|
