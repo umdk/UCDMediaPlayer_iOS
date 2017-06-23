@@ -92,6 +92,19 @@
  */
 @property (nonatomic, readonly) BOOL airPlayMediaActive;
 
+
+/**
+ * 当前视频的帧率
+ */
+@property (nonatomic, readonly) float   videofps;
+
+
+/**
+ * 当前下载速率，单位kb/s，b是byte
+ */
+@property (nonatomic, readonly) float   downloadSpeed;
+
+
 /**
  *  准备播放
  */

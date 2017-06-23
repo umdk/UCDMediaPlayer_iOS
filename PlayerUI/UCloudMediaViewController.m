@@ -258,7 +258,7 @@ typedef NS_ENUM(NSInteger, GesDirection)
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(refreshMediaControl) object:nil];
         if (!self.overlayPanel.hidden)
         {
-            [self performSelector:@selector(refreshMediaControl) withObject:nil afterDelay:0.5];
+            [self performSelector:@selector(refreshMediaControl) withObject:nil afterDelay:0.1];
         }
         
         if (self.urlType != UrlTypeLive)
@@ -379,7 +379,7 @@ typedef NS_ENUM(NSInteger, GesDirection)
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(refreshMediaControl) object:nil];
         if (!self.overlayPanel.hidden)
         {
-            [self performSelector:@selector(refreshMediaControl) withObject:nil afterDelay:0.5];
+            [self performSelector:@selector(refreshMediaControl) withObject:nil afterDelay:0.1];
         }
     }
     else
@@ -505,8 +505,8 @@ static bool centerBug;
         self.currentTimeLabel.text = [NSString stringWithFormat:@"%02d:%02d", (int)(intPosition / 60), (int)(intPosition % 60)];
         self.totalDurationLabel.text = [NSString stringWithFormat:@"%02d:%02d", (int)(intDuration / 60), (int)(intDuration % 60)];
         
-        CGFloat value = position/(float)duration;
-        if (value >= 0 && value <= 1 && self.progressView.progress != value)
+        CGFloat value = intPosition/(float)intDuration;
+        if (value >= 0 && value <= 1.0 && self.progressView.progress != value)
         {
             self.progressView.progress = value;
         }
@@ -573,7 +573,7 @@ static bool centerBug;
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(refreshMediaControl) object:nil];
     if (!self.overlayPanel.hidden)
     {
-        [self performSelector:@selector(refreshMediaControl) withObject:nil afterDelay:0.5];
+        [self performSelector:@selector(refreshMediaControl) withObject:nil afterDelay:0.1];
     }
 }
 
@@ -762,6 +762,7 @@ static bool centerBug;
 
 - (IBAction)onClickBack:(UIButton *)sender
 {
+    [self stop];
     if (self.delegateAction && [self.delegateAction respondsToSelector:@selector(onClickBack:)])
     {
         [self.delegateAction onClickBack:sender];
@@ -777,6 +778,7 @@ static bool centerBug;
     self.pauseButton.hidden = NO;
     if (self.delegateAction && [self.delegateAction respondsToSelector:@selector(onClickPlay:)] && sender != nil)
     {
+        [self refreshMediaControl];
         [self.delegateAction onClickPlay:sender];
     }
 }
@@ -904,6 +906,7 @@ static bool centerBug;
 - (void)stop
 {
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(refreshMediaControl) object:nil];
+    self.progressView.progress = 1.0f;
     [self onClickPause:nil];
 }
 
