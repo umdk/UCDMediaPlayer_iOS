@@ -18,8 +18,8 @@
 
 @property (nonatomic) BOOL barHidden;
 @property (assign, nonatomic) NSInteger liveId;
-@property (strong, nonatomic) NSString *vodUrlString;
 @property (strong, nonatomic) NSString *liveUrlString;
+@property (strong, nonatomic) NSString *vodUrlString;
 
 - (IBAction)switchPlayType:(id)sender;
 
@@ -34,18 +34,23 @@
     srand((unsigned)time(NULL));
     _liveId = rand()%10000;
     //直播播放地址为http://vlive3.rtmp.cdn.ucloud.com.cn/ucloud/%@.flv或者 rtmp://publish3.cdn.ucloud.com.cn/ucloud/%@，其中%@为推流的liveID
-    _liveUrlString = [NSString stringWithFormat:@"rtmp://publish3.cdn.ucloud.com.cn/ucloud/%ld", (long)_liveId];
+    _liveUrlString = [NSString stringWithFormat:
+//                      @"rtmp://publish3.cdn.ucloud.com.cn/ucloud/%ld", (long)_liveId //ucloudRTMP流地址，配合推流SDK使用 https://github.com/umdk/UCDLive_iOS
+                      @"rtmp://live.hkstv.hk.lxdns.com/live/hks" //香港卫视
+//                      @"rtmp://v1.one-tv.com/live/mpegts.stream" //亚太第一卫视
+//                      @"http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8" //cctv6高清
+                      ];
     
     _vodUrlString =
     //点播测试地址范例，urltype设置为UrlTypeAuto或UrlTypeHttp即可
     @"https://mediademo.ufile.ucloud.com.cn/ucloud_promo_140s.mp4";//https播放
 //    @"http://mediademo.ufile.ucloud.com.cn/ucloud_promo_140s.mp4";//http播放
 //【推荐使用】测试http-flv直播地址范例，因从url上无法判断是直播还是点播，在创建播放器时需要手动设置url类型，demo中可到PlayerManager.m 设置urltype为UrlTypeLive
-//    @"http://vlive3.rtmp.cdn.ucloud.com.cn/ucloud/streamId.flv";
+//    @"http://vlive3.rtmp.cdn.ucloud.com.cn/ucloud/<#streamId#>.flv";
 //测试rtmp直播地址范例，urltype设置为UrlTypeAuto或UrlTypeLive即可
-//    @"rtmp://vlive3.rtmp.cdn.ucloud.com.cn/ucloud/streamId";
+//    @"rtmp://vlive3.rtmp.cdn.ucloud.com.cn/ucloud/<#streamId#>";
 //测试hls直播地址范例，urltype设置为UrlTypeAuto或UrlTypeLive即可
-//    @"http://vlive3.hls.cdn.ucloud.com.cn/ucloud/streamId/playlist.m3u8";
+//    @"http://vlive3.hls.cdn.ucloud.com.cn/ucloud/<#streamId#>/playlist.m3u8";
     
     self.textField.text = _vodUrlString;
     
@@ -114,7 +119,7 @@
         NSLog(@"error");
     }
     
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     delegate.vc = self;
     self.playerManager = [[PlayerManager alloc] init];
     self.playerManager.view = self.view;
@@ -161,7 +166,7 @@
          */
         self.playerManager = nil;
         
-        AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+        AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
         delegate.vc = nil;
         
         self.barHidden = NO;
@@ -200,7 +205,7 @@
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-    [self.playerManager rotateBegain:toInterfaceOrientation];
+    [self.playerManager rotateBegin:toInterfaceOrientation];
 }
 
 - (IBAction)switchPlayType:(id)sender {

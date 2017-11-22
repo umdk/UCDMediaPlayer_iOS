@@ -6,6 +6,7 @@ UCDMediaPlayer 是一个适用于 iOS 的音视频播放器 SDK，基于FFmpeg�
 ![player2](screenshot/player2.jpeg)
 ## 一. 功能特性
 - [x] 支持 RTMP、HLS、HTTP-FLV、RTSP 等协议
+- [x] 支持speex音频播放
 - [x] 支持累积延迟消除(RTMP和HTTP+FLV)，降低观看直播的观众延迟
 - [x] 支持H.265/HEVC播放
 - [x] 包含armv7、arm64、i386、x86_64指令集
@@ -286,6 +287,7 @@ typedef NS_ENUM(NSInteger, UrlType)
 
 | 版本号 | 发布日期 | 说明 |
 |---|---|---|
+| 1.5.3  | 2017.11.22 | 1、demo增加错误重连逻辑<br/>2、修复demo横竖屏切换时缓冲动画的位置问题<br/>3、UCloudMediaPlayer.h增加dropframeInterval属性<br/>4、本地日志路径改为可设置|
 | 1.5.2  | 2017.06.23 | 1、UCloudPlayback.h增加videofps(视频帧率)、downloadSpeed(实时下载速度)属性|
 | 1.5.1  | 2017.05.05 | 1、在demo层面加入对demo的友盟统计<br/>2、调整播放器的时的默认参数设置<br/>3、UCloudMediaPlayer.h增加videoToolboxEnabled属性|
 | 1.5.0  | 2017.04.18 | 1、调整播放质量采集<br/>2、入本地日志模块，更方便普通用户定位问题，具体API详见UCloudMediaPlayer.h|

@@ -9,13 +9,9 @@
  *  解码器
  */
 typedef NS_ENUM(NSInteger, DecodeMethod) {
-    /*!
-     *  软解码
-     */
+    // 软解码
     DecodeMethodSoft,
-    /*!
-     *  硬解码
-     */
+    // 硬解码
     DecodeMethodHard,
 };
 
@@ -23,7 +19,6 @@ typedef NS_ENUM(NSInteger, DecodeMethod) {
  *  清晰度
  */
 typedef NS_ENUM(NSInteger, Definition) {
-    
     /// 蓝光
     Definition_fhd,
     /// 超清
@@ -74,18 +69,59 @@ typedef NS_ENUM(NSInteger, UrlType)
 {
     /// 自动，程序会根据相关规则为你选择播放类型，如果是http-flv直播，请必须设置为UrlTypeLive
     UrlTypeAuto   = 0,
-    ///本地视频
+    /// 本地视频
     UrlTypeLocal  = 1,
-    ///网络视频(非直播)
+    /// 网络视频(非直播)
     UrlTypeHttp   = 2,
-    ///直播
+    /// 直播
     UrlTypeLive   = 3,
 };
+
+/*!
+ @typedef    DropFrameMode
+ @abstract   丢帧模式
+ */
+typedef enum : NSUInteger {
+    DropFrameModeOnlyAudio,
+    DropFrameModeAll,
+} DropFrameMode;
+
+/*!
+ @typedef    UVodLiveLogLevel
+ @abstract   推流日志级别
+ */
+typedef NS_OPTIONS(NSUInteger, UVodLiveLogLevel){
+    // No logs
+    UVodLiveLogLevelOff       = 0,
+    // Error logs only
+    UVodLiveLogLevelError     = (1<<0),
+    // Error and warning logs
+    UVodLiveLogLevelWarning   = (UVodLiveLogLevelError | 1<<1),
+    // Error, warning and info logs
+    UVodLiveLogLevelInfo      = (UVodLiveLogLevelWarning | 1<<2),
+    // Error, warning, info and debug logs
+    UVodLiveLogLevelDebug     = (UVodLiveLogLevelInfo | 1<<3),
+    // Error, warning, info, debug and verbose logs
+    UVodLiveLogLevelVerbose   = (UVodLiveLogLevelDebug | 1<<4),
+};
+
+
+
 
 typedef void(^UCloudMediaCompletionBlock)(NSInteger defaultNum, NSArray *data);
 
 @interface UCloudMediaPlayer : NSObject
 
+
+/**
+ *  设备网络切换时是否自动重连,默认开启(YES)
+ */
+@property (assign, nonatomic) BOOL                  bReconEnable;
+
+/**
+ *  最大重连次数
+ */
+@property (assign, nonatomic) NSUInteger            maxReconCount;
 /**
  *  画面填充方式
  */
@@ -110,6 +146,12 @@ typedef void(^UCloudMediaCompletionBlock)(NSInteger defaultNum, NSArray *data);
  * 适用于rtmp直播协议，向服务器发送FCSubscribe命令,一般填写streamID，比如播放地址为rtmp://xxx.com/app/id,此处填写id
  */
 @property (strong, nonatomic) NSString              *rtmpSubscribe;
+
+/*!
+ @property dropframeInterval
+ @abstract 检测是否丢帧时间间隔设置，适用于直播，单位 ms，建议范围:5000-60000，默认为30000
+ */
+@property (assign, nonatomic) NSInteger             dropframeInterval;
 
 /*!
  @property cachedDuration
@@ -143,11 +185,23 @@ typedef void(^UCloudMediaCompletionBlock)(NSInteger defaultNum, NSArray *data);
  */
 @property (assign, nonatomic) bool                  videoToolboxEnabled;
 
+/*!
+ @property dropFrameMode
+ @abstract 针对直播有效，对于追帧策略的选择，DropFrameModeOnlyAudio丢弃音频，视频体现为快进效果；DropFrameModeAll丢弃音视频，直接跳帧，默认DropFrameModeAll
+ */
+@property (assign, nonatomic) DropFrameMode         dropFrameMode;
+
 /**
  @property enableLogFile
  @abstract 是否开启日志文件，默认开启
  */
 @property (assign, nonatomic) bool enableLogFile;
+
+/**
+ @property logLevel
+ @abstract 日志输出等级设置，默认UVodLiveLogLevelInfo
+ */
+@property (assign, nonatomic) UVodLiveLogLevel logLevel;
 
 /**
  @property logFiles
@@ -157,9 +211,9 @@ typedef void(^UCloudMediaCompletionBlock)(NSInteger defaultNum, NSArray *data);
 
 /**
  @property logsDirectory
- @abstract 日志文件路径，
+ @abstract 日志文件路径，默认Logs/UCloud/UMedia
  */
-@property (strong, nonatomic, readonly) NSString *logsDirectory;
+@property (strong, nonatomic) NSString *logsDirectory;
 
 /**
  @property lastLogFilePath
@@ -229,6 +283,15 @@ typedef void(^UCloudMediaCompletionBlock)(NSInteger defaultNum, NSArray *data);
  *  @param definition 切换后的清晰度
  */
 - (void)selectDefinition:(Definition)definition;
+
+
+/**
+ *  设置AudioSession 是否激活
+ *  @param bActive  YES:激活 NO:不激活
+ *  @param definition 切换后的清晰度
+ */
+- (void)setAudioSessionActive:(BOOL)bActive;
+
 
 /**
  * 获取播放器SDK版本号

@@ -14,12 +14,12 @@
 @property(strong, nonatomic) UCloudMediaPlayer *mediaPlayer;
 
 @property (assign, nonatomic) BOOL isFullscreen;                             //是否横屏
+@property (assign, nonatomic) BOOL isPortrait;
 @property (assign, nonatomic) UIInterfaceOrientation currentOrientation;     //当前屏幕方向
 @property (assign, nonatomic) UIInterfaceOrientationMask supportInterOrtation;
-@property (assign, nonatomic) BOOL isPortrait;
 
-@property (strong, nonatomic) NSMutableArray *p;
-@property (strong, nonatomic) NSMutableArray *l;
+@property (strong, nonatomic) NSMutableArray *equalArray;
+@property (strong, nonatomic) NSMutableArray *exchangeArray;
 @property (strong, nonatomic) NSLayoutConstraint *vcBottomConstraint;
 @property (strong, nonatomic) NSLayoutConstraint *playerCenterXContraint;
 @property (strong, nonatomic) NSLayoutConstraint *playerHeightContraint;
@@ -42,12 +42,20 @@
  */
 @property (assign, nonatomic) BOOL supportAutomaticRotation;
 /**
- *  是否支持角度旋转协议(支持表示播放画面会随着推流端旋转而旋转)
+ *  是否支持角度旋转(支持表示播放画面会随着推流端旋转而旋转)
  */
 @property (assign, nonatomic) BOOL supportAngleChange;
 
-- (void)buildMediaPlayer:(NSString *)path urlType:(UrlType)urlType;
-- (void)rotateBegain:(UIInterfaceOrientation)noti;
+
+/**
+ 初始化播放器
+
+ @param path 播放地址
+ @param urlType url类型
+ */
+- (void)buildMediaPlayer:(NSString *)playString urlType:(UrlType)urlType;
+
+- (void)rotateBegin:(UIInterfaceOrientation)noti;
 - (void)rotateEnd;
 - (void)awakeSupportInterOrtation:(UIViewController *)showVC completion:(void(^)(void))block;
 

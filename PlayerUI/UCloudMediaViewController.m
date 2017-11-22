@@ -22,13 +22,16 @@ typedef NS_ENUM(NSInteger, GesDirection)
 
 #define UISCREEN_WIDTH      MIN(UIScreen.mainScreen.bounds.size.width, UIScreen.mainScreen.bounds.size.height)
 #define UISCREEN_HEIGHT     MAX(UIScreen.mainScreen.bounds.size.width, UIScreen.mainScreen.bounds.size.height)
+#define IOS11 [[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0
 
 #define RIGHTPANELTRANSFORM self.rightPanel.frame.size.width*2
 
 //#define DANMU
 
-@interface UCloudMediaViewController ()<UITableViewDataSource, UITableViewDelegate>
-
+@interface UCloudMediaViewController ()<UITableViewDataSource, UITableViewDelegate, CAAnimationDelegate>
+{
+    
+}
 
 @property(nonatomic,strong) IBOutlet UIView *overlayPanel;
 @property(nonatomic,strong) IBOutlet UIView *topPanel;
@@ -62,6 +65,16 @@ typedef NS_ENUM(NSInteger, GesDirection)
 @property (nonatomic) NSInteger selectedChoices;
 @property (strong, nonatomic) NSMutableDictionary *selectedResults;
 @property (strong, nonatomic) UILabel *waterMarkLabel;
+@property (assign, nonatomic) BOOL isPaused;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightPanelRightContraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cropRightContraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnBackLeftContraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnFullRightContraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *totalDurationRightContraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnPlayLeftContraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnPauseLeftContraint;
+
 @end
 
 @implementation UCloudMediaViewController
@@ -71,7 +84,7 @@ typedef NS_ENUM(NSInteger, GesDirection)
     [super viewDidLoad];
     [self refreshMediaControl];
     [self buildData];
-    [self buildGes];
+    [self buildGestureRecognizer];
     [self buildUI];
     self.choiceTabelView.dataSource = self;
     self.choiceTabelView.delegate = self;
@@ -81,6 +94,7 @@ typedef NS_ENUM(NSInteger, GesDirection)
     self.resultTabelView.delegate = self;
     self.resultTabelView.tableFooterView = [[UIView alloc] init];
     
+    self.isPaused = NO;
     //暂时不加水印
     //    [self waterMark];
 }
@@ -92,52 +106,70 @@ typedef NS_ENUM(NSInteger, GesDirection)
     {
         Definition type = [dic integerValue];
         NSString *key = nil;
-        if (type == Definition_fhd)
-        {
+        if (type == Definition_fhd) {
             key = @"蓝光";
-        }
-        else if (type == Definition_shd)
-        {
+        } else if (type == Definition_shd) {
             key = @"超清";
-        }
-        else if (type == Definition_hd)
-        {
+        } else if (type == Definition_hd) {
             key = @"高清";
-        }
-        else if (type == Definition_sd)
-        {
+        } else if (type == Definition_sd) {
             key = @"标清";
         }
         
-        if (key != nil)
-        {
+        if (key != nil) {
             [arr addObject:key];
         }
     }
     
     self.choi = @[@"清晰度", @"画幅", @"解码器"];
-    if (self.urlType == UrlTypeHttp)
+    if (self.urlType == UrlTypeHttp || self.urlType == UrlTypeLocal)
     {
         self.choices = @{@"清晰度":arr, @"画幅":@[@"自动",@"原始",@"全屏"], @"解码器":@[@"硬解",@"软解"]};
-        self.selectedResults = [NSMutableDictionary dictionaryWithDictionary:@{@"0":@(self.defultQingXiDu), @"1":@(self.defultHuaFu), @"2":@(self.defultJieMaQi)}];
+        self.selectedResults = [NSMutableDictionary dictionaryWithDictionary:@{@"0":@(self.videoQuality), @"1":@(self.videoGravity), @"2":@(self.videoCodec)}];
     }
     else if (self.urlType == UrlTypeLive)
     {
         self.choices = @{@"清晰度":arr, @"画幅":@[@"自动",@"原始",@"全屏"], @"解码器":@[@"软解"]};
-        self.selectedResults = [NSMutableDictionary dictionaryWithDictionary:@{@"0":@(self.defultQingXiDu), @"1":@(self.defultHuaFu), @"2":@(0)}];
-    }
-    else if (self.urlType == UrlTypeLocal)
-    {
-        self.choices = @{@"清晰度":arr, @"画幅":@[@"自动",@"原始",@"全屏"], @"解码器":@[@"硬解",@"软解"]};
-        self.selectedResults = [NSMutableDictionary dictionaryWithDictionary:@{@"0":@(self.defultQingXiDu), @"1":@(self.defultHuaFu), @"2":@(self.defultJieMaQi)}];
+        self.selectedResults = [NSMutableDictionary dictionaryWithDictionary:@{@"0":@(self.videoQuality), @"1":@(self.videoGravity), @"2":@(0)}];
     }
     
 }
 
-- (void)buildGes
+- (void)buildGestureRecognizer
 {
     UIPanGestureRecognizer *ges = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
     [self.view addGestureRecognizer:ges];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickMediaControl:)];
+    [self.view addGestureRecognizer:tap];
+}
+
+- (void)buildUI
+{
+    //菜单，开始不显示
+    self.rightPanel.transform = CGAffineTransformIdentity;
+    self.rightPanel.transform = CGAffineTransformMakeTranslation(RIGHTPANELTRANSFORM, 0);
+    self.rightPanel.hidden = YES;
+    self.centerPlanBtn.hidden = YES;
+    self.playButton.hidden = YES;
+#ifdef DANMU
+    self.danmuButton.hidden = NO;
+#else
+    self.danmuButton.hidden = YES;
+#endif
+    
+    [self createProgressView:CGRectZero];
+    
+    if ([UIScreen mainScreen].bounds.size.height == 812) {
+        self.rightPanelRightContraint.constant = 30;
+        self.cropRightContraint.constant = 40;
+        self.btnBackLeftContraint.constant = 18;
+        self.btnFullRightContraint.constant = 18;
+        self.totalDurationRightContraint.constant = 18;
+        self.btnPlayLeftContraint.constant = 18;
+        self.btnPauseLeftContraint.constant = 18;
+    }
+
 }
 
 - (void)pan:(UIPanGestureRecognizer *)ges
@@ -146,16 +178,19 @@ typedef NS_ENUM(NSInteger, GesDirection)
     if (ges.state == UIGestureRecognizerStateBegan)
     {
         self.progressViewNormal = self.progressView.progress;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         self.voiceNormal = [MPMusicPlayerController applicationMusicPlayer].volume;
+#pragma clang diagnostic pop
         self.brightNomal = [UIScreen mainScreen].brightness;
         
         self.rightPanel.transform = CGAffineTransformMakeTranslation(RIGHTPANELTRANSFORM, 0);
         self.rightPanel.hidden = NO;
         [self showAndFade];
         
-        if (self.delegateAction && [self.delegateAction respondsToSelector:@selector(durationSliderTouchBegan:)])
+        if (_delegateAction && [_delegateAction respondsToSelector:@selector(durationSliderTouchBegan:)])
         {
-            [self.delegateAction durationSliderTouchBegan:nil];
+            [_delegateAction durationSliderTouchBegan:nil];
         }
         
         CGPoint point = [ges translationInView:self.view];
@@ -219,9 +254,9 @@ typedef NS_ENUM(NSInteger, GesDirection)
             {
                 if (self.urlType != UrlTypeLive)
                 {
-                    if (self.delegateAction && [self.delegateAction respondsToSelector:@selector(durationSliderValueChanged:)])
+                    if (_delegateAction && [_delegateAction respondsToSelector:@selector(durationSliderValueChanged:)])
                     {
-                        [self.delegateAction durationSliderValueChanged:@(delta)];
+                        [_delegateAction durationSliderValueChanged:@(delta)];
                     }
                     CGFloat value = self.progressViewNormal + delta;
                     if (value >= 0 && value <= 1)
@@ -239,7 +274,10 @@ typedef NS_ENUM(NSInteger, GesDirection)
             case Dir_V_L:
             {
 //                [MPMusicPlayerController systemMusicPlayer].volume = self.voiceNormal + delta;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
                 [MPMusicPlayerController applicationMusicPlayer].volume = self.voiceNormal + delta;
+#pragma clang diagnostic pop
             }break;
             default:
                 break;
@@ -253,7 +291,7 @@ typedef NS_ENUM(NSInteger, GesDirection)
             [weakSelf.brightnessView removeFromSuperview];
             
         }];
-//        [self.delegatePlayer play];
+//        [_delegatePlayer play];
         
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(refreshMediaControl) object:nil];
         if (!self.overlayPanel.hidden)
@@ -263,9 +301,9 @@ typedef NS_ENUM(NSInteger, GesDirection)
         
         if (self.urlType != UrlTypeLive)
         {
-            if (self.direc == Dir_H && self.delegateAction && [self.delegateAction respondsToSelector:@selector(durationSliderTouchEnded:)])
+            if (self.direc == Dir_H && _delegateAction && [_delegateAction respondsToSelector:@selector(durationSliderTouchEnded:)])
             {
-                [self.delegateAction durationSliderTouchEnded:@(self.progressView.progress - self.progressViewNormal)];
+                [_delegateAction durationSliderTouchEnded:@(self.progressView.progress - self.progressViewNormal)];
             }
         }
     }
@@ -413,7 +451,7 @@ typedef NS_ENUM(NSInteger, GesDirection)
 
 - (void)refreshCenterState
 {
-    if (![self.delegatePlayer isPlaying])
+    if (![_delegatePlayer isPlaying])
     {
         centerBug = YES;
     }
@@ -448,26 +486,6 @@ static bool centerBug;
     return contraint3;
 }
 
-- (void)buildUI
-{
-    //菜单，开始不显示
-    self.rightPanel.transform = CGAffineTransformIdentity;
-    self.rightPanel.transform = CGAffineTransformMakeTranslation(RIGHTPANELTRANSFORM, 0);
-    self.rightPanel.hidden = YES;
-    self.centerPlanBtn.hidden = YES;
-    self.playButton.hidden = YES;
-#ifdef DANMU
-    self.danmuButton.hidden = NO;
-#else
-    self.danmuButton.hidden = YES;
-#endif
-    
-    [self createProgressView:CGRectZero];
-    
-    UITapGestureRecognizer *pan = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickMediaControl:)];
-    [self.view addGestureRecognizer:pan];
-}
-
 - (void)showNoFade
 {
     self.overlayPanel.hidden = NO;
@@ -494,8 +512,8 @@ static bool centerBug;
 
 - (void)refreshMediaControl
 {
-    NSTimeInterval duration = self.delegatePlayer.duration;
-    NSTimeInterval position = self.delegatePlayer.currentPlaybackTime;
+    NSTimeInterval duration = _delegatePlayer.duration;
+    NSTimeInterval position = _delegatePlayer.currentPlaybackTime;
     
     NSInteger intDuration = duration;
     NSInteger intPosition = position;
@@ -519,28 +537,25 @@ static bool centerBug;
     }
     
     
-    PlayerManager *vc = (PlayerManager *)self.delegateAction;
+    PlayerManager *vc = (PlayerManager *)_delegateAction;
     if (vc.mediaPlayer.defaultDecodeMethod == DecodeMethodHard)
     {
-        MPMovieLoadState loadState = [self.delegatePlayer loadState];
-        MPMoviePlaybackState backState = [self.delegatePlayer playbackState];
-#ifdef  DEGUG
+        MPMovieLoadState loadState = [_delegatePlayer loadState];
+        MPMoviePlaybackState backState = [_delegatePlayer playbackState];
+#ifdef  DEBUG
         NSLog(@"load:%lu   back:%ld", (unsigned long)loadState, (long)backState);
 #endif
-        if (backState == MPMoviePlaybackStatePlaying || backState == MPMoviePlaybackStateSeekingBackward || backState == MPMoviePlaybackStateSeekingForward)
-        {
+        if (backState == MPMoviePlaybackStatePlaying || backState == MPMoviePlaybackStateSeekingBackward || backState == MPMoviePlaybackStateSeekingForward) {
             self.centerPlanBtn.hidden = YES;
             self.playButton.hidden = YES;
             self.pauseButton.hidden = NO;
-        }
-        else
-        {
+        } else {
             self.centerPlanBtn.hidden = NO;
             self.pauseButton.hidden = YES;
             self.playButton.hidden = NO;
         }
         
-        if (loadState&MPMovieLoadStateStalled)
+        if (loadState & MPMovieLoadStateStalled)
         {
             self.centerPlanBtn.hidden = YES;
             self.playButton.hidden = YES;
@@ -549,15 +564,17 @@ static bool centerBug;
     }
     else
     {
-     if ([self.delegatePlayer isPlaying])
+        if ([_delegatePlayer isPlaying])
         {
             self.centerPlanBtn.hidden = YES;
             self.playButton.hidden = YES;
             self.pauseButton.hidden = NO;
-        }
-        else
-        {
-            self.centerPlanBtn.hidden = NO;
+        } else {
+            if (_isPaused) {
+                self.centerPlanBtn.hidden = NO;
+            } else {
+                self.centerPlanBtn.hidden = YES;
+            }
             self.pauseButton.hidden = YES;
             self.playButton.hidden = NO;
         }
@@ -585,18 +602,14 @@ static bool centerBug;
         [UIView animateWithDuration:0.5f animations:^{
             weakSelf.rightPanel.transform = CGAffineTransformIdentity;
             weakSelf.rightPanel.hidden = NO;
-        } completion:^(BOOL finished) {
-            
-        }];
+        } completion:nil];
     }
     else
     {
         [UIView animateWithDuration:0.5f animations:^{
             weakSelf.rightPanel.transform = CGAffineTransformMakeTranslation(RIGHTPANELTRANSFORM, 0);
             weakSelf.rightPanel.hidden = YES;
-        } completion:^(BOOL finished) {
-            
-        }];
+        } completion:nil];
     }
 }
 
@@ -630,10 +643,8 @@ static bool centerBug;
             self.overlayPanel.hidden = YES;
             [self cancelDelayedHide];
             
-            BOOL isFullScreen = [self.delegateAction screenState];
-            
-            if (isFullScreen)
-            {
+            BOOL isFullScreen = [_delegateAction screenState];
+            if (isFullScreen) {
                 [self showOrHideMenu];
             }
         }
@@ -641,10 +652,10 @@ static bool centerBug;
         {
             //点击 menu
             CGPoint new = [self.choiceTabelView convertPoint:p fromView:self.view];
-            if (new.x < 0)
-            {
+            if (new.x < 0) {
                 self.rightPanel.hidden = YES;
             }
+            
             NSIndexPath *indexPath = [self.choiceTabelView indexPathForRowAtPoint:new];
             if (indexPath == nil)
             {
@@ -663,9 +674,7 @@ static bool centerBug;
                     if (lastOne == one && lastTwo == two)
                     {
                         
-                    }
-                    else
-                    {
+                    } else {
                         [self selectMenu:one choi:two];
                     }
                     
@@ -688,8 +697,14 @@ static bool centerBug;
     {
         if (self.rightPanel.hidden)
         {
-            //显示进度条
-            [self showAndFade];
+            if (self.overlayPanel.hidden) {
+                //显示进度条
+                [self showAndFade];
+            } else {
+                [self hide];
+            }
+
+            
         }
         else
         {
@@ -700,9 +715,9 @@ static bool centerBug;
         }
     }
     
-    if (self.delegateAction && [self.delegateAction respondsToSelector:@selector(onClickMediaControl:)])
+    if (_delegateAction && [_delegateAction respondsToSelector:@selector(onClickMediaControl:)])
     {
-        [self.delegateAction onClickMediaControl:sender];
+        [_delegateAction onClickMediaControl:sender];
     }
 }
 
@@ -712,50 +727,40 @@ static bool centerBug;
     {
         //清晰度
         Definition def = [[self.movieInfos objectAtIndex:menu] integerValue];
-        if (self.delegateAction && [self.delegateAction respondsToSelector:@selector(selectedDefinition:)])
+        if (_delegateAction && [_delegateAction respondsToSelector:@selector(selectedDefinition:)])
         {
-            [self.delegateAction selectedDefinition:def];
+            [_delegateAction selectedDefinition:def];
         }
     }
     else if (menu == 1)
     {
         MPMovieScalingMode mode = MPMovieScalingModeNone;
-        
         //画幅
-        if (choi == 0)
-        {
+        if (choi == 0) {
             mode = MPMovieScalingModeAspectFit;
-        }
-        else if (choi == 1)
-        {
+        } else if (choi == 1) {
             mode = MPMovieScalingModeNone;
-        }
-        else if (choi == 2)
-        {
+        } else if (choi == 2) {
             mode = MPMovieScalingModeAspectFill;
         }
-        if (self.delegateAction && [self.delegateAction respondsToSelector:@selector(selectedScalingMode:)])
+        
+        if (_delegateAction && [_delegateAction respondsToSelector:@selector(selectedScalingMode:)])
         {
-            [self.delegateAction selectedScalingMode:mode];
+            [_delegateAction selectedScalingMode:mode];
         }
     }
     else
     {
         DecodeMethod method;
-        //解码器
-        if (choi == 0)
-        {
-            //硬解
+        if (choi == 0) {
             method = DecodeMethodHard;
-        }
-        else
-        {
-            //软解
+        } else {
             method = DecodeMethodSoft;
         }
-        if (self.delegateAction && [self.delegateAction respondsToSelector:@selector(selectedDecodeMethod:)])
+        
+        if (_delegateAction && [_delegateAction respondsToSelector:@selector(selectedDecodeMethod:)])
         {
-            [self.delegateAction selectedDecodeMethod:method];
+            [_delegateAction selectedDecodeMethod:method];
         }
     }
 }
@@ -763,69 +768,67 @@ static bool centerBug;
 - (IBAction)onClickBack:(UIButton *)sender
 {
     [self stop];
-    if (self.delegateAction && [self.delegateAction respondsToSelector:@selector(onClickBack:)])
+    if (_delegateAction && [_delegateAction respondsToSelector:@selector(onClickBack:)])
     {
-        [self.delegateAction onClickBack:sender];
+        [_delegateAction onClickBack:sender];
     }
 }
 
 - (IBAction)onClickPlay:(id)sender
 {
-    NSLog(@"%s", __func__);
-    
-    self.centerPlanBtn.hidden = YES;
-    self.playButton.hidden = YES;
+    self.isPaused = NO;
+    self.centerPlanBtn.hidden = self.playButton.hidden = YES;
     self.pauseButton.hidden = NO;
-    if (self.delegateAction && [self.delegateAction respondsToSelector:@selector(onClickPlay:)] && sender != nil)
+    
+    if (_delegateAction && [_delegateAction respondsToSelector:@selector(onClickPlay:)] && sender != nil)
     {
         [self refreshMediaControl];
-        [self.delegateAction onClickPlay:sender];
+        [_delegateAction onClickPlay:sender];
     }
 }
 
 - (IBAction)onClickPause:(id)sender
 {
     centerBug = NO;
-    self.centerPlanBtn.hidden = NO;
+    self.isPaused = YES;
+    self.centerPlanBtn.hidden = self.playButton.hidden = NO;
     self.pauseButton.hidden = YES;
-    self.playButton.hidden = NO;
-    if (self.delegateAction && [self.delegateAction respondsToSelector:@selector(onClickPause:)] && sender != nil)
+    
+    if (_delegateAction && [_delegateAction respondsToSelector:@selector(onClickPause:)] && sender != nil)
     {
-        [self.delegateAction onClickPause:sender];
+        [_delegateAction onClickPause:sender];
     }
 }
 
 - (IBAction)clickBright:(id)sender
 {
-    if (self.delegateAction && [self.delegateAction respondsToSelector:@selector(clickBright:)])
+    if (_delegateAction && [_delegateAction respondsToSelector:@selector(clickBright:)])
     {
-        [self.delegateAction clickBright:sender];
+        [_delegateAction clickBright:sender];
     }
 }
 
 - (IBAction)clickVolume:(id)sender
 {
-    if (self.delegateAction && [self.delegateAction respondsToSelector:@selector(clickVolume:)])
+    if (_delegateAction && [_delegateAction respondsToSelector:@selector(clickVolume:)])
     {
-        [self.delegateAction clickVolume:sender];
+        [_delegateAction clickVolume:sender];
     }
 }
 
 - (IBAction)clickFull:(UIButton *)sender
 {
-    if (self.delegateAction && [self.delegateAction respondsToSelector:@selector(clickFull:)])
+    if (_delegateAction && [_delegateAction respondsToSelector:@selector(clickFull)])
     {
-        [self.delegateAction clickFull:^(WebState state, id data, NSError *error) {
-            
-        }];
+        [_delegateAction clickFull];
     }
 }
 
 - (IBAction)clickShot:(id)sender
 {
-    if (self.delegateAction && [self.delegateAction respondsToSelector:@selector(clickShot:)])
+    if (_delegateAction && [_delegateAction respondsToSelector:@selector(clickShot:)])
     {
-        [self.delegateAction clickShot:sender];
+        [_delegateAction clickSnaphot:sender];
     }
 }
 
@@ -837,13 +840,10 @@ static bool centerBug;
     UIButton *btn = sender;
     static BOOL show = NO;
     NSString *imageName = nil;
-    if (!show)
-    {
+    if (!show) {
         imageName = @"danmu_h";
         show = YES;
-    }
-    else
-    {
+    } else {
         imageName = @"danmu";
         show = NO;
     }
@@ -851,16 +851,14 @@ static bool centerBug;
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
     {
         backImage = [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];
-    }
-    else
-    {
+    } else {
         NSString *imagePath = [bundle pathForResource:imageName ofType:@"png"];
         backImage = [UIImage imageWithContentsOfFile:imagePath];
     }
     [btn setBackgroundImage:backImage forState:UIControlStateNormal];
-    if (self.delegateAction && [self.delegateAction respondsToSelector:@selector(clickDanmu:)])
+    if (_delegateAction && [_delegateAction respondsToSelector:@selector(clickDanmu:)])
     {
-        [self.delegateAction clickDanmu:show];
+        [_delegateAction clickDanmu:show];
     }
 }
 
@@ -877,7 +875,6 @@ static bool centerBug;
         self.waterMarkLabel = label;
         [self.view addSubview:label];
     }
-    
     
     //1.创建核心动画
     CAKeyframeAnimation *keyAnima=[CAKeyframeAnimation animation];

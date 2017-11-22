@@ -34,6 +34,12 @@
  */
 @property(nonatomic, readonly)  NSTimeInterval playableDuration;
 
+
+/**
+ *  biterate
+ */
+@property(nonatomic, readonly) long biteRate;
+
 /**
  *  缓冲进度
  */
