@@ -2,7 +2,7 @@
 
 UCDMediaPlayer 是一个适用于 iOS 的音视频播放器 SDK，基于FFmpeg自主研发音视频媒体播放器，支持 RTMP, HTTP-FLV 和 HLS 直播流媒体播放。更多视频云产品可去[官网](https://docs.ucloud.cn/video/uvideo/index)查看
 
-本文档简要介绍UCDMediaPlayer的功能与简单接入,对于SDK的详细API请查看相关[wiki][wiki]。
+本文档简要介绍UCDMediaPlayer的功能与简单接入,对于SDK的详细API请查看相关[wiki](https://github.com/umdk/UCDMediaPlayer_iOS/wiki)。
 
 ![player1](screenshot/player1.jpeg)
 ![player2](screenshot/player2.jpeg)
