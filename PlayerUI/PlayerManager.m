@@ -89,9 +89,9 @@
     
     // get player infos
     self.controlVC.videoQuality = defaultNum;
-    if (_mediaPlayer.defaultDecodeMethod == DecodeMethodHard) {
+    if (_mediaPlayer.videoDecodeMode == UCDMediaDecodeModeHardware) {
         self.controlVC.videoCodec = 0;
-    } else if (_mediaPlayer.defaultDecodeMethod == DecodeMethodSoft) {
+    } else {
         self.controlVC.videoCodec = 1;
     }
     self.controlVC.urlType = _mediaPlayer.urlType;
@@ -812,7 +812,7 @@ static bool showing = NO;
 
 //    [[NSNotificationCenter defaultCenter] removeObserver:self name:UCloudPlayerPlaybackDidFinishNotification object:nil];
     _bReconnceting = YES;
-    [self selectedDecodeMethod:_mediaPlayer.defaultDecodeMethod];
+    [self selectedDecodeMode:_mediaPlayer.videoDecodeMode];
 //    [[NSNotificationobsCenter defaultCenter] addObserver:self selector:@selector(noti:) name:UCloudPlayerPlaybackDidFinishNotification object:nil];
 }
 
@@ -835,13 +835,11 @@ static bool showing = NO;
     _mediaPlayer = nil;
     self.imgView = nil;
     
-    {
-        self.supportInterOrtation = UIInterfaceOrientationMaskPortrait;
-        [self awakeSupportInterOrtation:self.viewContorller completion:^{
-            self.supportInterOrtation = UIInterfaceOrientationMaskAllButUpsideDown;
-            [self.view setBackgroundColor:[UIColor whiteColor]];
-        }];
-    }
+    self.supportInterOrtation = UIInterfaceOrientationMaskPortrait;
+    [self awakeSupportInterOrtation:self.viewContorller completion:^{
+        self.supportInterOrtation = UIInterfaceOrientationMaskAllButUpsideDown;
+        [self.view setBackgroundColor:[UIColor whiteColor]];
+    }];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:UCloudMoviePlayerClickBack object:self];
 }
@@ -902,14 +900,10 @@ static bool showing = NO;
     self.imgView.image =  [_mediaPlayer.player thumbnailImageAtCurrentTime];
     
     if (self.imgView) {
-        
         [UIView animateWithDuration:0.3 animations:^{
-            
             [self.view addSubview:self.imgView];;
         }];
-        
     }
-
 }
 
 - (void)showMaskView
@@ -920,7 +914,7 @@ static bool showing = NO;
     [self.view addSubview:self.imgView];
 }
 
-- (void)selectedDecodeMethod:(DecodeMethod)decodeMethod
+- (void)selectedDecodeMode:(UCDMediaDecodeMode)decodeMode
 {
    
     if (_mediaPlayer.urlType != UrlTypeLive) {
@@ -928,7 +922,7 @@ static bool showing = NO;
         self.current = [_mediaPlayer.player currentPlaybackTime];
     }
     
-    [_mediaPlayer selectDecodeMethod:decodeMethod];
+    [_mediaPlayer selectDecodeMode:decodeMode];
     [self reConfigurePlayer:0];
 }
 

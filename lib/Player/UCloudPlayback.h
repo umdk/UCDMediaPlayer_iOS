@@ -67,9 +67,15 @@
  */
 @property(nonatomic, readonly) CGSize naturalSize;
 /*
- *播放速率
+ * 播放速率，取值范围(0.5~2.0)，默认1.0
  */
 @property (nonatomic) float playbackRate;
+
+
+/**
+ * 设置播放器音量，取值范围(0~2.0)，默认1.0
+ */
+@property (nonatomic) float playbackVolume;
 
 /**
  *  控制面板风格，枚举类型：
@@ -202,7 +208,7 @@ UCLOUD_EXTERN NSString* const UCloudPlayerIsAirPlayVideoActiveDidChangeNotificat
 UCLOUD_EXTERN NSString* const UCloudNaturalSizeAvailableNotification;
 
 /**
- *  底层开始解析视频
+ *  底层是否开启videotoolbox
  */
 UCLOUD_EXTERN NSString *const UCloudPlayerVideoDecoderOpenNotification;
 /**
@@ -233,7 +239,7 @@ UCLOUD_EXTERN NSString *const UCloudPlayerBufferingUpdateNotification;
  */
 UCLOUD_EXTERN NSString *const UCloudPlayerBufferStateKey;
 /*
- *seek完成的通知
+ * seek完成的通知
  *
  */
 UCLOUD_EXTERN NSString *const UCloudPlayerDidSeekCompleteNotification;

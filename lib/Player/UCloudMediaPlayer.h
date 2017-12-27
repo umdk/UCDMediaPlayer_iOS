@@ -8,12 +8,22 @@
 /*!
  *  解码器
  */
+typedef NS_ENUM(NSInteger, UCDMediaDecodeMode) {
+    // 软解码
+    UCDMediaDecodeModeSoftware,
+    // 硬解码
+    UCDMediaDecodeModeHardware,
+};
+
+/*!
+ *  解码器
+ */
 typedef NS_ENUM(NSInteger, DecodeMethod) {
     // 软解码
     DecodeMethodSoft,
     // 硬解码
     DecodeMethodHard,
-};
+} DEPRECATED_MSG_ATTRIBUTE("deprecated, Use 'UCDMediaDecodeMode' instead");
 
 /*!
  *  清晰度
@@ -122,15 +132,26 @@ typedef void(^UCloudMediaCompletionBlock)(NSInteger defaultNum, NSArray *data);
  *  最大重连次数
  */
 @property (assign, nonatomic) NSUInteger            maxReconCount;
+
 /**
  *  画面填充方式
  */
-@property (assign, nonatomic) MPMovieScalingMode    defaultScalingMode;
+@property (assign, nonatomic) MPMovieScalingMode    scalingMode;
+
+/**
+ *  画面填充方式
+ */
+@property (assign, nonatomic) MPMovieScalingMode    defaultScalingMode DEPRECATED_MSG_ATTRIBUTE("Use 'scalingMode' instead");
 
 /**
  *  默认的解码方式
  */
-@property (assign, nonatomic) DecodeMethod          defaultDecodeMethod;
+@property (assign, nonatomic) UCDMediaDecodeMode    videoDecodeMode;
+
+/**
+ *  默认的解码方式
+ */
+@property (assign, nonatomic) DecodeMethod          defaultDecodeMethod DEPRECATED_MSG_ATTRIBUTE("Use 'videoDecodeMode' instead");
 
 /**
  *  播放地址
@@ -141,6 +162,11 @@ typedef void(^UCloudMediaCompletionBlock)(NSInteger defaultNum, NSArray *data);
  *  视频类型（直播、点播）
  */
 @property (assign, nonatomic) UrlType               urlType;
+
+/**
+ *  播放视频时是否需要自动播放,默认值是YES
+ */
+@property (assign, nonatomic) BOOL                  shouldAutoPlay;
 
 /**
  * 适用于rtmp直播协议，向服务器发送FCSubscribe命令,一般填写streamID，比如播放地址为rtmp://xxx.com/app/id,此处填写id
@@ -162,8 +188,8 @@ typedef void(^UCloudMediaCompletionBlock)(NSInteger defaultNum, NSArray *data);
 
 /*!
  @property bufferDuration
- @abstract 卡顿时的缓存时长，适用于直播，单位 ms，建议范围：1000-6000，默认为3000。
- @discussion 当播放器发生卡顿开始缓存时，缓冲视频数据时长为bufferDuration。该值越大卡顿缓冲时间越长，但是后续卡顿率会所有降低。当bufferDuration设置为0时，播放器将不发生缓冲，有数据则即刻播放，对网络比较敏感，容易发生卡顿，如果对延时要求不高的可以适当设置cachedDuration缓存一定量的音视频数据
+ @abstract 卡顿时的缓存时长，适用于直播和点播，单位 ms，建议范围：1000-6000，默认为3000。
+ @discussion 当播放器发生卡顿开始缓存时，缓冲视频数据时长为bufferDuration。该值越大卡顿缓冲时间越长，但是后续卡顿率会有所降低。当bufferDuration设置为0时，播放器将不发生缓冲，有数据则即刻播放，对网络比较敏感，容易发生卡顿，如果对延时要求不高的可以适当设置cachedDuration缓存一定量的音视频数据
  */
 @property (assign, nonatomic) NSInteger             bufferDuration;
 
@@ -195,49 +221,49 @@ typedef void(^UCloudMediaCompletionBlock)(NSInteger defaultNum, NSArray *data);
  @property enableLogFile
  @abstract 是否开启日志文件，默认开启
  */
-@property (assign, nonatomic) bool enableLogFile;
+@property (assign, nonatomic) bool                  enableLogFile;
 
 /**
  @property logLevel
  @abstract 日志输出等级设置，默认UVodLiveLogLevelInfo
  */
-@property (assign, nonatomic) UVodLiveLogLevel logLevel;
+@property (assign, nonatomic) UVodLiveLogLevel      logLevel;
 
 /**
  @property logFiles
  @abstract 所有日志文件名
  */
-@property (strong, nonatomic, readonly) NSArray *logFiles;
+@property (strong, nonatomic, readonly) NSArray     *logFiles;
 
 /**
  @property logsDirectory
  @abstract 日志文件路径，默认Logs/UCloud/UMedia
  */
-@property (strong, nonatomic) NSString *logsDirectory;
+@property (strong, nonatomic) NSString              *logsDirectory;
 
 /**
  @property lastLogFilePath
  @abstract 最近的日志文件路径
  */
-@property (strong, nonatomic, readonly) NSString *lastLogFilePath;
+@property (strong, nonatomic, readonly) NSString    *lastLogFilePath;
 
 /**
  @property lastLogFileName
  @abstract 最近的日志文件名
  */
-@property (strong, nonatomic, readonly) NSString *lastLogFileName;
+@property (strong, nonatomic, readonly) NSString    *lastLogFileName;
 
 /**
  @property logFileSize
  @abstract 每个日志文件的大小，每个日志文件如若达到该大小将会进行一次压缩保存，减少沙盒使用量，默认1M
  */
-@property (assign, nonatomic) NSInteger logFileSize;
+@property (assign, nonatomic) NSInteger             logFileSize;
 
 /**
  @property logFilesMaxSize
  @abstract 日志文件夹大小，超过会清理日志，默认20M
  */
-@property (assign, nonatomic) NSInteger logFilesMaxSize;
+@property (assign, nonatomic) NSInteger             logFilesMaxSize;
 
 /**
  *  播放器控制器
@@ -271,11 +297,18 @@ typedef void(^UCloudMediaCompletionBlock)(NSInteger defaultNum, NSArray *data);
 - (void)showInview:(UIView *)view definition:(void(^)(NSInteger defaultNum, NSArray *data))block;
 
 /**
+ *  切换解码方式(弃用)
+ *
+ *  @param decode 切换后的解码方式
+ */
+- (void)selectDecodeMethod:(DecodeMethod)decode DEPRECATED_MSG_ATTRIBUTE("Use 'selectDecodeMode:' instead");
+
+/**
  *  切换解码方式
  *
  *  @param decode 切换后的解码方式
  */
-- (void)selectDecodeMethod:(DecodeMethod)decode;
+- (void)selectDecodeMode:(UCDMediaDecodeMode)decodeMode;
 
 /**
  *  切换清晰度

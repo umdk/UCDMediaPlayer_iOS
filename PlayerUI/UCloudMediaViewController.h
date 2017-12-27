@@ -35,7 +35,7 @@ typedef NS_ENUM(NSInteger, WebState)
 - (void)clickVolume:(id)sender;
 - (void)clickSnaphot:(id)sender;
 
-- (void)selectedDecodeMethod:(DecodeMethod)decodeMethod;
+- (void)selectedDecodeMode:(UCDMediaDecodeMode)decodeMode;
 - (void)selectedDefinition:(Definition)definition;
 - (void)selectedScalingMode:(MPMovieScalingMode)scalingMode;
 

@@ -1,15 +1,22 @@
 # [UCloud MediaPlayer iOS SDK]()
 
-UCDMediaPlayer 是一个适用于 iOS 的音视频播放器 SDK，基于FFmpeg自主研发音视频媒体播放器，支持 RTMP, HTTP-FLV 和 HLS 直播流媒体播放。
+UCDMediaPlayer 是一个适用于 iOS 的音视频播放器 SDK，基于FFmpeg自主研发音视频媒体播放器，支持 RTMP, HTTP-FLV 和 HLS 直播流媒体播放。更多视频云产品可去[官网](https://docs.ucloud.cn/video/uvideo/index)查看
+
+本文档简要介绍UCDMediaPlayer的功能与简单接入,对于SDK的详细API请查看相关[wiki][wiki]。
 
 ![player1](screenshot/player1.jpeg)
 ![player2](screenshot/player2.jpeg)
+
+## Demo 体验
+![demo](screenshot/vod_download.png)
+
 ## 一. 功能特性
 - [x] 支持 RTMP、HLS、HTTP-FLV、RTSP 等协议
 - [x] 支持speex音频播放
 - [x] 支持累积延迟消除(RTMP和HTTP+FLV)，降低观看直播的观众延迟
 - [x] 支持H.265/HEVC播放
 - [x] 包含armv7、arm64、i386、x86_64指令集
+- [x] 支持bitcode
 - [x] 支持直播首屏秒开
 - [x] 支持直播、点播播放
 - [x] 支持软解、硬解切换
@@ -61,45 +68,19 @@ git clone https://github.com/umdk/UCDMediaPlayer_iOS.git
 |---|---|
 | VideoToolbox.framework |
 | CoreMedia.framework |
+| MediaPlayer.framework |
 | AVFoundation.framework |
 | AudioToolbox.framework |
 | libz.tbd |
-
-#### 2.3.3 iOS9中ATS配置
-
-由于iOS9引入了AppTransportSecurity(ATS)特性，要求App访问的网络使用HTTPS协议，如果不做特殊设置，http请求会失败，所以需要开发者在工程中增加设置以便可以发送http请求，如下：
-
-在info plist中增加字段：
-
-\< key\>NSAppTransportSecurity\< /key\>
-
-\< dict\>
-
- \< key\>NSAllowsArbitraryLoads\< /key\>
-
- \< true\>
-
-\< /dict\>
 
 ### 2.4播放器接入
 
 #### 2.4.1 引入静态库
 
-播放器包含ffmpeg库，已知在含有ffmpeg的第三方库情况下无法正常运行,可以尝试在编译选项**Other linker Flags**中加入**-force_load**来解决冲突，但不推荐使用。Player文件夹放置的是直播云播放器库，（如果已经有播放器库，可以不添加，自行配置播放器）将Player直接拉进Xcode工程目录中
-
-*Player文件夹中相关文件意义:
-
-| 类文件 | 描述 |
-|---|---|---|
-| UCloudMediaPlayer.h | 播放器控制类 |
-| UCloudMediaPlayback.h | 播放器通知类 |
-| libUCloudMediaPlayer.a | 播放器静态库 |
-| UCloudPlayback.h | 播放器播放类 |
-| UCloudMediaModule.h | 播放器显示控制类 |
-| Filter文件夹 | 所有滤镜库，包含美颜滤镜 |
+播放器包含ffmpeg库，已知在含有ffmpeg的第三方库情况下无法正常运行,可以尝试在编译选项**Other linker Flags**中加入**-force_load**来解决冲突，但不推荐使用。Player文件夹放置的是直播云播放器库，（如果已经有播放器库，可以不添加，自行配置播放器）将Player直接拉进Xcode工程目录中;
 
 
-*引入**PlayerUI**，**PlayerUI**是项目中的播放器UI及其管理器类，用户可以自行修改使用。
+*引入**PlayerUI**文件夹，**PlayerUI**是项目中的播放器UI及其管理器类，用户可以自行修改使用。*
 
 #### 2.4.2 集成播放器
 
@@ -150,143 +131,11 @@ self.playerManager.mediaPlayer = nil;
 
 <code>shouldAutoplay</code> 是否自动播放
 
-## 四 API介绍
-
-### 4.1 主要方法
-UCloudMediaPlayer.h  
-
-```
-/**
- *  初始化mediaPlayer
- *
- *  @return UCloudMediaPlayer
- */
-+ (instancetype)ucloudMediaPlayer;
-
-/**
- *  配置播放view
- *
- *  @param url   播放url
- *  @param urltype 播放类型
- *  @param frame playerView视图大小，默认传入CGRectNull
- *  @param view  player
- *  @param block 初始化完成
- */
-- (void)showMediaPlayer:(NSString *)url urltype:(UrlType)urltype frame:(CGRect)frame view:(UIView *)view completion:(UCloudMediaCompletionBlock)block;
-
-/**
- *  配置播放view
- *
- *  @param view  父view
- *  @param block 回掉清晰度信息
- */
-- (void)showInview:(UIView *)view definition:(void(^)(NSInteger defaultNum, NSArray *data))block;
-
-/**
- *  切换解码方式
- *
- *  @param decode 切换后的解码方式
- */
-- (void)selectDecodeMthod:(DecodeMthod)decode;
-
-/**
- *  切换清晰度
- *
- *  @param definition 切换后的清晰度
- */
-- (void)selectDefinition:(Definition)definition;
-
-/**
- *  刷新视图
- */
-- (void)refreshView;
-```
-UCloudPlayback.h
-
-```
-/**
- *  准备播放
- */
-- (void)prepareToPlay;
-
-/**
- *  播放
- */
-- (void)play;
-
-/**
- *  暂停
- */
-- (void)pause;
-
-/**
- *  停止
- */
-- (void)stop;
-
-/**
- *  播放状态
- */
-- (BOOL)isPlaying;
-
-/**
- *  关闭播放器
- */
-- (void)shutdown;
-
-/**
- *  进入后台自动暂停
- *
- *  @param pause 是否暂停
- */
-- (void)setPauseInBackground:(BOOL)pause;
-```
-
-### 4.4 枚举 
-```
-typedef NS_ENUM(NSInteger, DecodeMthod)
-{
-    DecodeMthodSoft,//软解
-    DecodeMthodHard,//硬解
-};
-
-typedef NS_ENUM(NSInteger, Definition)
-{
-    Definition_fhd,   //@"蓝光"
-    Definition_shd,   //@"超清"
-    Definition_hd,    //@"高清"
-    Definition_sd,    //@"标清"
-};
-
-typedef NS_ENUM(NSInteger, ErrorNum)
-{
-    ErrorNumShowViewIsNull = 1000,
-    ErrorNumUrlIsNull,
-    ErrorNumSaveShotError,
-    ErrorNumUrlIsWrong,
-    ErrorNumdrm,
-    
-    ErrorNumCgiLostPars = 40021,
-    ErrorNumCgiRequest = 40022,
-    ErrorNumCgiAuthFail = 40023,
-    ErrorNumCgiMovieCannotFound = 40024,//不会构建videoview
-    ErrorNumCgiDomainError = 40025,
-    ErrorNumCgiServerError = 40026,
-    ErrorNumCgiTimeOut = 40027,
-};
-
-typedef NS_ENUM(NSInteger, UrlType)
-{
-    UrlTypeAuto   = 0,//自动，程序会根据相关规则为你选择播放类型，如果是http-flv直播，请必须设置为UrlTypeLive，hls点播必须设置为UrlTypeHttp
-    UrlTypeLocal  = 1,//本地视频
-    UrlTypeHttp   = 2,//网络视频(非直播)
-    UrlTypeLive   = 3,//直播
-};
-```
-## 五 SDK升级历史信息文档变更
+## 四 SDK升级历史信息文档变更
 
 | 版本号 | 发布日期 | 说明 |
 |---|---|---|
+| 1.5.4  | 2017.12.27 | 1、增加音量调节接口，支持音量放大和静音<br/>2、弃用部分API接口改用新命名接口<br/>3、更新播放器内核|
 | 1.5.3  | 2017.11.22 | 1、demo增加错误重连逻辑<br/>2、修复demo横竖屏切换时缓冲动画的位置问题<br/>3、UCloudMediaPlayer.h增加dropframeInterval属性<br/>4、本地日志路径改为可设置|
 | 1.5.2  | 2017.06.23 | 1、UCloudPlayback.h增加videofps(视频帧率)、downloadSpeed(实时下载速度)属性|
 | 1.5.1  | 2017.05.05 | 1、在demo层面加入对demo的友盟统计<br/>2、调整播放器的时的默认参数设置<br/>3、UCloudMediaPlayer.h增加videoToolboxEnabled属性|
@@ -309,7 +158,7 @@ typedef NS_ENUM(NSInteger, UrlType)
 | 0.9.1  | 2015.10.15 | 完成drm功能开发 |
 | 0.9.0  | 2015.09.18 | 基本功能完成，UI编写使用完毕，文档初稿 |
 
-## 六 反馈和建议
+## 五 反馈和建议
   - 主 页：<https://www.ucloud.cn/>
   - issue：[查看已有的 issues 和提交 Bug[推荐]](https://github.com/umdk/UCDMediaPlayer_iOS/issues)
   - 邮 箱：[sdk_spt@ucloud.cn](mailto:sdk_spt@ucloud.cn)
@@ -325,3 +174,9 @@ typedef NS_ENUM(NSInteger, UrlType)
 | 问题描述 | 描述问题现象 |
 | 操作路径 | 经过了什么样的操作出现所述的问题 |
 | 附 件 | 文本形式控制台log、crash报告、其他辅助信息（播放界面截屏或其他） |
+
+### 提交工单
+
+提交工单，配置推流域名对应的accesskey: https://accountv2.ucloud.cn/work_ticket
+
+<img src="screenshot/work_ticket.png" width = "75%" height = "75%" alt="work_ticket" />

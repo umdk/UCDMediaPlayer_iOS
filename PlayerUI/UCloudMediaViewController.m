@@ -538,7 +538,7 @@ static bool centerBug;
     
     
     PlayerManager *vc = (PlayerManager *)_delegateAction;
-    if (vc.mediaPlayer.defaultDecodeMethod == DecodeMethodHard)
+    if (vc.mediaPlayer.videoDecodeMode == UCDMediaDecodeModeHardware)
     {
         MPMovieLoadState loadState = [_delegatePlayer loadState];
         MPMoviePlaybackState backState = [_delegatePlayer playbackState];
@@ -751,16 +751,16 @@ static bool centerBug;
     }
     else
     {
-        DecodeMethod method;
+        UCDMediaDecodeMode mode;
         if (choi == 0) {
-            method = DecodeMethodHard;
+            mode = UCDMediaDecodeModeHardware;
         } else {
-            method = DecodeMethodSoft;
+            mode = UCDMediaDecodeModeSoftware;
         }
         
-        if (_delegateAction && [_delegateAction respondsToSelector:@selector(selectedDecodeMethod:)])
+        if (_delegateAction && [_delegateAction respondsToSelector:@selector(selectedDecodeMode:)])
         {
-            [_delegateAction selectedDecodeMethod:method];
+            [_delegateAction selectedDecodeMode:mode];
         }
     }
 }

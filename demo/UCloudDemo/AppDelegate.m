@@ -26,6 +26,7 @@ void uncaughtExceptionHandler(NSException *exception) {
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
 //    [self configurePre];
 //    [self performSelectorOnMainThread:@selector(noti) withObject:self waitUntilDone:YES];
+    // 友盟统计，用于统计APP
     UMConfigInstance.appKey = @"58f87c76677baa3b840005fa";
     [MobClick startWithConfigure:UMConfigInstance];
     
