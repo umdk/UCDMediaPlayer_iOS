@@ -110,7 +110,7 @@ self.playerManager.mediaPlayer = nil;
 ### 3.1 参数配置
 当你要深入理解 SDK 的一些参数及有定制化需求时，可以从高级功能部分中查询阅读。
 
-<code>defaultDecodeMethod</code>
+<code>videoDecodeMode</code>
 解码方式分软解码和硬解码
 
 <code>UrlType</code> 播放地址类型，区分为本地视频，网络视频，直播视频，使用UrlTypeAuto程序会根据相关规则为你选择播放类型，如果是http-flv直播，请必须设置为UrlTypeLive，hls点播必须设置为UrlTypeHttp;
@@ -135,6 +135,7 @@ self.playerManager.mediaPlayer = nil;
 
 | 版本号 | 发布日期 | 说明 |
 |---|---|---|
+| 1.5.5  | 2018.01.03 | 1、修复点播模式下playbackState状态不稳定问题<br/>2、修复部分机型播放闪退问题<br/>|
 | 1.5.4  | 2017.12.27 | 1、增加音量调节接口，支持音量放大和静音<br/>2、弃用部分API接口改用新命名接口<br/>3、更新播放器内核|
 | 1.5.3  | 2017.11.22 | 1、demo增加错误重连逻辑<br/>2、修复demo横竖屏切换时缓冲动画的位置问题<br/>3、UCloudMediaPlayer.h增加dropframeInterval属性<br/>4、本地日志路径改为可设置|
 | 1.5.2  | 2017.06.23 | 1、UCloudPlayback.h增加videofps(视频帧率)、downloadSpeed(实时下载速度)属性|
