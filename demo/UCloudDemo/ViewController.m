@@ -35,10 +35,10 @@
     _liveId = rand()%10000;
     //直播播放地址为http://vlive3.rtmp.cdn.ucloud.com.cn/ucloud/%@.flv或者 rtmp://publish3.cdn.ucloud.com.cn/ucloud/%@，其中%@为推流的liveID
     _liveUrlString = [NSString stringWithFormat:
-//                      @"rtmp://publish3.cdn.ucloud.com.cn/ucloud/%ld", (long)_liveId //ucloudRTMP流地址，配合推流SDK使用 https://github.com/umdk/UCDLive_iOS
-                      @"rtmp://live.hkstv.hk.lxdns.com/live/hks" //香港卫视
-//                      @"rtmp://v1.one-tv.com/live/mpegts.stream" //亚太第一卫视
-//                      @"http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8" //cctv6高清
+//                      @"http://demo.pull.ucloud.com.cn/live/%@.flv", (long)_liveId //ucloudRTMP流地址，配合推流SDK使用 https://github.com/umdk/UCDLive_iOS
+                                            @"rtmp://live.hkstv.hk.lxdns.com/live/hks" //香港卫视
+                      //                      @"rtmp://v1.one-tv.com/live/mpegts.stream" //亚太第一卫视
+                      //                      @"http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8" //cctv6高清
                       ];
     
     _vodUrlString =

@@ -28,7 +28,7 @@ typedef NS_ENUM(NSInteger, GesDirection)
 
 //#define DANMU
 
-@interface UCloudMediaViewController ()<UITableViewDataSource, UITableViewDelegate, CAAnimationDelegate>
+@interface UCloudMediaViewController ()<UITableViewDataSource, UITableViewDelegate, CAAnimationDelegate, UIGestureRecognizerDelegate>
 {
     
 }
@@ -52,6 +52,7 @@ typedef NS_ENUM(NSInteger, GesDirection)
 //@property (weak, nonatomic) IBOutlet UCloudProgressView *progressPanel;
 @property (weak, nonatomic) IBOutlet UIButton *fullButton;
 @property (weak, nonatomic) IBOutlet UIButton *danmuButton;
+@property (weak, nonatomic) IBOutlet UIButton *rightButton;
 
 @property (strong, nonatomic) NSDictionary *choices;
 @property (strong, nonatomic) NSArray *choi;
@@ -121,16 +122,17 @@ typedef NS_ENUM(NSInteger, GesDirection)
         }
     }
     
-    self.choi = @[@"清晰度", @"画幅", @"解码器"];
+    self.choi = @[@"解码器", @"画幅", @"清晰度"];
     if (self.urlType == UrlTypeHttp || self.urlType == UrlTypeLocal)
     {
-        self.choices = @{@"清晰度":arr, @"画幅":@[@"自动",@"原始",@"全屏"], @"解码器":@[@"硬解",@"软解"]};
+        self.choices = @{ @"解码器":@[@"硬解",@"软解"], @"画幅":@[@"自动",@"原始",@"全屏"],@"清晰度":arr };
         self.selectedResults = [NSMutableDictionary dictionaryWithDictionary:@{@"0":@(self.videoQuality), @"1":@(self.videoGravity), @"2":@(self.videoCodec)}];
     }
     else if (self.urlType == UrlTypeLive)
     {
-        self.choices = @{@"清晰度":arr, @"画幅":@[@"自动",@"原始",@"全屏"], @"解码器":@[@"软解"]};
+        self.choices = @{@"解码器":@[@"硬解", @"软解"], @"画幅":@[@"自动",@"原始",@"全屏"], @"清晰度":arr};
         self.selectedResults = [NSMutableDictionary dictionaryWithDictionary:@{@"0":@(self.videoQuality), @"1":@(self.videoGravity), @"2":@(0)}];
+        self.totalDurationLabel.hidden = YES;
     }
     
 }
@@ -141,6 +143,7 @@ typedef NS_ENUM(NSInteger, GesDirection)
     [self.view addGestureRecognizer:ges];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickMediaControl:)];
+    tap.delegate = self;
     [self.view addGestureRecognizer:tap];
 }
 
@@ -157,6 +160,7 @@ typedef NS_ENUM(NSInteger, GesDirection)
 #else
     self.danmuButton.hidden = YES;
 #endif
+    self.rightButton.hidden = NO;
     
     [self createProgressView:CGRectZero];
     
@@ -169,7 +173,7 @@ typedef NS_ENUM(NSInteger, GesDirection)
         self.btnPlayLeftContraint.constant = 18;
         self.btnPauseLeftContraint.constant = 18;
     }
-
+    
 }
 
 - (void)pan:(UIPanGestureRecognizer *)ges
@@ -250,19 +254,27 @@ typedef NS_ENUM(NSInteger, GesDirection)
         
         switch (self.direc)
         {
+                // 水平拖动进度条
             case Dir_H:
             {
                 if (self.urlType != UrlTypeLive)
                 {
                     if (_delegateAction && [_delegateAction respondsToSelector:@selector(durationSliderValueChanged:)])
                     {
-                        [_delegateAction durationSliderValueChanged:@(delta)];
+                        // 固定30秒
+                        [_delegateAction durationSliderValueChanged:@(delta > 0 ? 30 : -30)];
                     }
-                    CGFloat value = self.progressViewNormal + delta;
-                    if (value >= 0 && value <= 1)
-                    {
-                        self.progressView.progress = value;
+                    CGFloat value = self.progressViewNormal + 30 / _delegatePlayer.duration;
+                    if (delta < 0) {
+                        value = self.progressViewNormal - 30 / _delegatePlayer.duration;
                     }
+                    
+                    if (value < 0) {
+                        value = 0;
+                    } else if (value > 1) {
+                        value = 1;
+                    }
+                    self.progressView.progress = value;
                 }
             }break;
             case Dir_V_R:
@@ -273,7 +285,7 @@ typedef NS_ENUM(NSInteger, GesDirection)
             }break;
             case Dir_V_L:
             {
-//                [MPMusicPlayerController systemMusicPlayer].volume = self.voiceNormal + delta;
+                //                [MPMusicPlayerController systemMusicPlayer].volume = self.voiceNormal + delta;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
                 [MPMusicPlayerController applicationMusicPlayer].volume = self.voiceNormal + delta;
@@ -291,7 +303,7 @@ typedef NS_ENUM(NSInteger, GesDirection)
             [weakSelf.brightnessView removeFromSuperview];
             
         }];
-//        [_delegatePlayer play];
+        //        [_delegatePlayer play];
         
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(refreshMediaControl) object:nil];
         if (!self.overlayPanel.hidden)
@@ -474,7 +486,7 @@ static bool centerBug;
     //子view的右边缘离父view的右边缘40个像素
     NSLayoutConstraint *contraint4 = [NSLayoutConstraint constraintWithItem:subView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeRight multiplier:1.0 constant:-0.0];
     //把约束添加到父视图上
-     NSLayoutConstraint *contraint1 = [NSLayoutConstraint constraintWithItem:subView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:0 multiplier:1.0 constant:5.0];
+    NSLayoutConstraint *contraint1 = [NSLayoutConstraint constraintWithItem:subView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:0 multiplier:1.0 constant:5.0];
     NSArray *array = [NSArray arrayWithObjects:contraint1, contraint2, contraint3, contraint4, nil];
     
     if (contraints)
@@ -534,6 +546,11 @@ static bool centerBug;
         self.totalDurationLabel.text = @"--:--";
         self.currentTimeLabel.text = @"00:00";
         self.progressView.progress = 0.0f;
+    }
+    if (self.urlType == UrlTypeLive) {
+        self.currentTimeLabel.text = @"--:--";
+        self.playButton.enabled = NO;
+        self.pauseButton.enabled = NO;
     }
     
     
@@ -640,12 +657,18 @@ static bool centerBug;
         if (self.rightPanel.hidden)
         {
             //show menu
-            self.overlayPanel.hidden = YES;
-            [self cancelDelayedHide];
-            
-            BOOL isFullScreen = [_delegateAction screenState];
-            if (isFullScreen) {
-                [self showOrHideMenu];
+            //            self.overlayPanel.hidden = YES;
+            //            [self cancelDelayedHide];
+            //
+            //            BOOL isFullScreen = [_delegateAction screenState];
+            //            if (isFullScreen) {
+            //                [self showOrHideMenu];
+            //            }
+            if (self.overlayPanel.hidden) {
+                //显示进度条
+                [self showAndFade];
+            } else {
+                [self hide];
             }
         }
         else
@@ -703,7 +726,7 @@ static bool centerBug;
             } else {
                 [self hide];
             }
-
+            
             
         }
         else
@@ -862,6 +885,26 @@ static bool centerBug;
     }
 }
 
+- (IBAction)clickRight:(UIButton *)sender
+{
+    if (self.rightPanel.hidden)
+    {
+        //show menu
+        self.overlayPanel.hidden = YES;
+        [self cancelDelayedHide];
+        
+        BOOL isFullScreen = [_delegateAction screenState];
+        if (isFullScreen) {
+            [self showOrHideMenu];
+        }
+    }
+    
+    if (_delegateAction && [_delegateAction respondsToSelector:@selector(onClickMediaControl:)])
+    {
+        [_delegateAction onClickMediaControl:sender];
+    }
+}
+
 #pragma mark - 水印
 - (void)waterMark
 {
@@ -911,4 +954,15 @@ static bool centerBug;
 {
     self.rightPanel.hidden = hidden;
 }
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+    CGPoint touchTopPoint = [touch locationInView:_topPanel];
+    CGPoint touchBottomPoint = [touch locationInView:_bottomPanel];
+    CGPoint touchRightPoint = [touch locationInView:_rightPanel];
+    bool bTop = !CGRectContainsPoint(_topPanel.frame, touchTopPoint);
+    bool bBottom = !CGRectContainsPoint(_bottomPanel.frame, touchBottomPoint);
+    bool bRight = !CGRectContainsPoint(_rightPanel.frame, touchRightPoint);
+    return  bTop;
+}
+
 @end

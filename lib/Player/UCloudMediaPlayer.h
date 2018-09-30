@@ -266,6 +266,25 @@ typedef void(^UCloudMediaCompletionBlock)(NSInteger defaultNum, NSArray *data);
 @property (assign, nonatomic) NSInteger             logFilesMaxSize;
 
 /**
+ @property httpCookies
+ @abstract 设置请求cookie，初始化有效
+ 对Cookie内容进行了拼接优化处理，不需要自己拼接字段，字典形式传递 （key,value仅限string内容，若不是先自行转换成string）\
+ 同时设置httpCookies和httpHeaders时,不管httpHeaders是否设置Cookie字段，以httpCookies为准
+ */
+@property (strong, nonatomic) NSDictionary          *httpCookies;
+
+/**
+ @property httpHeaders
+ @abstract 设置请求头，初始化有效
+ 如果设置下来的头域域名是新增的域名，则将该头域直接附着在原请求头后面
+ 
+ 如果设置下来的头域域名在原有请求头中存在（不区分大小写），则替换原请求头中相应的域值
+ 
+ 播放器自带的域名包括：User-Agent、Accept、Range、Connection、Host、Icy-MetaData
+ */
+@property (strong, nonatomic) NSDictionary         *httpHeaders;
+
+/**
  *  播放器控制器
  */
 @property (strong, nonatomic) id<UCloudMediaPlayback> player;
