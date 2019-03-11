@@ -1,6 +1,6 @@
-# [UCloud MediaPlayer iOS SDK]()
+# [MediaPlayer iOS SDK]()
 
-UCDMediaPlayer 是一个适用于 iOS 的音视频播放器 SDK，基于FFmpeg自主研发音视频媒体播放器，支持 RTMP, HTTP-FLV 和 HLS 直播流媒体播放。更多视频云产品可去[官网](https://docs.ucloud.cn/video/uvideo/index)查看
+UCDMediaPlayer 是一个适用于 iOS 的音视频播放器 SDK，基于FFmpeg自主研发音视频媒体播放器，支持 RTMP, HTTP-FLV 和 HLS 直播流媒体播放。
 
 本文档简要介绍UCDMediaPlayer的功能与简单接入,对于SDK的详细API请查看相关[wiki](https://github.com/umdk/UCDMediaPlayer_iOS/wiki)。
 
@@ -160,24 +160,7 @@ self.playerManager.mediaPlayer = nil;
 | 0.9.0  | 2015.09.18 | 基本功能完成，UI编写使用完毕，文档初稿 |
 
 ## 五 反馈和建议
-  - 主 页：<https://www.ucloud.cn/>
-  - issue：[查看已有的 issues 和提交 Bug[推荐]](https://github.com/umdk/UCDMediaPlayer_iOS/issues)
-  - 邮 箱：[sdk_spt@ucloud.cn](mailto:sdk_spt@ucloud.cn)
+  有问题反馈或者交流请https://github.com/umdk/UCDMediaPlayer_iOS/issues上提issues
+
  
-### 问题反馈参考模板
 
-| 名称 | 描述 |
-|---|---|
-| SDK名称 | UCDMediaPlayer_iOS|
-| 设备型号 | iphone7 |
-| 系统版本 | iOS 10 |
-| SDK版本 | v1.5.0 |
-| 问题描述 | 描述问题现象 |
-| 操作路径 | 经过了什么样的操作出现所述的问题 |
-| 附 件 | 文本形式控制台log、crash报告、其他辅助信息（播放界面截屏或其他） |
-
-### 提交工单
-
-提交工单，配置推流域名对应的accesskey: https://accountv2.ucloud.cn/work_ticket
-
-<img src="screenshot/work_ticket.png" width = "75%" height = "75%" alt="work_ticket" />
