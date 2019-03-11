@@ -160,7 +160,7 @@ self.playerManager.mediaPlayer = nil;
 | 0.9.0  | 2015.09.18 | 基本功能完成，UI编写使用完毕，文档初稿 |
 
 ## 五 反馈和建议
-  有问题反馈或者交流请https://github.com/umdk/UCDMediaPlayer_iOS/issues上提issues
+  有问题反馈或者交流请到https://github.com/umdk/UCDMediaPlayer_iOS/issues上提issues
 
  
 
